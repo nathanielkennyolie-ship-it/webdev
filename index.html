@@ -3,18 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talent Loop Web Services — Fast Websites for Nigerian Hotels & Businesses</title>
+  <title>Talent Loop Web Services — Fast Websites for Nigerian Hotels &amp; Businesses</title>
   <meta name="description" content="We build fast, professional websites for hotels, churches and businesses in Delta State and across Nigeria. 99/100 PageSpeed. Hand-coded HTML/CSS. Based in Warri." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://webdive.talent-loop.org/" />
 
-  <!-- FIX 1: Non-blocking Google Fonts with display=swap -->
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- LCP image preload — must be first resource hint -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1200&fm=webp&auto=format&fit=crop" fetchpriority="high" />
+
+  <!-- Non-blocking fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
-  <meta name="robots" content="index, follow" />
-
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1200&fm=webp&auto=format&fit=crop" />
+  <!-- Structured data for local business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Talent Loop Web Services",
+    "description": "Fast, professional websites for hotels, churches and businesses across Nigeria. Hand-coded HTML/CSS. 99/100 PageSpeed.",
+    "url": "https://webdive.talent-loop.org/",
+    "telephone": "+2349076042573",
+    "email": "nathanielkenny@talent-loop.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Warri",
+      "addressRegion": "Delta State",
+      "addressCountry": "NG"
+    },
+    "founder": { "@type": "Person", "name": "Nathaniel Kenny Olie" },
+    "serviceType": ["Hotel Website Design", "Church Website Design", "Business Website Design"]
+  }
+  </script>
 
   <style>
     /* ================================
@@ -23,17 +47,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:      #1a2b5f;
-      --navy-dark: #111d42;
-      --blue:      #0066CC;
-      --blue-dark: #004d99;
-      --gold:      #C9A84C;
-      --gold-light:#f0d98a;
-      --body:      #3d4450;
-      --bg:        #FDFDFD;
-      --bg-light:  #f0f4f8;
-      --white:     #ffffff;
-      --shadow:    0 8px 30px rgba(0,0,0,0.09);
+      --navy:        #1a2b5f;
+      --navy-dark:   #111d42;
+      --blue:        #0055b3;
+      --blue-dark:   #003d80;
+      --gold:        #C9A84C;
+      --gold-light:  #f0d98a;
+      --body:        #3d4450;
+      --bg:          #FDFDFD;
+      --bg-light:    #f0f4f8;
+      --white:       #ffffff;
+      --shadow:      0 8px 30px rgba(0,0,0,0.09);
+      --muted-text:  #595f6e;
+      --subtle-text: #6b7280;
+      --on-dark-muted: #c8ccd6;
+      --on-dark-body:  #dde0e8;
+      --on-navy-muted: #b8bfcf;
+      --on-navy-body:  #d4d9e6;
     }
 
     html { scroll-behavior: smooth; }
@@ -54,6 +84,24 @@
       margin: 0 auto;
       padding: 0 2rem;
     }
+
+    /* ================================
+       SKIP LINK (accessibility)
+    ================================ */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--navy);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 6px 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      z-index: 9999;
+      text-decoration: underline;
+    }
+    .skip-link:focus { top: 0; }
 
     /* ================================
        NAVBAR
@@ -104,7 +152,7 @@
       display: block;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.7rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--blue);
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -121,11 +169,16 @@
       color: var(--navy);
       font-weight: 500;
       font-size: 0.95rem;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+      transition: color 0.3s ease, text-decoration-color 0.3s ease;
     }
 
-    .nav-menu a:hover {
+    .nav-menu a:hover,
+    .nav-menu a:focus-visible {
       color: var(--blue);
-      text-decoration: underline;
+      text-decoration-color: var(--blue);
     }
 
     .nav-cta {
@@ -134,13 +187,18 @@
       padding: 0.55rem 1.25rem;
       border-radius: 6px;
       font-weight: 700 !important;
+      text-decoration: none !important;
       transition: background 0.3s ease !important;
     }
 
-    .nav-cta:hover {
+    .nav-cta:hover,
+    .nav-cta:focus-visible {
       background: var(--blue-dark) !important;
       color: var(--white) !important;
       text-decoration: none !important;
+      text-decoration-color: transparent !important;
+      outline: 2px solid var(--blue-dark);
+      outline-offset: 2px;
     }
 
     .hamburger {
@@ -207,9 +265,9 @@
 
     .hero-eyebrow {
       display: inline-block;
-      background: rgba(0,102,204,0.18);
-      border: 1px solid rgba(0,102,204,0.4);
-      color: #7ec8ff;
+      background: rgba(0,85,179,0.22);
+      border: 1px solid rgba(0,85,179,0.45);
+      color: #a8d4ff;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -232,7 +290,7 @@
 
     .hero-subtitle {
       font-size: 1.2rem;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.92);
       max-width: 560px;
       margin: 0 auto 2.5rem;
       line-height: 1.7;
@@ -263,6 +321,11 @@
       text-decoration: none;
     }
 
+    .btn:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
     .btn-primary {
       background: var(--blue);
       color: var(--white);
@@ -277,7 +340,7 @@
     .btn-outline {
       background: transparent;
       color: var(--white);
-      border-color: rgba(255,255,255,0.6);
+      border-color: rgba(255,255,255,0.8);
     }
     .btn-outline:hover {
       background: var(--white);
@@ -285,27 +348,15 @@
       border-color: var(--white);
     }
 
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy-dark);
-      border-color: var(--gold);
-      font-weight: 700;
-    }
-    .btn-gold:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      color: var(--navy-dark);
-    }
-
     .btn-wa {
       background: #25D366;
-      color: var(--white);
+      color: #0a3d1e;
       border-color: #25D366;
     }
     .btn-wa:hover {
       background: #1ebe5d;
       border-color: #1ebe5d;
-      color: var(--white);
+      color: #0a3d1e;
     }
 
     /* ================================
@@ -320,7 +371,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0;
       flex-wrap: wrap;
     }
 
@@ -350,7 +400,7 @@
 
     .stat-label {
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.85);
+      color: var(--on-navy-muted);
       margin-top: 0.3rem;
       letter-spacing: 0.03em;
     }
@@ -432,7 +482,7 @@
 
     .service-card p {
       font-size: 0.92rem;
-      color: #555;
+      color: var(--muted-text);
       line-height: 1.6;
       margin-bottom: 1.25rem;
     }
@@ -448,8 +498,8 @@
     }
 
     .service-card.featured .service-tag {
-      background: rgba(201,168,76,0.15);
-      color: #6b4f0e;
+      background: rgba(201,168,76,0.18);
+      color: #5a3e00;
     }
 
     /* ================================
@@ -490,7 +540,7 @@
     .portfolio-thumb-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--navy-dark) 0%, rgba(0,102,204,0.4) 100%);
+      background: linear-gradient(135deg, var(--navy-dark) 0%, rgba(0,85,179,0.4) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -512,7 +562,7 @@
       top: 1rem;
       right: 1rem;
       background: var(--gold);
-      color: var(--navy-dark);
+      color: #2a1a00;
       font-size: 0.72rem;
       font-weight: 700;
       padding: 0.3rem 0.7rem;
@@ -531,7 +581,7 @@
 
     .portfolio-body p {
       font-size: 0.88rem;
-      color: #666;
+      color: var(--muted-text);
       margin-bottom: 1.1rem;
       line-height: 1.5;
     }
@@ -566,9 +616,16 @@
       gap: 0.3rem;
       white-space: nowrap;
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     .portfolio-link:hover { color: var(--blue-dark); }
+
+    .portfolio-link-muted {
+      font-size: 0.8rem;
+      color: var(--muted-text);
+      font-weight: 500;
+    }
 
     /* ================================
        WHY US
@@ -577,7 +634,7 @@
 
     .why-us .section-label { color: var(--gold); }
     .why-us .section-title { color: var(--white); }
-    .why-us .section-sub { color: rgba(255,255,255,0.85); }
+    .why-us .section-sub { color: var(--on-navy-body); }
 
     .why-grid {
       display: grid;
@@ -587,7 +644,7 @@
 
     .why-card {
       background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.14);
       border-radius: 14px;
       padding: 2rem 1.75rem;
       transition: background 0.3s ease;
@@ -606,14 +663,14 @@
 
     .why-card p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.82);
+      color: var(--on-navy-body);
       line-height: 1.6;
     }
 
     .speed-proof {
       margin-top: 3rem;
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(201,168,76,0.3);
+      border: 1px solid rgba(201,168,76,0.35);
       border-radius: 14px;
       padding: 2rem 2.5rem;
       display: flex;
@@ -623,16 +680,18 @@
       flex-wrap: wrap;
     }
 
-    .speed-proof-text h3 {
+    .speed-proof-headline {
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
+      font-weight: 700;
       color: var(--white);
       margin-bottom: 0.4rem;
+      line-height: 1.3;
     }
 
     .speed-proof-text p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.75);
+      color: var(--on-dark-muted);
       max-width: 420px;
     }
 
@@ -650,7 +709,7 @@
 
     .score-lbl {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.7);
+      color: var(--on-navy-muted);
       margin-top: 0.25rem;
     }
 
@@ -703,7 +762,7 @@
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: rgba(0,102,204,0.1);
+      background: rgba(0,85,179,0.1);
     }
 
     .about-visual-icon {
@@ -743,7 +802,7 @@
 
     .about-visual-stat-lbl {
       font-size: 0.72rem;
-      color: rgba(255,255,255,0.75);
+      color: var(--on-dark-muted);
       margin-top: 0.2rem;
     }
 
@@ -769,7 +828,7 @@
 
     .about-badge-lbl {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.8);
+      color: var(--on-navy-body);
       margin-top: 0.2rem;
     }
 
@@ -796,8 +855,8 @@
     }
 
     .testi-placeholder {
-      background: rgba(0,102,204,0.04);
-      border: 2px dashed rgba(0,102,204,0.25);
+      background: rgba(0,85,179,0.04);
+      border: 2px dashed rgba(0,85,179,0.25);
       border-radius: 14px;
       padding: 2.5rem 2rem;
       display: flex;
@@ -809,7 +868,7 @@
     }
 
     .testi-placeholder p {
-      color: #666;
+      color: var(--muted-text);
       font-size: 0.9rem;
       font-style: italic;
     }
@@ -863,7 +922,7 @@
       flex-shrink: 0;
     }
 
-    .contact-item-text h4 {
+    .contact-item-text h3 {
       font-family: 'Playfair Display', serif;
       font-size: 0.95rem;
       color: var(--navy);
@@ -873,13 +932,14 @@
     .contact-item-text p,
     .contact-item-text a {
       font-size: 0.9rem;
-      color: #555;
+      color: var(--muted-text);
       line-height: 1.5;
     }
 
     .contact-item-text a {
       color: var(--blue);
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
     .contact-item-text a:hover { color: var(--blue-dark); }
 
@@ -890,16 +950,17 @@
       box-shadow: var(--shadow);
     }
 
-    .contact-box h3 {
+    .contact-box-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       color: var(--navy);
       margin-bottom: 0.5rem;
+      font-weight: 700;
     }
 
     .contact-box > p {
       font-size: 0.9rem;
-      color: #777;
+      color: var(--subtle-text);
       margin-bottom: 2rem;
     }
 
@@ -908,7 +969,7 @@
       align-items: center;
       gap: 1.25rem;
       background: #f0fdf6;
-      border: 2px solid #25D366;
+      border: 2px solid #1a9e50;
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 2rem;
@@ -922,7 +983,7 @@
 
     .wa-cta-text strong {
       display: block;
-      color: #166534;
+      color: #14532d;
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.2rem;
@@ -930,12 +991,12 @@
 
     .wa-cta-text span {
       font-size: 0.85rem;
-      color: #16a34a;
+      color: #166534;
     }
 
     .contact-divider {
       text-align: center;
-      color: #999;
+      color: var(--muted-text);
       font-size: 0.85rem;
       margin-bottom: 1.5rem;
       position: relative;
@@ -961,7 +1022,7 @@
       gap: 0.5rem;
       padding: 0.9rem;
       border-radius: 8px;
-      border: 1.5px solid #dde2ed;
+      border: 2px solid #9aa5b8;
       color: var(--navy);
       font-weight: 600;
       font-size: 0.95rem;
@@ -995,7 +1056,7 @@
     .footer-brand .logo-text span { color: var(--gold); }
 
     .footer-tagline {
-      color: rgba(255,255,255,0.65);
+      color: var(--on-dark-muted);
       font-size: 0.9rem;
       line-height: 1.6;
       margin-top: 1rem;
@@ -1017,19 +1078,22 @@
     }
 
     .footer-col ul a {
-      color: rgba(255,255,255,0.65);
+      color: var(--on-dark-muted);
       font-size: 0.9rem;
-      transition: color 0.3s ease;
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 2px;
+      transition: color 0.3s ease, text-decoration-color 0.3s ease;
     }
 
-    .footer-col ul a:hover {
+    .footer-col ul a:hover,
+    .footer-col ul a:focus-visible {
       color: var(--gold);
-      text-decoration: underline;
+      text-decoration-color: var(--gold);
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.12);
       padding-top: 2rem;
       display: flex;
       justify-content: space-between;
@@ -1039,11 +1103,17 @@
     }
 
     .footer-bottom p {
-      color: rgba(255,255,255,0.55);
+      color: var(--on-dark-muted);
       font-size: 0.85rem;
     }
 
-    .footer-bottom a { color: var(--gold); }
+    .footer-bottom a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footer-bottom a:hover { color: var(--gold-light); }
 
     /* ================================
        RESPONSIVE
@@ -1078,6 +1148,7 @@
         display: block;
         padding: 0.75rem 2rem;
         border-bottom: 1px solid #f0f0f0;
+        text-decoration-color: transparent;
       }
 
       .nav-cta {
@@ -1104,16 +1175,26 @@
       .hero-actions { flex-direction: column; align-items: center; }
       .btn { width: 100%; justify-content: center; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- ======================== NAVBAR ======================== -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- NAVBAR -->
   <nav class="navbar" aria-label="Main navigation">
     <div class="container nav-container">
 
-      <a href="#" class="logo" aria-label="Talent Loop Web Services home">
+      <a href="#" class="logo" aria-label="Talent Loop Web Services — go to homepage">
         <div class="logo-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
@@ -1132,34 +1213,47 @@
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#about">About</a></li>
         <li>
-          <a href="https://wa.me/2349076042573?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote" class="nav-cta" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/2349076042573?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote"
+             class="nav-cta"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Contact us on WhatsApp (opens in new tab)">
             💬 WhatsApp Us
           </a>
         </li>
       </ul>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
 
     </div>
   </nav>
 
-  <!-- ======================== HERO ======================== -->
-  <section class="hero" aria-label="Hero">
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
     <img
       class="hero-bg-img"
       src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1200&fm=webp&auto=format&fit=crop"
       alt=""
       fetchpriority="high"
+      loading="eager"
+      decoding="sync"
       aria-hidden="true"
+      width="1200"
+      height="800"
     />
     <div class="hero-stripe" aria-hidden="true"></div>
 
     <div class="hero-content">
       <span class="hero-eyebrow">Based in Warri, Delta State · Serving All of Nigeria</span>
 
-      <h1 class="hero-title">
+      <h1 id="hero-heading" class="hero-title">
         Fast Websites for<br>
         <span class="accent">Hotels &amp; Businesses</span><br>
         That Actually Win
@@ -1171,7 +1265,11 @@
       </p>
 
       <div class="hero-actions">
-        <a href="https://wa.me/2349076042573?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/2349076042573?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote"
+           class="btn btn-wa"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp us now (opens in new tab)">
           💬 WhatsApp Us Now
         </a>
         <a href="#portfolio" class="btn btn-outline">
@@ -1181,12 +1279,12 @@
     </div>
   </section>
 
-  <!-- ======================== STATS BAR ======================== -->
+  <!-- STATS BAR -->
   <div class="stats-bar" role="region" aria-label="Key statistics">
     <div class="container">
       <div class="stats-bar-grid">
         <div class="stat-item">
-          <div class="stat-num">99/100</div>
+          <div class="stat-num" aria-label="99 out of 100">99/100</div>
           <div class="stat-label">PageSpeed Score</div>
         </div>
         <div class="stat-item">
@@ -1209,17 +1307,16 @@
     </div>
   </div>
 
-  <!-- ======================== SERVICES ======================== -->
-  <section class="services" id="services">
+  <!-- SERVICES -->
+  <section class="services" id="services" aria-labelledby="services-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">What We Build</span>
-        <h2 class="section-title">One Thing Done Right<br>For Your Industry</h2>
+        <span class="section-label" aria-hidden="true">What We Build</span>
+        <h2 id="services-heading" class="section-title">One Thing Done Right<br>For Your Industry</h2>
         <p class="section-sub">No templates. No WordPress. Every site is hand-coded from scratch and tuned for speed, search rankings, and real business results.</p>
       </div>
 
       <div class="services-grid">
-
         <div class="service-card featured">
           <div class="service-icon" aria-hidden="true">🏨</div>
           <h3>Hotel Website</h3>
@@ -1247,30 +1344,28 @@
           <p>Is your current site broken, slow, or stuck on an error? We diagnose and fix it — or rebuild it properly for less than your developer charges for basic fixes.</p>
           <span class="service-tag">Quick Turnaround</span>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ======================== PORTFOLIO ======================== -->
-  <section class="portfolio" id="portfolio">
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio" aria-labelledby="portfolio-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Live Projects</span>
-        <h2 class="section-title">Real Sites. Real Results.<br>Click to See Them Live.</h2>
+        <span class="section-label" aria-hidden="true">Live Projects</span>
+        <h2 id="portfolio-heading" class="section-title">Real Sites. Real Results.<br>Click to See Them Live.</h2>
         <p class="section-sub">Every project below is live on the internet right now. Click any card to visit the actual site and see the quality for yourself.</p>
       </div>
 
       <div class="portfolio-grid">
 
-        <!-- Rikon Hotels -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">🏨</div>
               <div class="portfolio-thumb-name">Rikon Hotels</div>
             </div>
-            <span class="speed-badge">⚡ 96 Mobile</span>
+            <span class="speed-badge" aria-label="PageSpeed: 96 on Mobile">⚡ 96 Mobile</span>
           </div>
           <div class="portfolio-body">
             <h3>Rikon Hotels — Ughelli</h3>
@@ -1280,19 +1375,18 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">Events</span>
               </div>
-              <a href="https://rikonhotels.github.io/ughelli" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://rikonhotels.github.io/ughelli" class="portfolio-link" target="_blank" rel="noopener noreferrer" aria-label="View Rikon Hotels live site (opens in new tab)">View Live →</a>
             </div>
           </div>
         </div>
 
-        <!-- Bedouin Hotels -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">🏨</div>
               <div class="portfolio-thumb-name">Bedouin Hotels</div>
             </div>
-            <span class="speed-badge">⚡ 99 Desktop</span>
+            <span class="speed-badge" aria-label="PageSpeed: 99 on Desktop">⚡ 99 Desktop</span>
           </div>
           <div class="portfolio-body">
             <h3>Bedouin Hotels &amp; Suites — Warri</h3>
@@ -1302,19 +1396,18 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">Suites</span>
               </div>
-              <a href="https://kennysaint2-hub.github.io/Bedouinhotels/" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://kennysaint2-hub.github.io/Bedouinhotels/" class="portfolio-link" target="_blank" rel="noopener noreferrer" aria-label="View Bedouin Hotels live site (opens in new tab)">View Live →</a>
             </div>
           </div>
         </div>
 
-        <!-- Kayriots Hotel -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">🏨</div>
               <div class="portfolio-thumb-name">Kayriots Hotel</div>
             </div>
-            <span class="speed-badge">⚡ 99 Desktop</span>
+            <span class="speed-badge" aria-label="PageSpeed: 99 on Desktop">⚡ 99 Desktop</span>
           </div>
           <div class="portfolio-body">
             <h3>Kayriots Hotel — Delta State</h3>
@@ -1323,19 +1416,18 @@
               <div class="portfolio-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <span class="portfolio-link" style="color:#999; text-decoration:none; font-size:0.8rem;">Demo on request</span>
+              <span class="portfolio-link-muted">Demo on request</span>
             </div>
           </div>
         </div>
 
-        <!-- Catwright Hotel -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">🏨</div>
               <div class="portfolio-thumb-name">Catwright Hotel</div>
             </div>
-            <span class="speed-badge">⚡ 99 Desktop</span>
+            <span class="speed-badge" aria-label="PageSpeed: 99 on Desktop">⚡ 99 Desktop</span>
           </div>
           <div class="portfolio-body">
             <h3>Catwright Hotel — Delta State</h3>
@@ -1344,19 +1436,18 @@
               <div class="portfolio-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <span class="portfolio-link" style="color:#999; text-decoration:none; font-size:0.8rem;">Demo on request</span>
+              <span class="portfolio-link-muted">Demo on request</span>
             </div>
           </div>
         </div>
 
-        <!-- Tophill Hotel -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">🏨</div>
               <div class="portfolio-thumb-name">Tophill Hotel</div>
             </div>
-            <span class="speed-badge">⚡ 99 Desktop</span>
+            <span class="speed-badge" aria-label="PageSpeed: 99 on Desktop">⚡ 99 Desktop</span>
           </div>
           <div class="portfolio-body">
             <h3>Tophill Hotel — Delta State</h3>
@@ -1366,19 +1457,18 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">SEO</span>
               </div>
-              <span class="portfolio-link" style="color:#999; text-decoration:none; font-size:0.8rem;">Demo on request</span>
+              <span class="portfolio-link-muted">Demo on request</span>
             </div>
           </div>
         </div>
 
-        <!-- GKS Demo -->
         <div class="portfolio-card">
           <div class="portfolio-thumb">
             <div class="portfolio-thumb-overlay">
               <div class="portfolio-thumb-icon" aria-hidden="true">⛪</div>
               <div class="portfolio-thumb-name">GKS Demo</div>
             </div>
-            <span class="speed-badge">⚡ 96 Mobile</span>
+            <span class="speed-badge" aria-label="PageSpeed: 96 on Mobile">⚡ 96 Mobile</span>
           </div>
           <div class="portfolio-body">
             <h3>God's Kingdom Society — Demo</h3>
@@ -1388,7 +1478,7 @@
                 <span class="ptag">Church</span>
                 <span class="ptag">Sermons</span>
               </div>
-              <a href="https://godskingdomsociety.github.io/gksdemo" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://godskingdomsociety.github.io/gksdemo" class="portfolio-link" target="_blank" rel="noopener noreferrer" aria-label="View God's Kingdom Society demo site (opens in new tab)">View Live →</a>
             </div>
           </div>
         </div>
@@ -1397,12 +1487,12 @@
     </div>
   </section>
 
-  <!-- ======================== WHY US ======================== -->
-  <section class="why-us" id="why-us">
+  <!-- WHY US -->
+  <section class="why-us" id="why-us" aria-labelledby="why-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Why Choose Us</span>
-        <h2 class="section-title" style="color:#fff;">Your Competitors' Websites<br>Are Failing Them Right Now</h2>
+        <span class="section-label" aria-hidden="true">Why Choose Us</span>
+        <h2 id="why-heading" class="section-title">Your Competitors' Websites<br>Are Failing Them Right Now</h2>
         <p class="section-sub">Broken WordPress sites, 500 errors, unreadable on mobile — that's the standard in Delta State. Here's what you get instead.</p>
       </div>
 
@@ -1441,20 +1531,20 @@
 
       <div class="speed-proof">
         <div class="speed-proof-text">
-          <h3>We don't just claim 99/100 PageSpeed. We prove it live.</h3>
+          <p class="speed-proof-headline">We don't just claim 99/100 PageSpeed. We prove it live.</p>
           <p>Every client meeting includes a live Google PageSpeed test on our sites. You watch it score in real time. Try that with any other developer in Delta State.</p>
         </div>
-        <div class="speed-scores" aria-label="PageSpeed scores">
+        <div class="speed-scores" aria-label="Live PageSpeed scores">
           <div class="score-box">
-            <div class="score-num">99</div>
+            <div class="score-num" aria-label="99 desktop score">99</div>
             <div class="score-lbl">Desktop</div>
           </div>
           <div class="score-box">
-            <div class="score-num">96</div>
+            <div class="score-num" aria-label="96 mobile score">96</div>
             <div class="score-lbl">Mobile</div>
           </div>
           <div class="score-box">
-            <div class="score-num">100</div>
+            <div class="score-num" aria-label="100 SEO score">100</div>
             <div class="score-lbl">SEO</div>
           </div>
         </div>
@@ -1463,8 +1553,8 @@
     </div>
   </section>
 
-  <!-- ======================== ABOUT ======================== -->
-  <section class="about" id="about">
+  <!-- ABOUT -->
+  <section class="about" id="about" aria-labelledby="about-heading">
     <div class="container">
       <div class="about-grid">
 
@@ -1496,8 +1586,8 @@
         </div>
 
         <div class="about-text">
-          <span class="section-label">About Us</span>
-          <h2 class="section-title">Built in Warri.<br>Built for Nigeria.</h2>
+          <span class="section-label" aria-hidden="true">About Us</span>
+          <h2 id="about-heading" class="section-title">Built in Warri.<br>Built for Nigeria.</h2>
           <p>
             I'm <strong>Nathaniel Kenny Olie</strong>, founder of Talent Loop Web Services. I've been building websites since 2015 — long before most people in Delta State had even heard of PageSpeed scores.
           </p>
@@ -1510,7 +1600,12 @@
           <p>
             I specialise in hotels and hospitality because I've seen firsthand how a great website can fill rooms. And I'm based right here in Warri — which means you can reach me on WhatsApp any time.
           </p>
-          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20website" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:1.5rem;">
+          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20website"
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="margin-top:1.5rem;"
+             aria-label="Let's talk — WhatsApp Kenny (opens in new tab)">
             💬 Let's Talk →
           </a>
         </div>
@@ -1519,12 +1614,12 @@
     </div>
   </section>
 
-  <!-- ======================== TESTIMONIALS ======================== -->
-  <section class="testimonials" id="testimonials">
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials" aria-labelledby="testi-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Client Feedback</span>
-        <h2 class="section-title">What Our Clients Say</h2>
+        <span class="section-label" aria-hidden="true">Client Feedback</span>
+        <h2 id="testi-heading" class="section-title">What Our Clients Say</h2>
         <p class="section-sub">We're earning our first client reviews right now. In the meantime, here's what we can prove.</p>
       </div>
 
@@ -1534,7 +1629,12 @@
           <div style="font-size:2rem;" aria-hidden="true">🏨</div>
           <strong>Hotel Client — Coming Soon</strong>
           <p>We're currently finalising our first signed contracts in Delta State. Check back soon — or be the business whose review appears here first.</p>
-          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business." class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:0.5rem; font-size:0.9rem; padding:0.7rem 1.5rem;">
+          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business."
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="margin-top:0.5rem; font-size:0.9rem; padding:0.7rem 1.5rem;"
+             aria-label="Get started — WhatsApp us (opens in new tab)">
             Get Started →
           </a>
         </div>
@@ -1543,58 +1643,63 @@
           <div style="font-size:2rem;" aria-hidden="true">⛪</div>
           <strong>Church / Business Client — Coming Soon</strong>
           <p>Every review on this page will be from a real client in Nigeria. We don't fabricate feedback — we earn it. Yours could be first.</p>
-          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business." class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:0.5rem; font-size:0.9rem; padding:0.7rem 1.5rem;">
+          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business."
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="margin-top:0.5rem; font-size:0.9rem; padding:0.7rem 1.5rem;"
+             aria-label="Get started — WhatsApp us (opens in new tab)">
             Get Started →
           </a>
         </div>
 
         <div class="testi-placeholder" style="background:rgba(201,168,76,0.06); border-color:rgba(201,168,76,0.4);">
           <div style="font-size:2rem;" aria-hidden="true">⚡</div>
-          <strong style="color:#6b4f0e;">99/100 PageSpeed — Proven Live</strong>
-          <p style="color:#555;">We test our scores in front of every client. No screenshots, no claims — just a live Google test you watch in real time. 6 hotel demos built. 0 WordPress installs. Every site hand-coded from scratch.</p>
-          <p style="font-size:0.8rem; color:#999; margin-top:0.5rem;">— Talent Loop Web Services, Warri</p>
+          <strong style="color:#5a3e00;">99/100 PageSpeed — Proven Live</strong>
+          <p style="color:var(--muted-text);">We test our scores in front of every client. No screenshots, no claims — just a live Google test you watch in real time. 6 hotel demos built. 0 WordPress installs. Every site hand-coded from scratch.</p>
+          <p style="font-size:0.82rem; color:var(--muted-text); margin-top:0.5rem;">— Talent Loop Web Services, Warri</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======================== CONTACT ======================== -->
-  <section class="contact" id="contact">
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-grid">
 
         <div class="contact-info">
-          <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">Ready to Get<br>Your Website?</h2>
+          <span class="section-label" aria-hidden="true">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title">Ready to Get<br>Your Website?</h2>
           <p>WhatsApp is the fastest way to reach us. Send a message and we'll respond within the hour — no forms, no email chains, just a real conversation.</p>
 
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-icon-wrap" aria-hidden="true">💬</div>
               <div class="contact-item-text">
-                <h4>WhatsApp (Fastest)</h4>
-                <a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer">+234 907 604 2573</a>
+                <h3>WhatsApp (Fastest)</h3>
+                <a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +234 907 604 2573 (opens in new tab)">+234 907 604 2573</a>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon-wrap" aria-hidden="true">📧</div>
               <div class="contact-item-text">
-                <h4>Email</h4>
+                <h3>Email</h3>
                 <a href="mailto:nathanielkenny@talent-loop.org">nathanielkenny@talent-loop.org</a>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon-wrap" aria-hidden="true">📍</div>
               <div class="contact-item-text">
-                <h4>Location</h4>
+                <h3>Location</h3>
                 <p>Warri, Delta State, Nigeria</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon-wrap" aria-hidden="true">⏱️</div>
               <div class="contact-item-text">
-                <h4>Response Time</h4>
+                <h3>Response Time</h3>
                 <p>Usually within 1 hour on WhatsApp</p>
               </div>
             </div>
@@ -1602,10 +1707,14 @@
         </div>
 
         <div class="contact-box">
-          <h3>Start the Conversation</h3>
+          <h3 class="contact-box-title">Start the Conversation</h3>
           <p>Tell us what you need and we'll get back to you with a free quote — no pressure, no commitment.</p>
 
-          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business.%20Here%27s%20what%20I%20need%3A%20" class="wa-cta-big" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business.%20Here%27s%20what%20I%20need%3A%20"
+             class="wa-cta-big"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Message us on WhatsApp — opens pre-filled chat (opens in new tab)">
             <div class="wa-cta-icon" aria-hidden="true">💚</div>
             <div class="wa-cta-text">
               <strong>Message us on WhatsApp</strong>
@@ -1613,9 +1722,9 @@
             </div>
           </a>
 
-          <div class="contact-divider">or reach us by email</div>
+          <div class="contact-divider" aria-hidden="true">or reach us by email</div>
 
-          <a href="mailto:nathanielkenny@talent-loop.org" class="email-cta">
+          <a href="mailto:nathanielkenny@talent-loop.org" class="email-cta" aria-label="Send email to nathanielkenny@talent-loop.org">
             📧 nathanielkenny@talent-loop.org
           </a>
         </div>
@@ -1624,8 +1733,10 @@
     </div>
   </section>
 
-  <!-- ======================== FOOTER ======================== -->
-  <footer class="footer">
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-grid">
 
@@ -1637,7 +1748,7 @@
                 <path d="M12 2v20M3 7l9 5 9-5" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="logo-text">
+            <div class="logo-text" aria-hidden="true">
               Talent Loop
               <span>Web Services</span>
             </div>
@@ -1664,7 +1775,7 @@
             <li><a href="#why-us">Why Us</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Visit talent-loop.org (opens in new tab)">talent-loop.org</a></li>
           </ul>
         </div>
 
@@ -1677,18 +1788,16 @@
     </div>
   </footer>
 
-  <!-- ======================== SCRIPTS ======================== -->
+  <!-- SCRIPTS -->
   <script>
-    // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
 
     hamburger.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close nav on link click
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -1696,13 +1805,16 @@
       });
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
         }
       });
     });
