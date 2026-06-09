@@ -7,17 +7,35 @@
   <meta name="description" content="We build fast, professional websites for hotels, churches and businesses in Delta State and across Nigeria. 99/100 PageSpeed. Hand-coded HTML/CSS. Based in Warri." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://webdive.talent-loop.org/" />
-
-  <!-- Preconnect for fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Sitemap reference helps Google crawl — pairs with your robots.txt -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- LCP image preload — must be first resource hint -->
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1200&fm=webp&auto=format&fit=crop" fetchpriority="high" />
+  <link rel="preload" as="image" href="./hero-bg.webp" fetchpriority="high" />
 
-  <!-- Non-blocking fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <!-- Self-hosted fonts via Google Fonts CSS API with font-display:swap -->
+  <!-- These URLs return @font-face blocks; browser caches font files long-term -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Inline critical font-display to prevent layout shift while fonts load -->
+  <style>
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 700 800;
+      font-display: swap;
+      src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold');
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: local('DM Sans'), local('DMSans-Regular');
+    }
+  </style>
 
   <!-- Structured data for local business -->
   <script type="application/ld+json">
@@ -240,8 +258,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       opacity: 0.18;
       z-index: 0;
+      /* Prevent layout shift — browser knows size before paint */
+      aspect-ratio: 3 / 2;
+      will-change: auto;
     }
 
     .hero-stripe {
@@ -409,6 +431,17 @@
        SECTION SHARED
     ================================ */
     section { padding: 5rem 0; }
+
+    /* Defer rendering of below-fold sections — major mobile perf gain */
+    .services,
+    .portfolio,
+    .why-us,
+    .about,
+    .testimonials,
+    .contact {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 600px;
+    }
 
     .section-label {
       display: inline-block;
@@ -1239,7 +1272,7 @@
   <section class="hero" aria-labelledby="hero-heading">
     <img
       class="hero-bg-img"
-      src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1200&fm=webp&auto=format&fit=crop"
+      src="./hero-bg.webp"
       alt=""
       fetchpriority="high"
       loading="eager"
@@ -1813,8 +1846,11 @@
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          target.setAttribute('tabindex', '-1');
-          target.focus({ preventScroll: true });
+          // Defer focus to next frame — prevents forced reflow during scroll paint
+          requestAnimationFrame(() => {
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+          });
         }
       });
     });
