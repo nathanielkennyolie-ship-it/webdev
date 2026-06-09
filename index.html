@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talent Loop Web Services — Fast Websites for Nigerian Hotels & Businesses</title>
+  <meta name="description" content="We build fast, professional websites for hotels, churches and businesses in Delta State and across Nigeria. 99/100 PageSpeed. Hand-coded HTML/CSS. Based in Warri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================
+       RESET & BASE
+    ================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a2b5f;
+      --navy-dark: #111d42;
+      --blue:      #007BFF;
+      --blue-dark: #0056b3;
+      --gold:      #C9A84C;
+      --gold-light:#f0d98a;
+      --body:      #495057;
+      --bg:        #FDFDFD;
+      --bg-light:  #f0f4f8;
+      --white:     #ffffff;
+      --shadow:    0 8px 30px rgba(0,0,0,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--body);
+      background-color: var(--bg);
+    }
+
+    a { text-decoration: none; transition: color 0.3s ease; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ================================
+       NAVBAR
+    ================================ */
+    .navbar {
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg { width: 22px; height: 22px; }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--blue);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-menu a:hover { color: var(--blue); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.3s ease !important;
+    }
+
+    .nav-cta:hover { background: var(--blue-dark) !important; color: var(--white) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    /* ================================
+       HERO
+    ================================ */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: var(--navy-dark);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=60&w=1920&fm=webp&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+    }
+
+    /* diagonal gold stripe — signature element */
+    .hero-stripe {
+      position: absolute;
+      bottom: -60px;
+      left: -5%;
+      width: 110%;
+      height: 180px;
+      background: var(--gold);
+      opacity: 0.07;
+      transform: rotate(-3deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 2rem 1rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(0,123,255,0.18);
+      border: 1px solid rgba(0,123,255,0.4);
+      color: #7ec8ff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title .accent { color: var(--gold); }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ================================
+       BUTTONS
+    ================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: var(--navy-dark);
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: var(--white);
+      border-color: #25D366;
+    }
+    .btn-wa:hover {
+      background: #1ebe5d;
+      border-color: #1ebe5d;
+      color: var(--white);
+    }
+
+    /* ================================
+       STATS BAR
+    ================================ */
+    .stats-bar {
+      background: var(--navy);
+      padding: 1.75rem 0;
+    }
+
+    .stats-bar-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 0.5rem 2.5rem;
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.3rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ================================
+       SECTION SHARED
+    ================================ */
+    section { padding: 5rem 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--body);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ================================
+       SERVICES
+    ================================ */
+    .services { background: var(--bg-light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow);
+      border-top: 4px solid transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+    }
+
+    .service-card.featured { border-top-color: var(--gold); }
+    .service-card.blue-top { border-top-color: var(--blue); }
+
+    .service-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-tag {
+      display: inline-block;
+      background: var(--bg-light);
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 99px;
+    }
+
+    .service-card.featured .service-tag {
+      background: rgba(201,168,76,0.15);
+      color: #8a6a1a;
+    }
+
+    /* ================================
+       PORTFOLIO
+    ================================ */
+    .portfolio { background: var(--white); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #eaecf0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--white);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    .portfolio-thumb {
+      height: 190px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .portfolio-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, rgba(0,123,255,0.4) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .portfolio-thumb-icon {
+      font-size: 3rem;
+    }
+
+    .portfolio-thumb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .speed-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 99px;
+      letter-spacing: 0.04em;
+    }
+
+    .portfolio-body {
+      padding: 1.5rem;
+    }
+
+    .portfolio-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .portfolio-body p {
+      font-size: 0.88rem;
+      color: #777;
+      margin-bottom: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .portfolio-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .ptag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      background: var(--bg-light);
+      color: var(--navy);
+    }
+
+    .portfolio-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+    }
+
+    .portfolio-link:hover { color: var(--blue-dark); }
+
+    /* ================================
+       WHY US
+    ================================ */
+    .why-us { background: var(--navy); color: var(--white); }
+
+    .why-us .section-label { color: var(--gold); }
+    .why-us .section-title { color: var(--white); }
+    .why-us .section-sub { color: rgba(255,255,255,0.75); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      transition: background 0.3s ease;
+    }
+
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+
+    .why-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    .speed-proof {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .speed-proof-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .speed-proof-text p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 420px;
+    }
+
+    .speed-scores {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .score-box {
+      text-align: center;
+    }
+
+    .score-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .score-lbl {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.25rem;
+    }
+
+    /* ================================
+       ABOUT
+    ================================ */
+    .about { background: var(--bg-light); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,43,95,0.2);
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.25rem;
+      right: -1.25rem;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .about-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .about-badge-lbl {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.2rem;
+    }
+
+    .about-text .section-title { margin-bottom: 1rem; }
+
+    .about-text p {
+      color: var(--body);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .about-text p strong { color: var(--navy); }
+
+    /* ================================
+       TESTIMONIALS
+    ================================ */
+    .testimonials { background: var(--white); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testi-card {
+      background: var(--bg-light);
+      border-radius: 14px;
+      padding: 2rem;
+      border-left: 4px solid var(--blue);
+      position: relative;
+    }
+
+    .testi-quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--blue);
+      opacity: 0.15;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .testi-text {
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testi-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .testi-role {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .testi-placeholder {
+      background: rgba(0,123,255,0.04);
+      border: 2px dashed rgba(0,123,255,0.25);
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .testi-placeholder p {
+      color: #aaa;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .testi-placeholder strong {
+      color: var(--blue);
+      font-size: 1rem;
+    }
+
+    /* ================================
+       CONTACT
+    ================================ */
+    .contact { background: var(--bg-light); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info .section-title { margin-bottom: 0.75rem; }
+    .contact-info > p {
+      color: var(--body);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-size: 0.97rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item-text p, .contact-item-text a {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .contact-item-text a { color: var(--blue); }
+    .contact-item-text a:hover { color: var(--blue-dark); }
+
+    .contact-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box > p {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .wa-cta-big {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #f0fdf6;
+      border: 2px solid #25D366;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .wa-cta-big:hover { background: #dcfce7; }
+
+    .wa-cta-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .wa-cta-text strong {
+      display: block;
+      color: #166534;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .wa-cta-text span {
+      font-size: 0.85rem;
+      color: #4ade80;
+      color: #16a34a;
+    }
+
+    .contact-divider {
+      text-align: center;
+      color: #bbb;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 42%;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .contact-divider::before { left: 0; }
+    .contact-divider::after { right: 0; }
+
+    .email-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: 1.5px solid #dde2ed;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .email-cta:hover {
+      border-color: var(--blue);
+      background: var(--bg-light);
+      color: var(--blue);
+    }
+
+    /* ================================
+       FOOTER
+    ================================ */
+    .footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .logo-text { color: var(--white); }
+    .footer-brand .logo-text span { color: var(--gold); }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col ul a {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom a {
+      color: var(--gold);
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================ */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        gap: 0;
+        z-index: 999;
+      }
+
+      .nav-menu.active { display: flex; }
+
+      .nav-menu li a {
+        display: block;
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .nav-cta {
+        margin: 0.5rem 1.5rem;
+        text-align: center;
+        border-radius: 6px;
+      }
+
+      .hero-title { font-size: 2.6rem; }
+      .stats-bar-grid { gap: 1rem; }
+      .stat-item { padding: 0.5rem 1.25rem; }
+      .stat-item::after { display: none; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .speed-proof { flex-direction: column; text-align: center; }
+      .speed-scores { justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      section { padding: 3.5rem 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .section-title { font-size: 1.9rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================== NAVBAR ======================== -->
+  <nav class="navbar">
+    <div class="container nav-container">
+
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 2v20M3 7l9 5 9-5" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          Talent Loop
+          <span>Web Services</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a href="https://wa.me/2348000000000?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote" class="nav-cta" target="_blank" rel="noopener">
+            💬 WhatsApp Us
+          </a>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripe"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Based in Warri, Delta State · Serving All of Nigeria</span>
+
+      <h1 class="hero-title">
+        Fast Websites for<br>
+        <span class="accent">Hotels &amp; Businesses</span><br>
+        That Actually Win
+      </h1>
+
+      <p class="hero-subtitle">
+        We hand-code professional websites that score <strong style="color:#fff;">99/100 on PageSpeed</strong> —
+        so your business ranks on Google, loads instantly, and converts visitors into customers.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/2348000000000?text=Hi%2C%20I%27d%20like%20to%20get%20a%20website%20quote" class="btn btn-wa" target="_blank" rel="noopener">
+          💬 WhatsApp Us Now
+        </a>
+        <a href="#portfolio" class="btn btn-outline">
+          View Portfolio →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== STATS BAR ======================== -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar-grid">
+        <div class="stat-item">
+          <div class="stat-num">99/100</div>
+          <div class="stat-label">PageSpeed Score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Hotel Sites Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Hand-coded HTML/CSS</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0</div>
+          <div class="stat-label">WordPress Vulnerabilities</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Warri</div>
+          <div class="stat-label">Delta State, Nigeria</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SERVICES ======================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Build</span>
+        <h2 class="section-title">One Thing Done Right<br>For Your Industry</h2>
+        <p class="section-sub">No templates. No WordPress. Every site is hand-coded from scratch and tuned for speed, search rankings, and real business results.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card featured">
+          <div class="service-icon">🏨</div>
+          <h3>Hotel Website</h3>
+          <p>Room showcases, event pages, booking enquiry forms, and Google Maps integration — everything a hotel needs to turn online visitors into walk-in guests.</p>
+          <span class="service-tag">⭐ Most Popular</span>
+        </div>
+
+        <div class="service-card blue-top">
+          <div class="service-icon">⛪</div>
+          <h3>Church Website</h3>
+          <p>Sermon archives with YouTube embeds, branch locator, event calendar, and donation pages — built for congregations across Nigeria.</p>
+          <span class="service-tag">Sermon Archive Included</span>
+        </div>
+
+        <div class="service-card blue-top">
+          <div class="service-icon">🏢</div>
+          <h3>Business Website</h3>
+          <p>Professional online presence for shops, clinics, schools, and service businesses. Portfolio, services, contact — clean and fast.</p>
+          <span class="service-tag">Fast Delivery</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚑</div>
+          <h3>Website Rescue</h3>
+          <p>Is your current site broken, slow, or stuck on an error? We diagnose and fix it — or rebuild it properly for less than your developer charges for basic fixes.</p>
+          <span class="service-tag">Quick Turnaround</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PORTFOLIO ======================== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Live Projects</span>
+        <h2 class="section-title">Real Sites. Real Results.<br>Click to See Them Live.</h2>
+        <p class="section-sub">Every project below is live on the internet right now. Click any card to visit the actual site and see the quality for yourself.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <!-- Rikon Hotels -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">🏨</div>
+              <div class="portfolio-thumb-name">Rikon Hotels</div>
+            </div>
+            <span class="speed-badge">⚡ 96 Mobile</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Rikon Hotels — Ughelli</h3>
+            <p>47 rooms, 350-guest event hall. Full hotel site with rooms, events, and booking enquiry.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">Events</span>
+              </div>
+              <a href="https://rikonhotels.github.io/ughelli" class="portfolio-link" target="_blank" rel="noopener">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bedouin Hotels -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">🏨</div>
+              <div class="portfolio-thumb-name">Bedouin Hotels</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Bedouin Hotels &amp; Suites — Warri</h3>
+            <p>Elegant hotel site with room gallery, amenities showcase, and WhatsApp booking CTA.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">Suites</span>
+              </div>
+              <a href="https://kennysaint2-hub.github.io/Bedouinhotels/" class="portfolio-link" target="_blank" rel="noopener">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kayriots Hotel -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">🏨</div>
+              <div class="portfolio-thumb-name">Kayriots Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Kayriots Hotel — Delta State</h3>
+            <p>Professional hotel demo showcasing rooms, dining, and local hospitality.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="#portfolio" class="portfolio-link">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Catwright Hotel -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">🏨</div>
+              <div class="portfolio-thumb-name">Catwright Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Catwright Hotel — Delta State</h3>
+            <p>Clean, modern hotel presence with amenities, gallery, and contact integration.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="#portfolio" class="portfolio-link">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tophill Hotel -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">🏨</div>
+              <div class="portfolio-thumb-name">Tophill Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>Tophill Hotel — Delta State</h3>
+            <p>Full-featured hotel site with room listings, event space, and local SEO setup.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">SEO</span>
+              </div>
+              <a href="#portfolio" class="portfolio-link">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GKS Demo -->
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-overlay">
+              <div class="portfolio-thumb-icon">⛪</div>
+              <div class="portfolio-thumb-name">GKS Demo</div>
+            </div>
+            <span class="speed-badge">⚡ 96 Mobile</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>God's Kingdom Society — Demo</h3>
+            <p>Church site with sermon archive, YouTube embeds, branch locator, and donation page.</p>
+            <div class="portfolio-footer">
+              <div class="portfolio-tags">
+                <span class="ptag">Church</span>
+                <span class="ptag">Sermons</span>
+              </div>
+              <a href="https://godskindomsociety.github.io/gksdemo" class="portfolio-link" target="_blank" rel="noopener">View Live →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHY US ======================== -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title" style="color:#fff;">Your Competitors' Websites<br>Are Failing Them Right Now</h2>
+        <p class="section-sub">Broken WordPress sites, 500 errors, unreadable on mobile — that's the standard in Delta State. Here's what you get instead.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Loads in Under 2 Seconds</h3>
+          <p>Hand-coded HTML/CSS with no bloated plugins. Your site loads before a visitor can blink — and Google rewards that with higher rankings.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Zero WordPress Vulnerabilities</h3>
+          <p>WordPress sites get hacked. Ours don't. Pure HTML/CSS means no database, no plugin exploits, no ransom requests at 2am.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📱</div>
+          <h3>Perfect on Every Phone</h3>
+          <p>80% of your visitors are on mobile. Every site we build is tested on phones first and looks sharp from a ₦30k Android to an iPhone.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📍</div>
+          <h3>Local Developer, Real Accountability</h3>
+          <p>Based in Warri. You can call, WhatsApp, or meet us. No chasing a Lagos agency or paying USD to someone overseas for basic fixes.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏆</div>
+          <h3>Niche Expertise in Hospitality</h3>
+          <p>We've built more hotel websites in Delta State than any other developer. We know what hotel guests look for — and how to convert them.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚀</div>
+          <h3>Fast Delivery, No Excuses</h3>
+          <p>Most sites delivered within 7–14 days. You get a live demo to review before we finalise anything. No hidden charges, no surprises.</p>
+        </div>
+      </div>
+
+      <div class="speed-proof">
+        <div class="speed-proof-text">
+          <h3>We don't just claim 99/100 PageSpeed. We prove it live.</h3>
+          <p>Every client meeting includes a live Google PageSpeed test on our sites. You watch it score in real time. Try that with any other developer in Delta State.</p>
+        </div>
+        <div class="speed-scores">
+          <div class="score-box">
+            <div class="score-num">99</div>
+            <div class="score-lbl">Desktop</div>
+          </div>
+          <div class="score-box">
+            <div class="score-num">96</div>
+            <div class="score-lbl">Mobile</div>
+          </div>
+          <div class="score-box">
+            <div class="score-num">100</div>
+            <div class="score-lbl">SEO</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual">
+          <div class="about-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=60&w=800&fm=webp&auto=format&fit=crop"
+              alt="Talent Loop Web Services — Warri, Delta State"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num">10+</div>
+            <div class="about-badge-lbl">Years Building</div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Built in Warri.<br>Built for Nigeria.</h2>
+          <p>
+            I'm <strong>Nathaniel Kenny Olie</strong>, founder of Talent Loop Web Services. I've been building websites since 2015 — long before most people in Delta State had even heard of PageSpeed scores.
+          </p>
+          <p>
+            I got tired of watching Nigerian businesses lose customers to broken websites, unresponsive WordPress installs, and developers who charge USD for fixing a broken link. So I built a different kind of service.
+          </p>
+          <p>
+            <strong>Every site I build is hand-coded in pure HTML and CSS.</strong> No WordPress. No page builders. No bloat. Just fast, clean, professional websites that make your business look exactly as serious as it is.
+          </p>
+          <p>
+            I specialise in hotels and hospitality because I've seen firsthand how a great website can fill rooms. And I'm based right here in Warri — which means you can reach me on WhatsApp any time.
+          </p>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20website" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:1.5rem;">
+            💬 Let's Talk →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TESTIMONIALS ======================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Client Feedback</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-sub">Real feedback from real businesses in Delta State.</p>
+      </div>
+
+      <div class="testi-grid">
+
+        <div class="testi-card">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "We showed the site to guests checking in and they were impressed. It loads so fast — even our staff was surprised. Kenny delivered exactly what he promised and was always reachable on WhatsApp."
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Hotel Manager</div>
+              <div class="testi-role">Rikon Hotels, Ughelli</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "The demo he built for our hotel was cleaner than what we had before. The PageSpeed score alone convinced our chairman. I've never seen a developer actually prove their work like that."
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">B</div>
+            <div>
+              <div class="testi-name">General Manager</div>
+              <div class="testi-role">Bedouin Hotels, Warri</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-placeholder">
+          <div style="font-size:2rem;">🤝</div>
+          <strong>Your review could be here</strong>
+          <p>We're building our client base across Delta State. Be one of our first clients and see the results for yourself.</p>
+          <a href="https://wa.me/2348000000000" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:0.5rem; font-size:0.9rem; padding:0.7rem 1.5rem;">
+            Get Started →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Ready to Get<br>Your Website?</h2>
+          <p>WhatsApp is the fastest way to reach us. Send a message and we'll respond within the hour — no forms, no email chains, just a real conversation.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon-wrap">💬</div>
+              <div class="contact-item-text">
+                <h4>WhatsApp (Fastest)</h4>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noopener">+234 800 000 0000</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">📧</div>
+              <div class="contact-item-text">
+                <h4>Email</h4>
+                <a href="mailto:nathanielkenny@talent-loop.org">nathanielkenny@talent-loop.org</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">📍</div>
+              <div class="contact-item-text">
+                <h4>Location</h4>
+                <p>Warri, Delta State, Nigeria</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">⏱️</div>
+              <div class="contact-item-text">
+                <h4>Response Time</h4>
+                <p>Usually within 1 hour on WhatsApp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>Start the Conversation</h3>
+          <p>Tell us what you need and we'll get back to you with a free quote — no pressure, no commitment.</p>
+
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%27d%20like%20to%20get%20a%20website%20for%20my%20business.%20Here%27s%20what%20I%20need%3A%20" class="wa-cta-big" target="_blank" rel="noopener">
+            <div class="wa-cta-icon">💚</div>
+            <div class="wa-cta-text">
+              <strong>Message us on WhatsApp</strong>
+              <span>Tap to open a pre-filled chat — we respond fast</span>
+            </div>
+          </a>
+
+          <div class="contact-divider">or reach us by email</div>
+
+          <a href="mailto:nathanielkenny@talent-loop.org" class="email-cta">
+            📧 nathanielkenny@talent-loop.org
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M12 2v20M3 7l9 5 9-5" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              Talent Loop
+              <span>Web Services</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Fast, professional websites for hotels, churches and businesses across Nigeria. Hand-coded HTML/CSS. 99/100 PageSpeed. Based in Warri, Delta State.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Hotel Website</a></li>
+            <li><a href="#services">Church Website</a></li>
+            <li><a href="#services">Business Website</a></li>
+            <li><a href="#services">Website Rescue</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener">talent-loop.org</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Talent Loop Web Services. All rights reserved.</p>
+        <p>Built by <a href="https://talent-loop.org" target="_blank" rel="noopener">Talent Loop Web Services</a> · Warri, Delta State, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== SCRIPTS ======================== -->
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close nav on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
