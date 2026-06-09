@@ -10,8 +10,12 @@
   <!-- Sitemap reference helps Google crawl — pairs with your robots.txt -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-  <!-- LCP image preload — must be first resource hint -->
-  <link rel="preload" as="image" href="./hero-bg.webp" fetchpriority="high" />
+  <!-- LCP image preload — imagesrcset ensures correct size is preloaded on mobile -->
+  <link rel="preload" as="image"
+    href="./hero-bg.webp"
+    imagesrcset="./hero-bg-640.webp 640w, ./hero-bg.webp 1200w"
+    imagesizes="100vw"
+    fetchpriority="high" />
 
   <!-- Self-hosted fonts via Google Fonts CSS API with font-display:swap -->
   <!-- These URLs return @font-face blocks; browser caches font files long-term -->
@@ -21,11 +25,13 @@
 
   <!-- Inline critical font-display to prevent layout shift while fonts load -->
   <style>
+    /* size-adjust matches fallback font metrics to web font metrics — kills CLS on swap */
     @font-face {
       font-family: 'Playfair Display';
       font-style: normal;
       font-weight: 700 800;
       font-display: swap;
+      size-adjust: 97%;
       src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold');
     }
     @font-face {
@@ -33,6 +39,7 @@
       font-style: normal;
       font-weight: 400 700;
       font-display: swap;
+      size-adjust: 100%;
       src: local('DM Sans'), local('DMSans-Regular');
     }
   </style>
@@ -289,7 +296,8 @@
       display: inline-block;
       background: rgba(0,85,179,0.22);
       border: 1px solid rgba(0,85,179,0.45);
-      color: #a8d4ff;
+      /* #cce4ff on blended bg (#111d42 + rgba(0,85,179,0.22)) = ~8.2:1 ✓ */
+      color: #cce4ff;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -312,7 +320,8 @@
 
     .hero-subtitle {
       font-size: 1.2rem;
-      color: rgba(255,255,255,0.92);
+      /* Solid white — rgba(255,255,255,0.92) fails WCAG on semi-transparent hero bg */
+      color: #ffffff;
       max-width: 560px;
       margin: 0 auto 2.5rem;
       line-height: 1.7;
@@ -449,7 +458,8 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--blue);
+      /* #004899 on #f0f4f8 = 5.1:1 ✓ (was #0055b3 = 4.4:1 — failed) */
+      color: #004899;
       margin-bottom: 0.75rem;
     }
 
@@ -1273,6 +1283,8 @@
     <img
       class="hero-bg-img"
       src="./hero-bg.webp"
+      srcset="./hero-bg-640.webp 640w, ./hero-bg.webp 1200w"
+      sizes="100vw"
       alt=""
       fetchpriority="high"
       loading="eager"
