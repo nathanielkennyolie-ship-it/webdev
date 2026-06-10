@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webdive.talent-loop.org/sitemap.xml
+Sitemap: https://webdev.talent-loop.org/sitemap.xml
