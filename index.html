@@ -17,10 +17,13 @@
     imagesizes="100vw"
     fetchpriority="high" />
 
-  <!-- Self-hosted fonts via Google Fonts CSS API with font-display:swap -->
-  <!-- These URLs return @font-face blocks; browser caches font files long-term -->
+  <!-- Font connections — established before stylesheet request fires -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+  <!-- Non-blocking Google Fonts with display=swap — single correct parameter -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Inline critical font-display to prevent layout shift while fonts load -->
@@ -84,7 +87,7 @@
       --white:       #ffffff;
       --shadow:      0 8px 30px rgba(0,0,0,0.09);
       --muted-text:  #595f6e;
-      --subtle-text: #6b7280;
+      --subtle-text: #50535a;   /* was #6b7280 = 4.37:1 on bg-light — FAIL. #50535a = 6.97:1 ✓ */
       --on-dark-muted: #c8ccd6;
       --on-dark-body:  #dde0e8;
       --on-navy-muted: #b8bfcf;
@@ -137,6 +140,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      /* Promote to compositor layer — stops forced reflow on every scroll tick */
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     .nav-container {
@@ -250,6 +256,8 @@
     ================================ */
     .hero {
       min-height: 92vh;
+      /* Fallback px height for mobile — prevents reflow when vh recalculates on scroll */
+      min-height: min(92vh, 900px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -257,6 +265,8 @@
       position: relative;
       background: var(--navy-dark);
       overflow: hidden;
+      /* Contain layout recalculation to this section */
+      contain: layout style;
     }
 
     .hero-bg-img {
