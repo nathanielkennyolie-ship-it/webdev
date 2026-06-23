@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathaniel Kenny Olie — Freelance Web Developer | Warri, Nigeria</title>
+  <meta name="description" content="Professional freelance web developer based in Warri, Delta State. I build fast, hand-coded websites for hotels, churches, and businesses. 99/100 PageSpeed." />
+  <meta name="keywords" content="web developer, freelance, Warri, Nigeria, portfolio, HTML, CSS, website designer" />
+  <meta name="author" content="Nathaniel Kenny Olie" />
+  <meta property="og:title" content="Nathaniel Kenny Olie — Freelance Web Developer" />
+  <meta property="og:description" content="I build fast, hand-coded websites for hotels, churches, and businesses in Nigeria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webdev.talent-loop.org" />
+  <link rel="canonical" href="https://webdev.talent-loop.org" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a2b5f;
+      --navy-dark: #111d42;
+      --blue:      #0066CC;
+      --blue-dark: #004d99;
+      --gold:      #C9A84C;
+      --gold-light:#f0d98a;
+      --body:      #3d4349;
+      --bg:        #FDFDFD;
+      --bg-light:  #f0f4f8;
+      --white:     #ffffff;
+      --shadow:    0 8px 30px rgba(0,0,0,0.09);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+      --radius:    14px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--body);
+      background: var(--bg);
+    }
+
+    a { color: var(--blue); text-decoration: underline; transition: color var(--transition); }
+    a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 2px; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      z-index: 9999;
+      transition: top 0.2s;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .logo:hover { color: var(--blue); text-decoration: none; }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-menu a {
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 0.25rem 0;
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue);
+      transition: width var(--transition);
+    }
+    .nav-menu a:hover { color: var(--blue); text-decoration: none; }
+    .nav-menu a:hover::after { width: 100%; }
+    .nav-menu a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 2px; }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+      font-size: 0.85rem !important;
+      transition: background var(--transition) !important;
+      text-decoration: none !important;
+    }
+    .nav-cta:hover { background: var(--blue-dark) !important; color: var(--white) !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: 2px solid var(--navy);
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      background: transparent;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--navy);
+      border-radius: 3px;
+      transition: all var(--transition);
+    }
+    .hamburger:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+    .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: var(--white); text-decoration: none; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); text-decoration: none; }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy-dark); text-decoration: none; }
+
+    .btn-wa {
+      background: #25D366;
+      color: var(--white);
+      border-color: #25D366;
+    }
+    .btn-wa:hover { background: #1da851; border-color: #1da851; color: var(--white); text-decoration: none; }
+
+    .btn-sm { padding: 0.6rem 1.25rem; font-size: 0.85rem; }
+
+    /* Hero */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #0f1a3a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero-bg.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 25% 50%, rgba(201,168,76,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 75% 50%, rgba(0,102,204,0.06) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem 1rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,102,204,0.15);
+      border: 1px solid rgba(0,102,204,0.3);
+      color: #9dd4ff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #25D366;
+      display: inline-block;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title .accent { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .hero-scroll:hover { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .hero-scroll-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translate(0, 0); }
+      50% { transform: rotate(45deg) translate(4px, 4px); }
+    }
+
+    /* Section shared */
+    section { padding: 5rem 0; }
+    .section-header { margin-bottom: 3.5rem; max-width: 680px; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--body);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .section-title.light { color: var(--white); }
+    .section-sub.light { color: rgba(255,255,255,0.8); }
+
+    /* About */
+    .about { background: var(--bg-light); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-experience-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .about-experience-badge .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .about-experience-badge .lbl {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.15rem;
+    }
+
+    .about-text p {
+      color: var(--body);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+    .about-text p strong { color: var(--navy); }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .skill-tag {
+      background: var(--white);
+      border: 1px solid #dce0e8;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: all var(--transition);
+    }
+    .skill-tag:hover {
+      border-color: var(--blue);
+      background: rgba(0,102,204,0.06);
+    }
+
+    /* Services */
+    .services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .service-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 2.25rem 2rem;
+      border: 1px solid #eaecf0;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+    .service-card.featured {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+    .service-card.featured:hover { border-color: var(--gold); }
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .service-tag {
+      display: inline-block;
+      background: rgba(0,102,204,0.08);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+    }
+    .service-card.featured .service-tag {
+      background: rgba(201,168,76,0.15);
+      color: #6b4f0e;
+    }
+
+    /* Projects */
+    .projects { background: var(--bg-light); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #eaecf0;
+      transition: all var(--transition);
+      background: var(--white);
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-thumb {
+      height: 200px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-thumb img { transform: scale(1.05); }
+
+    .project-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, rgba(0,102,204,0.3) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .project-thumb-icon {
+      font-size: 2.8rem;
+    }
+    .project-thumb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .speed-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gold);
+      color: #111d42;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
+    }
+
+    .project-body { padding: 1.5rem; }
+    .project-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .project-body p {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .project-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .ptag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      background: var(--bg-light);
+      color: var(--navy);
+    }
+    .project-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+    }
+    .project-link:hover { color: var(--blue-dark); }
+
+    /* Pricing */
+    .pricing { background: var(--white); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .pricing-card {
+      background: var(--bg-light);
+      border: 1px solid #eaecf0;
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .pricing-card.featured {
+      background: var(--white);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px var(--gold), var(--shadow);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .pricing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .pricing-card .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #777;
+    }
+    .pricing-card .price-desc {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .pricing-features li {
+      font-size: 0.88rem;
+      color: var(--body);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: #25D366;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .pricing-features li.na::before {
+      content: '✗';
+      color: #ccc;
+    }
+    .pricing-features li.na { color: #aaa; }
+
+    /* CV Section */
+    .cv-section { background: var(--navy); }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .cv-content h2 { margin-bottom: 1rem; }
+    .cv-content p {
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .cv-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .cv-highlight {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+    }
+    .cv-highlight .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .cv-highlight .lbl {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.15rem;
+    }
+
+    .cv-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cv-doc-icon {
+      width: 200px;
+      height: 260px;
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+      position: relative;
+    }
+    .cv-doc-icon svg { width: 60px; height: 60px; }
+    .cv-doc-icon span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Contact */
+    .contact { background: var(--bg-light); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info > p {
+      color: var(--body);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-size: 0.97rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+    .contact-item-text p,
+    .contact-item-text a {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.5;
+    }
+    .contact-item-text a { color: var(--blue); }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-form-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .contact-form-card > p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--body);
+      background: var(--white);
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group .hint {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .wa-alternative {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      background: #f0fdf6;
+      border: 1.5px solid #25D366;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .wa-alternative:hover { background: #dcfce7; text-decoration: none; }
+    .wa-alternative span { font-size: 0.85rem; color: #145229; }
+
+    /* Footer */
+    .footer {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .logo { color: var(--white); font-size: 1.1rem; }
+    .footer-brand .logo:hover { color: var(--gold); }
+    .footer-tagline {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .footer-col ul a {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--gold); text-decoration: underline; }
+    .footer-col ul a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+    }
+    .footer-bottom a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-img-wrap img { height: 320px; }
+      .cv-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .cv-visual { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-title { font-size: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        padding: 0.5rem 0;
+        gap: 0;
+        z-index: 999;
+      }
+      .nav-menu.active { display: flex; }
+
+      .nav-menu li a {
+        display: block;
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid #eee;
+      }
+      .nav-menu li a::after { display: none; }
+      .nav-cta { margin: 0.75rem 1.5rem; text-align: center; }
+
+      .hero-title { font-size: 2.4rem; }
+      .hero-sub { font-size: 1rem; }
+      .section-title { font-size: 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .cv-highlights { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      section { padding: 3.5rem 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.9rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeUp 0.6s ease forwards; }
+    .animate-in-d1 { animation: fadeUp 0.6s ease 0.1s forwards; opacity: 0; }
+    .animate-in-d2 { animation: fadeUp 0.6s ease 0.2s forwards; opacity: 0; }
+    .animate-in-d3 { animation: fadeUp 0.6s ease 0.3s forwards; opacity: 0; }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="Nathaniel Kenny Olie — Home">
+        <span class="logo-dot" aria-hidden="true"></span>
+        Nathaniel Kenny
+      </a>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Hire me on WhatsApp (opens in new tab)">
+            Hire Me
+          </a>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" role="presentation" aria-hidden="true"></div>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Available for freelance projects
+      </p>
+      <h1 class="hero-title" id="hero-heading">
+        I Build <span class="accent">Fast Websites</span><br>
+        That Grow Your Business
+      </h1>
+      <p class="hero-sub">
+        Freelance web developer based in <strong style="color:#fff;">Warri, Nigeria</strong>. I hand-code
+        professional websites that score <strong style="color:#fff;">99/100 on PageSpeed</strong> —
+        no WordPress, no bloat, just results.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="btn btn-wa" target="_blank" rel="noopener noreferrer" aria-label="Hire me on WhatsApp (opens in new tab)">
+          Hire Me on WhatsApp
+        </a>
+        <a href="#projects" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.6);">View My Work →</a>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll to learn more">
+      <span>Scroll</span>
+      <span class="hero-scroll-arrow" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=60&w=800&fm=webp&auto=format&fit=crop"
+            alt=""
+            loading="lazy"
+            width="800"
+            height="420"
+          />
+          <div class="about-experience-badge">
+            <div class="num">10+</div>
+            <div class="lbl">Years Building</div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title" id="about-heading">Building for the Web<br>Since 2015</h2>
+          <p>
+            I'm <strong>Nathaniel Kenny Olie</strong>, a freelance web developer based in
+            Warri, Delta State. I've been building websites since 2015 — hand-coding every
+            line of HTML and CSS to create fast, reliable, and beautiful web experiences.
+          </p>
+          <p>
+            I specialise in <strong>hotel, church, and business websites</strong> for Nigerian
+            clients. My philosophy is simple: no page builders, no WordPress vulnerabilities,
+            no bloated code. Just clean, professional sites that load instantly and rank well
+            on Google.
+          </p>
+          <p>
+            When you hire me, you get <strong>a real developer</strong> who answers WhatsApp
+            messages and delivers on time. Based in Warri — reachable anytime.
+          </p>
+          <div class="skills-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">PageSpeed Optimization</span>
+            <span class="skill-tag">Web Accessibility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-label">What I Do</p>
+        <h2 class="section-title" id="services-heading">Services I Offer</h2>
+        <p class="section-sub">Every site is hand-coded from scratch — no templates, no WordPress, no shortcuts.</p>
+      </header>
+      <div class="services-grid">
+        <article class="service-card featured">
+          <div class="service-icon" aria-hidden="true">🏨</div>
+          <h3>Hotel Websites</h3>
+          <p>Room showcases, event pages, booking enquiry forms, and Google Maps integration — everything to turn online visitors into walk-in guests.</p>
+          <span class="service-tag">⭐ Most Popular</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⛪</div>
+          <h3>Church Websites</h3>
+          <p>Sermon archives with YouTube embeds, branch locator, event calendar, and donation pages. Built for congregations across Nigeria.</p>
+          <span class="service-tag">Sermon Archive Included</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">🏢</div>
+          <h3>Business Websites</h3>
+          <p>Professional online presence for shops, clinics, schools, and service businesses. Portfolio, services, contact — clean and fast.</p>
+          <span class="service-tag">Fast Delivery</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">🚑</div>
+          <h3>Website Rescue</h3>
+          <p>Is your current site broken, slow, or stuck on an error? I diagnose and fix it — or rebuild it properly for less than you'd expect.</p>
+          <span class="service-tag">Quick Turnaround</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title" id="projects-heading">Recent Projects</h2>
+        <p class="section-sub">Live websites I've built for clients across Delta State. Click any card to visit the actual site.</p>
+      </header>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-name">Rikon Hotels</div>
+            </div>
+            <span class="speed-badge">⚡ 96 Mobile</span>
+          </div>
+          <div class="project-body">
+            <h3>Rikon Hotels — Ughelli</h3>
+            <p>47 rooms, 350-guest event hall. Full hotel site with rooms, events, and booking enquiry.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">Events</span>
+              </div>
+              <a href="https://rikonhotels.github.io/ughelli" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Rikon Hotels live site (opens in new tab)">
+                View Live →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-name">Bedouin Hotels</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="project-body">
+            <h3>Bedouin Hotels &amp; Suites — Warri</h3>
+            <p>Elegant hotel site with room gallery, amenities showcase, and WhatsApp booking CTA.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">Suites</span>
+              </div>
+              <a href="https://kennysaint2-hub.github.io/Bedouinhotels/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Bedouin Hotels live site (opens in new tab)">
+                View Live →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-name">Kayriots Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="project-body">
+            <h3>Kayriots Hotel — Delta State</h3>
+            <p>Professional hotel demo showcasing rooms, dining, and local hospitality.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://kennysaint2-hub.github.io/kayriots-hotel" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Kayriots Hotel demo (opens in new tab)">
+                View Demo →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-name">Catwright Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="project-body">
+            <h3>Catwright Hotel — Delta State</h3>
+            <p>Clean, modern hotel presence with amenities, gallery, and contact integration.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://kennysaint2-hub.github.io/catwright-hotel" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Catwright Hotel demo (opens in new tab)">
+                View Demo →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-name">Tophill Hotel</div>
+            </div>
+            <span class="speed-badge">⚡ 99 Desktop</span>
+          </div>
+          <div class="project-body">
+            <h3>Tophill Hotel — Delta State</h3>
+            <p>Full-featured hotel site with room listings, event space, and local SEO setup.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">SEO</span>
+              </div>
+              <a href="https://kennysaint2-hub.github.io/tophill-hotel" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Tophill Hotel demo (opens in new tab)">
+                View Demo →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-overlay">
+              <div class="project-thumb-icon">⛪</div>
+              <div class="project-thumb-name">GKS Demo</div>
+            </div>
+            <span class="speed-badge">⚡ 96 Mobile</span>
+          </div>
+          <div class="project-body">
+            <h3>God's Kingdom Society — Demo</h3>
+            <p>Church site with sermon archive, YouTube embeds, branch locator, and donation page.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Church</span>
+                <span class="ptag">Sermons</span>
+              </div>
+              <a href="https://godskindomsociety.github.io/gksdemo" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View GKS demo site (opens in new tab)">
+                View Live →
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-label">Pricing</p>
+        <h2 class="section-title" id="pricing-heading">Transparent Pricing,<br>No Hidden Fees</h2>
+        <p class="section-sub">Fixed prices for common project types. Every site is hand-coded, optimized for speed, and delivered within 7–14 days.</p>
+      </header>
+      <div class="pricing-grid">
+
+        <article class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">₦150k <span>one-off</span></div>
+          <p class="price-desc">Perfect for small businesses and startups</p>
+          <ul class="pricing-features" role="list">
+            <li>1-page professional website</li>
+            <li>Mobile responsive design</li>
+            <li>Contact form / WhatsApp integration</li>
+            <li>Basic SEO setup</li>
+            <li>PageSpeed optimized (95+)</li>
+            <li class="na">Custom domain setup</li>
+            <li class="na">Ongoing maintenance</li>
+          </ul>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Starter%20plan%20(%C2%A6150k)" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
+        </article>
+
+        <article class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Standard</h3>
+          <div class="price">₦300k <span>one-off</span></div>
+          <p class="price-desc">Ideal for hotels, churches, and growing businesses</p>
+          <ul class="pricing-features" role="list">
+            <li>Up to 5-page website</li>
+            <li>Mobile responsive design</li>
+            <li>Contact form / WhatsApp integration</li>
+            <li>Full SEO optimization</li>
+            <li>PageSpeed optimized (97+)</li>
+            <li>Google Maps integration</li>
+            <li>Image gallery / portfolio</li>
+            <li class="na">Ongoing maintenance</li>
+          </ul>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Standard%20plan%20(%C2%A6300k)" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
+        </article>
+
+        <article class="pricing-card">
+          <h3>Premium</h3>
+          <div class="price">₦500k <span>one-off</span></div>
+          <p class="price-desc">For multi-location hotels, chains, and advanced projects</p>
+          <ul class="pricing-features" role="list">
+            <li>Up to 10-page website</li>
+            <li>Mobile responsive design</li>
+            <li>Contact form / WhatsApp integration</li>
+            <li>Full SEO optimization</li>
+            <li>PageSpeed optimized (99/100)</li>
+            <li>Google Maps integration</li>
+            <li>Image gallery / portfolio</li>
+            <li>3 months maintenance included</li>
+          </ul>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Premium%20plan%20(%C2%A6500k)" class="btn btn-gold btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CV / Resume -->
+  <section class="cv-section" id="cv" aria-labelledby="cv-heading">
+    <div class="container">
+      <div class="cv-grid">
+        <div class="cv-content">
+          <p class="section-label" style="color:var(--gold);">Resume / CV</p>
+          <h2 class="section-title light" id="cv-heading">10+ Years of<br>Web Development Experience</h2>
+          <p>
+            I've been building websites professionally since 2015. From single-page business
+            sites to multi-location hotel platforms — I've done it all. Here's a quick
+            snapshot of my experience.
+          </p>
+          <div class="cv-highlights">
+            <div class="cv-highlight">
+              <div class="num">10+</div>
+              <div class="lbl">Years Experience</div>
+            </div>
+            <div class="cv-highlight">
+              <div class="num">50+</div>
+              <div class="lbl">Sites Built</div>
+            </div>
+            <div class="cv-highlight">
+              <div class="num">99</div>
+              <div class="lbl">Avg. PageSpeed Score</div>
+            </div>
+            <div class="cv-highlight">
+              <div class="num">100%</div>
+              <div class="lbl">Hand-coded HTML/CSS</div>
+            </div>
+          </div>
+          <div class="cv-actions">
+            <a href="#" class="btn btn-gold" download aria-label="Download my CV (PDF)">
+              📄 Download CV (PDF)
+            </a>
+            <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20CV%20and%20I'd%20like%20to%20discuss%20a%20project" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:var(--white);" target="_blank" rel="noopener noreferrer">
+              Discuss a Project
+            </a>
+          </div>
+        </div>
+        <div class="cv-visual">
+          <div class="cv-doc-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Nathaniel Kenny Olie<br>Web Developer CV</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Get In Touch</p>
+          <h2 class="section-title" id="contact-heading">Let's Build Something<br>Together</h2>
+          <p>WhatsApp is the fastest way to reach me. Send a message and I'll respond within the hour — no forms, no email chains, just a real conversation.</p>
+          <ul class="contact-items" role="list">
+            <li class="contact-item">
+              <div class="contact-icon-wrap" aria-hidden="true">💬</div>
+              <div class="contact-item-text">
+                <h3>WhatsApp (Fastest)</h3>
+                <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">+234 800 000 0000</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon-wrap" aria-hidden="true">📧</div>
+              <div class="contact-item-text">
+                <h3>Email</h3>
+                <a href="mailto:nathanielkenny@talent-loop.org">nathanielkenny@talent-loop.org</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon-wrap" aria-hidden="true">📍</div>
+              <div class="contact-item-text">
+                <h3>Location</h3>
+                <p>Warri, Delta State, Nigeria</p>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon-wrap" aria-hidden="true">⏱️</div>
+              <div class="contact-item-text">
+                <h3>Response Time</h3>
+                <p>Usually within 1 hour on WhatsApp</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <p>Fill out the form and I'll get back to you within 24 hours.</p>
+          <form id="contactForm" novalidate onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="projectType">Project Type</label>
+              <select id="projectType" name="projectType">
+                <option value="">Select one...</option>
+                <option value="hotel">Hotel Website</option>
+                <option value="church">Church Website</option>
+                <option value="business">Business Website</option>
+                <option value="rescue">Website Rescue</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message
+            </button>
+            <p class="hint" style="text-align:center;margin-top:0.75rem;">I'll respond within 24 hours via email</p>
+          </form>
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20project" class="wa-alternative" target="_blank" rel="noopener noreferrer">
+            <span style="font-size:1.5rem;" aria-hidden="true">💚</span>
+            <span>Prefer WhatsApp? Message me directly instead</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" aria-label="Back to top">
+            <span class="logo-dot" style="background:var(--gold);" aria-hidden="true"></span>
+            Nathaniel Kenny
+          </a>
+          <p class="footer-tagline">
+            Freelance web developer based in Warri, Delta State. Building fast, hand-coded websites for hotels, churches, and businesses across Nigeria.
+          </p>
+        </div>
+        <nav class="footer-col" aria-label="Quick links">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h3>Services</h3>
+          <ul role="list">
+            <li><a href="#services">Hotel Websites</a></li>
+            <li><a href="#services">Church Websites</a></li>
+            <li><a href="#services">Business Websites</a></li>
+            <li><a href="#services">Website Rescue</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Contact links">
+          <h3>Contact</h3>
+          <ul role="list">
+            <li><a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:nathanielkenny@talent-loop.org">Email</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
+        <p>Built with <span aria-hidden="true">❤️</span> in Warri, Delta State, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isExpanded = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = '#25D366';
+      btn.style.borderColor = '#25D366';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

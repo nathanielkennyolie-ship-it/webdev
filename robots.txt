@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webdev.talent-loop.org/sitemap.xml
