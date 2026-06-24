@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Nathaniel Kenny Olie</title>
-  <meta name="description" content="Hand-coded websites built by Nathaniel Kenny Olie. See live projects for hotels, churches, businesses, and more." />
-  <meta name="keywords" content="web developer, freelance, Warri, Nigeria, portfolio, HTML, CSS, website design" />
+  <title>Services — Nathaniel Kenny Olie</title>
+  <meta name="description" content="Freelance web developer services — hotel websites, church websites, business websites, and website rescue. Hand-coded HTML & CSS." />
+  <meta name="keywords" content="web developer, freelance, Warri, Nigeria, services, hotel website, church website, business website" />
   <meta name="author" content="Nathaniel Kenny Olie" />
-  <meta property="og:title" content="Portfolio — Nathaniel Kenny Olie" />
-  <meta property="og:description" content="Every site is hand-coded from scratch — no WordPress, no page builders." />
+  <meta property="og:title" content="Services — Nathaniel Kenny Olie" />
+  <meta property="og:description" content="Every website is hand-coded from scratch — fast, clean, and built to convert." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://webdev.talent-loop.org/portfolio" />
-  <link rel="canonical" href="https://webdev.talent-loop.org/portfolio" />
+  <meta property="og:url" content="https://webdev.talent-loop.org/services" />
+  <link rel="canonical" href="https://webdev.talent-loop.org/services" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -237,6 +237,8 @@
       line-height: 1.8;
     }
 
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
     section { padding: 6rem 0; position: relative; }
     .section-header { margin-bottom: 4rem; max-width: 640px; }
 
@@ -265,63 +267,96 @@
     .section-header.centered { text-align: center; margin-left: auto; margin-right: auto; }
     .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
 
-    .projects-grid {
+    .services { background: var(--bg-alt); }
+
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
-    .project-card {
+    .service-card {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: all var(--transition);
+      border-radius: var(--radius); padding: 2.25rem 2rem;
+      transition: all var(--transition); position: relative; overflow: hidden;
     }
-    .project-card:hover {
+    .service-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(108,140,255,0.04), transparent);
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .service-card:hover {
       transform: translateY(-6px); border-color: rgba(108,140,255,0.2);
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
+    .service-card:hover::before { opacity: 1; }
+    .service-card.featured { border-color: rgba(212,168,84,0.3); }
 
-    .project-thumb {
-      height: 210px; position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--surface-2), var(--bg-alt));
-    }
-    .project-thumb img {
-      width: 100%; height: 100%; object-fit: cover;
-      position: absolute; inset: 0;
-    }
-
-    .speed-badge {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(212,168,84,0.15);
-      backdrop-filter: blur(8px);
-      color: var(--gold); font-size: 0.68rem; font-weight: 700;
-      padding: 0.25rem 0.65rem; border-radius: 99px;
-      border: 1px solid rgba(212,168,84,0.3);
-    }
-
-    .project-body { padding: 1.5rem; }
-    .project-body h3 {
+    .service-icon { width: 40px; height: 40px; margin-bottom: 1rem; position: relative; z-index: 1; color: var(--accent); }
+    .service-icon svg { width: 100%; height: 100%; }
+    .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--text); margin-bottom: 0.35rem;
+      font-size: 1.2rem; color: var(--text);
+      margin-bottom: 0.6rem; position: relative; z-index: 1;
     }
-    .project-body p {
-      font-size: 0.85rem; color: var(--text-2);
-      margin-bottom: 1rem; line-height: 1.6;
+    .service-card p {
+      font-size: 0.88rem; color: var(--text-2);
+      line-height: 1.7; margin-bottom: 1.25rem; position: relative; z-index: 1;
     }
-    .project-footer {
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .project-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
-    .ptag {
-      font-size: 0.68rem; font-weight: 600;
-      padding: 0.2rem 0.55rem; border-radius: 99px;
+    .service-tag {
+      display: inline-block;
       background: rgba(108,140,255,0.08); color: var(--accent);
+      font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.75rem; border-radius: 99px;
+      position: relative; z-index: 1;
     }
-    .project-link {
-      font-size: 0.82rem; font-weight: 600; color: var(--accent);
-      display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap;
+    .service-card.featured .service-tag {
+      background: rgba(212,168,84,0.12); color: var(--gold);
     }
+
+    .process { background: var(--bg-alt); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .process-step {
+      text-align: center; padding: 2rem 1.5rem;
+      position: relative;
+    }
+    .process-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 2.5rem;
+      right: -1rem; width: 2rem; height: 2px;
+      background: var(--border);
+    }
+    .process-step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), transparent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1; margin-bottom: 0.75rem;
+      opacity: 0.5;
+    }
+    .process-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--text); margin-bottom: 0.4rem;
+    }
+    .process-step p {
+      font-size: 0.85rem; color: var(--text-2); line-height: 1.6;
+    }
+
+    .cta-section { background: var(--bg-alt); text-align: center; }
+    .cta-content { max-width: 700px; margin: 0 auto; }
+    .cta-text { color: var(--text-2); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+    .cta-steps { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-step { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; color: var(--text-2); }
+    .cta-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+    .cta-tagline { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); margin: 2rem 0 1.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-footer-text { font-size: 0.82rem; color: var(--text-3); margin-top: 1.25rem; }
 
     .footer {
       border-top: 1px solid var(--border);
@@ -393,6 +428,7 @@
 
     @media (max-width: 900px) {
       .hero-title { font-size: 3rem; }
+      .process-step:not(:last-child)::after { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -412,7 +448,6 @@
       .hero-title { font-size: 2.4rem; }
       .section-title { font-size: 2rem; }
       .section-header { margin-bottom: 2.5rem; }
-      .projects-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
       section { padding: 4rem 0; }
@@ -420,6 +455,7 @@
 
     @media (max-width: 480px) {
       .hero-title { font-size: 1.9rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
       .btn { width: 100%; justify-content: center; }
       .container { padding: 0 1.25rem; }
     }
@@ -457,202 +493,168 @@
 
   <main id="main-content">
 
-  <section class="hero" aria-labelledby="portfolio-heading">
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="services-heading">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-badge reveal visible">
         <span class="hero-badge-dot" aria-hidden="true"></span>
-        Full portfolio
+        What I offer
       </p>
-      <h1 class="hero-title reveal visible reveal-delay-1" id="portfolio-heading">
-        My <span class="gradient-text">Work</span>
+      <h1 class="hero-title reveal visible reveal-delay-1" id="services-heading">
+        What I <span class="gradient-text">Build</span>
       </h1>
       <p class="hero-sub reveal visible reveal-delay-2">
-        Every site below is hand-coded from scratch — no WordPress, no page builders.
+        Every website is hand-coded from scratch — fast, clean, and built to convert.
       </p>
+      <div class="hero-actions reveal visible reveal-delay-3">
+        <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'd%20like%20to%20discuss%20a%20project" class="btn btn-wa" target="_blank" rel="noopener noreferrer">Let's Talk →</a>
+      </div>
     </div>
   </section>
 
-  <section class="projects" aria-labelledby="portfolio-grid-heading">
+  <!-- Services Grid -->
+  <section class="services" aria-labelledby="services-grid-heading">
     <div class="container">
-      <div class="projects-grid">
-
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://talent-loop.org/" alt="Talent Loop" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+      <header class="section-header centered reveal">
+        <p class="section-label">Services</p>
+        <h2 class="section-title" id="services-grid-heading">What I Build</h2>
+        <p class="section-sub">Every project is hand-coded from scratch — optimised for speed, search, and conversions.</p>
+      </header>
+      <div class="services-grid">
+        <article class="service-card featured reveal reveal-delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7" />
+            </svg>
           </div>
-          <div class="project-body">
-            <h3>Talent Loop</h3>
-            <p>Freelance web development agency connecting businesses with expert developers.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Agency</span>
-                <span class="ptag">Portfolio</span>
-              </div>
-              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
+          <h3>Hotel Websites</h3>
+          <p>Room showcases, event pages, booking enquiry forms, and Maps integration — everything to turn online visitors into guests.</p>
+          <span class="service-tag">&#x2B50; Most Popular</span>
         </article>
-
-        <article class="project-card reveal reveal-delay-2">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://topviewhotels.pages.dev/" alt="Topview Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 21h16M6 21V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14M9 21V14h6v7" />
+              <path d="M12 7v2M10 11h4" />
+            </svg>
           </div>
-          <div class="project-body">
-            <h3>Topview Hotels</h3>
-            <p>Modern hotel website with room showcases, amenities, and online booking features.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-              </div>
-              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
+          <h3>Church Websites</h3>
+          <p>Sermon archives with YouTube embeds, branch locator, event calendar, and donation pages for congregations across Nigeria.</p>
+          <span class="service-tag">Sermon Archive Included</span>
         </article>
-
-        <article class="project-card reveal reveal-delay-3">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://kayriott.pages.dev/" alt="Kayriott Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+        <article class="service-card reveal reveal-delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
           </div>
-          <div class="project-body">
-            <h3>Kayriott Hotels</h3>
-            <p>Elegant hotel site showcasing rooms, dining, events, and local hospitality.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-              </div>
-              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
+          <h3>Business Websites</h3>
+          <p>Professional online presence for shops, clinics, schools, and service businesses. Clean, fast, and built to convert.</p>
+          <span class="service-tag">Fast Delivery</span>
         </article>
-
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://catwrighthotels.pages.dev/" alt="Catwright Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+        <article class="service-card reveal reveal-delay-4">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
           </div>
-          <div class="project-body">
-            <h3>Catwright Hotels</h3>
-            <p>Clean, modern hotel presence with amenities, gallery, and contact integration.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-              </div>
-              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
+          <h3>Website Rescue</h3>
+          <p>Broken site? Slow load times? Stuck on an error? I diagnose and fix it — or rebuild it properly for less than you'd expect.</p>
+          <span class="service-tag">Quick Turnaround</span>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="project-card reveal reveal-delay-2">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://beechnuthotels.pages.dev/" alt="Beechnut Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
-          </div>
-          <div class="project-body">
-            <h3>Beechnut Hotels</h3>
-            <p>Premium hotel website with full service listings, events, and guest information.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-              </div>
-              <a href="https://beechnuthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
-        </article>
+  <!-- Performance Credentials -->
+  <section class="performance" aria-labelledby="performance-heading">
+    <div class="container">
+      <header class="section-header centered reveal">
+        <p class="section-label">Performance</p>
+        <h2 class="section-title" id="performance-heading">Proven Performance</h2>
+        <p class="section-sub">Every site I build is tested and verified by Google PageSpeed Insights.</p>
+      </header>
+      <div style="text-align:center;" class="reveal">
+        <img src="pagespeed-credential.webp" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" style="max-width:900px;width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);" />
+        <p style="color:var(--text-3);font-size:0.85rem;margin-top:1rem;">Verified by Google PageSpeed Insights — June 24, 2026</p>
+      </div>
+    </div>
+  </section>
 
-        <article class="project-card reveal reveal-delay-3">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://decoastalhotels.pages.dev/" alt="DeCoastal Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
-          </div>
-          <div class="project-body">
-            <h3>DeCoastal Hotels</h3>
-            <p>Coastal hotel site with room listings, event spaces, and seamless contact flow.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-              </div>
-              <a href="https://decoastalhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
-        </article>
+  <!-- Process -->
+  <section class="process" aria-labelledby="process-heading">
+    <div class="container">
+      <header class="section-header centered reveal">
+        <p class="section-label">How I Work</p>
+        <h2 class="section-title" id="process-heading">From Brief to Launch</h2>
+        <p class="section-sub">A simple, transparent process that keeps you in the loop at every stage.</p>
+      </header>
+      <div class="process-grid">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-step-num">01</div>
+          <h3>Discovery</h3>
+          <p>We discuss your business, goals, and what you need from your website.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-step-num">02</div>
+          <h3>Design & Build</h3>
+          <p>I hand-code your site and share a live demo for your feedback.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-step-num">03</div>
+          <h3>Review & Refine</h3>
+          <p>You review the demo, I make tweaks, and we lock in the final version.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-step-num">04</div>
+          <h3>Launch</h3>
+          <p>Your site goes live on your domain — fast, secure, and ready to grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://bedouinhotels.pages.dev/" alt="Bedouin Hotels" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+  <!-- CTA -->
+  <section class="cta-section" id="lets-build" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-content reveal">
+        <p class="section-label" style="color:var(--gold);">Get a Custom Quote</p>
+        <h2 class="section-title" id="cta-heading">Let's Build Something Great</h2>
+        <p class="cta-text">
+          Every project is unique — so instead of fixed packages, I work with you directly
+          to understand your goals and deliver exactly what your business needs.
+        </p>
+        <p class="cta-text">
+          Whether you need a brand new website, an SEO overhaul, or a full digital setup
+          from scratch, I'll send you a detailed quote within 24 hours.
+        </p>
+        <div class="cta-steps">
+          <div class="cta-step">
+            <span class="cta-step-num">1</span>
+            <span>Tell me about your project</span>
           </div>
-          <div class="project-body">
-            <h3>Bedouin Hotels &amp; Suites</h3>
-            <p>Luxury hotel and suites website with room gallery and WhatsApp booking CTA.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Hotel</span>
-                <span class="ptag">Suites</span>
-              </div>
-              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
+          <div class="cta-step">
+            <span class="cta-step-num">2</span>
+            <span>I review your needs and goals</span>
           </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-2">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://abariecomedy.pages.dev/" alt="Abarie Comedy" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
+          <div class="cta-step">
+            <span class="cta-step-num">3</span>
+            <span>You receive a custom quote within 24 hours</span>
           </div>
-          <div class="project-body">
-            <h3>Abarie Comedy</h3>
-            <p>Comedy show event site with tour dates, ticket info, and performer highlights.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Events</span>
-                <span class="ptag">Entertainment</span>
-              </div>
-              <a href="https://abariecomedy.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
+          <div class="cta-step">
+            <span class="cta-step-num">4</span>
+            <span>We agree on timeline and get to work</span>
           </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-3">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://okarobetty.pages.dev/" alt="Betty Oriflame" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
-          </div>
-          <div class="project-body">
-            <h3>Betty Oriflame</h3>
-            <p>Oriflame beauty consultant personal brand site with product showcases and contact.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Personal Brand</span>
-                <span class="ptag">Beauty</span>
-              </div>
-              <a href="https://okarobetty.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-1">
-          <div class="project-thumb">
-            <img src="https://image.thum.io/get/width/800/crop/600/https://godskingdomsociety.github.io/gksdemo/" alt="God's Kingdom Society" loading="lazy" width="800" height="600" />
-            <span class="speed-badge">⚡ 100</span>
-          </div>
-          <div class="project-body">
-            <h3>God's Kingdom Society</h3>
-            <p>Church site with sermon archive, YouTube embeds, branch locator, and donation page.</p>
-            <div class="project-footer">
-              <div class="project-tags">
-                <span class="ptag">Church</span>
-                <span class="ptag">Sermons</span>
-              </div>
-              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
-            </div>
-          </div>
-        </article>
-
+        </div>
+        <p class="cta-tagline">Based in Nigeria. Available worldwide. Let's talk.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'd%20like%20to%20get%20a%20custom%20quote%20for%20my%20project" class="btn btn-wa" target="_blank" rel="noopener noreferrer">WhatsApp Me Now</a>
+          <a href="/#contact" class="btn btn-outline">Send a Message</a>
+        </div>
+        <p class="cta-footer-text">No pressure. No long calls. Just a straightforward conversation about your project.</p>
       </div>
     </div>
   </section>
@@ -671,9 +673,9 @@
             Freelance web developer specialized in hand-coded HTML &amp; CSS. Building fast, hand-coded websites for hotels, churches, and businesses across Nigeria.
           </p>
           <div class="footer-social">
-            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
-            <a href="mailto:nathanielkenny@talent-loop.org" aria-label="Email">📧</a>
-            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐</a>
+            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">&#x1F4AC;</a>
+            <a href="mailto:nathanielkenny@talent-loop.org" aria-label="Email">&#x1F4E7;</a>
+            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website">&#x1F310;</a>
           </div>
         </div>
         <nav class="footer-col" aria-label="Navigation links">
@@ -708,7 +710,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
-        <p>Built with <span aria-hidden="true">❤️</span> in Warri, Delta State, Nigeria</p>
+        <p>Built with <span aria-hidden="true">&#x2764;&#xFE0F;</span> in Warri, Delta State, Nigeria</p>
       </div>
     </div>
   </footer>
