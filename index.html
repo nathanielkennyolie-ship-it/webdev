@@ -600,6 +600,17 @@
     .pricing-features li.na::before { content: '✗'; color: var(--text-3); }
     .pricing-features li.na { color: var(--text-3); }
 
+    /* === CTA / LET'S BUILD === */
+    .cta-section { background: var(--bg-alt); text-align: center; }
+    .cta-content { max-width: 700px; margin: 0 auto; }
+    .cta-text { color: var(--text-2); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+    .cta-steps { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-step { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; color: var(--text-2); }
+    .cta-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+    .cta-tagline { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); margin: 2rem 0 1.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-footer-text { font-size: 0.82rem; color: var(--text-3); margin-top: 1.25rem; }
+
     /* === CV SECTION === */
     .cv-section { background: var(--bg-alt); }
 
@@ -896,7 +907,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#lets-build">Get a Quote</a></li>
         <li><a href="#cv">CV</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1301,67 +1312,44 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+  <!-- Let's Build -->
+  <section class="cta-section" id="lets-build" aria-labelledby="cta-heading">
     <div class="container">
-      <header class="section-header reveal">
-        <p class="section-label">Pricing</p>
-        <h2 class="section-title" id="pricing-heading">Simple, Transparent Pricing</h2>
-        <p class="section-sub">Fixed prices for common project types. Every site hand-coded, optimised for speed, and delivered in 7–14 days.</p>
-      </header>
-      <div class="pricing-grid">
-
-        <article class="pricing-card reveal reveal-delay-1">
-          <h3>Starter</h3>
-          <div class="price">₦150k <span>one-off</span></div>
-          <p class="price-desc">Perfect for small businesses and startups</p>
-          <ul class="pricing-features" role="list">
-            <li>1-page professional website</li>
-            <li>Mobile responsive design</li>
-            <li>Contact / WhatsApp integration</li>
-            <li>Basic SEO setup</li>
-            <li>PageSpeed 95+</li>
-            <li class="na">Custom domain setup</li>
-            <li class="na">Ongoing maintenance</li>
-          </ul>
-          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Starter%20plan" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
-        </article>
-
-        <article class="pricing-card featured reveal reveal-delay-2">
-          <div class="pricing-badge">Most Popular</div>
-          <h3>Standard</h3>
-          <div class="price">₦300k <span>one-off</span></div>
-          <p class="price-desc">Ideal for hotels, churches, and growing businesses</p>
-          <ul class="pricing-features" role="list">
-            <li>Up to 5-page website</li>
-            <li>Mobile responsive design</li>
-            <li>Contact / WhatsApp integration</li>
-            <li>Full SEO optimization</li>
-            <li>PageSpeed 97+</li>
-            <li>Google Maps integration</li>
-            <li>Image gallery / portfolio</li>
-            <li class="na">Ongoing maintenance</li>
-          </ul>
-          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Standard%20plan" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
-        </article>
-
-        <article class="pricing-card reveal reveal-delay-3">
-          <h3>Premium</h3>
-          <div class="price">₦500k <span>one-off</span></div>
-          <p class="price-desc">For multi-location hotels, chains, and advanced projects</p>
-          <ul class="pricing-features" role="list">
-            <li>Up to 10-page website</li>
-            <li>Mobile responsive design</li>
-            <li>Contact / WhatsApp integration</li>
-            <li>Full SEO optimization</li>
-            <li>PageSpeed 99/100</li>
-            <li>Google Maps integration</li>
-            <li>Image gallery / portfolio</li>
-            <li>3 months maintenance included</li>
-          </ul>
-          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'm%20interested%20in%20the%20Premium%20plan" class="btn btn-gold btn-sm" target="_blank" rel="noopener noreferrer">Get Started</a>
-        </article>
-
+      <div class="cta-content reveal">
+        <p class="section-label" style="color:var(--gold);">Get a Custom Quote</p>
+        <h2 class="section-title" id="cta-heading">Let's Build Something Great</h2>
+        <p class="cta-text">
+          Every project is unique — so instead of fixed packages, I work with you directly
+          to understand your goals and deliver exactly what your business needs.
+        </p>
+        <p class="cta-text">
+          Whether you need a brand new website, an SEO overhaul, or a full digital setup
+          from scratch, I'll send you a detailed quote within 24 hours.
+        </p>
+        <div class="cta-steps">
+          <div class="cta-step">
+            <span class="cta-step-num">1</span>
+            <span>Tell me about your project</span>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">2</span>
+            <span>I review your needs and goals</span>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">3</span>
+            <span>You receive a custom quote within 24 hours</span>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">4</span>
+            <span>We agree on timeline and get to work</span>
+          </div>
+        </div>
+        <p class="cta-tagline">Based in Nigeria. Available worldwide. Let's talk.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'd%20like%20to%20get%20a%20custom%20quote%20for%20my%20project" class="btn btn-wa" target="_blank" rel="noopener noreferrer">WhatsApp Me Now</a>
+          <a href="#contact" class="btn btn-outline">Send a Message</a>
+        </div>
+        <p class="cta-footer-text">No pressure. No long calls. Just a straightforward conversation about your project.</p>
       </div>
     </div>
   </section>
@@ -1562,7 +1550,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#lets-build">Get a Quote</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
