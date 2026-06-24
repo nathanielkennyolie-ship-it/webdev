@@ -611,18 +611,6 @@
     .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .cta-footer-text { font-size: 0.82rem; color: var(--text-3); margin-top: 1.25rem; }
 
-    /* === ABOUT SNIPPET === */
-    .about-snippet { background: var(--bg-alt); }
-    .about-snippet-card {
-      display: flex; align-items: center; gap: 2.5rem;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2.5rem;
-      max-width: 800px; margin: 0 auto;
-    }
-    .about-snippet-img { flex-shrink: 0; }
-    .about-snippet-img img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); }
-    .about-snippet-text p { color: var(--text-2); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.25rem; }
-
     /* === CV SECTION === */
     .cv-section { background: var(--bg-alt); }
 
@@ -860,7 +848,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img-wrap img { height: 340px; }
       .about-exp { right: -0.75rem; bottom: -1rem; padding: 1rem 1.25rem; }
-      .about-snippet-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
       .cv-grid { grid-template-columns: 1fr; gap: 2rem; }
       .cv-visual { display: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -917,7 +904,7 @@
       </a>
 
       <ul class="nav-menu" id="navMenu" role="list">
-            <li><a href="about.html">About</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#lets-build">Get a Quote</a></li>
@@ -960,28 +947,95 @@
         <a href="#work" class="btn btn-outline">View My Work →</a>
       </div>
     </div>
-    <a href="#services" class="hero-scroll" aria-label="Scroll down">
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">
       <span>Scroll</span>
       <span class="hero-scroll-arrow" aria-hidden="true"></span>
     </a>
   </section>
 
-  <!-- About snippet -->
-  <section class="about-snippet" id="about" aria-labelledby="about-heading">
+  <!-- About -->
+  <section class="about" id="about" aria-labelledby="about-heading">
     <div class="container">
-      <div class="about-snippet-card reveal">
-        <div class="about-snippet-img">
-          <img src="kenny.webp" alt="Nathaniel Kenny Olie" loading="lazy" width="120" height="120" />
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-wrap">
+            <img
+              src="kenny.webp"
+              alt="Nathaniel Kenny Olie — Freelance Web Developer"
+              loading="lazy"
+              width="800"
+              height="460"
+            />
+            <div class="about-exp">
+              <div class="num">10+</div>
+              <div class="lbl">Years Experience</div>
+            </div>
+          </div>
         </div>
-        <div class="about-snippet-text">
+        <div class="about-text reveal reveal-delay-1">
           <p class="section-label">About Me</p>
-          <h2 class="section-title" id="about-heading" style="font-size:1.6rem;">Hand-Coding the Web, One Clean Line at a Time</h2>
+          <h2 class="section-title" id="about-heading">Hand-Coding the Web,<br>One Clean Line at a Time</h2>
           <p>
-            I'm Nathaniel Kenny Olie — a freelance web developer with over a decade of
-            experience building fast, conversion-focused websites from scratch. No page
-            builders, no WordPress, no bloat.
+            I'm <strong>Nathaniel Kenny Olie</strong>, a freelance web developer with over a
+            decade of experience building fast, conversion-focused websites from scratch —
+            no page builders, no WordPress, no bloat. Just clean, hand-crafted HTML, CSS,
+            and JavaScript that performs.
           </p>
-          <a href="about.html" class="btn btn-outline btn-sm">Read Full Story →</a>
+          <p>
+            I work with clients across Nigeria and internationally, delivering websites
+            that don't just look good — they load fast, rank on Google, and turn visitors
+            into paying customers.
+          </p>
+
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin:1.75rem 0 0.75rem;">What I Build</h3>
+          <p>
+            Every project I take on is built with a focus on three things: speed, visibility,
+            and results. Whether you need a business website, a church platform, a hotel
+            booking page, or a professional portfolio, I deliver a site that works hard for
+            you around the clock.
+          </p>
+
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin:1.75rem 0 0.75rem;">My Technical Stack</h3>
+          <p>
+            I'm proficient in <strong>HTML5, CSS3, and responsive design</strong> — meaning
+            your site looks sharp on every screen size. Beyond the build, I handle SEO,
+            PageSpeed optimisation, and Google Search Console indexing so your site doesn't
+            just exist online — it gets found.
+          </p>
+          <p>
+            I also set up Google Business profiles, implement web accessibility standards,
+            manage version control with Git, and build automated email workflows using n8n —
+            giving your business the kind of backend automation most freelancers don't even offer.
+          </p>
+          <p>
+            For clients who need content, I write long-form SEO blog posts that rank —
+            detailed, researched, and optimised to drive organic traffic month after month.
+          </p>
+
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin:1.75rem 0 0.75rem;">Why Work With Me</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+            <li style="display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--text-2);">✅ Fast turnaround — I don't keep you waiting</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--text-2);">✅ Direct communication — reach me on WhatsApp anytime</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--text-2);">✅ No middlemen — you work directly with the developer</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--text-2);">✅ Built for performance — green PageSpeed scores, every time</li>
+            <li style="display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--text-2);">✅ Full-service — from design to deployment to SEO</li>
+          </ul>
+          <p>
+            I'm based in <strong>Warri, Nigeria</strong>, and available to clients worldwide.
+            If you need a developer who takes your business seriously, let's build something
+            great together.
+          </p>
+          <div class="skills-grid">
+            <span class="skill-chip">HTML5</span>
+            <span class="skill-chip">CSS3</span>
+            <span class="skill-chip">Responsive Design</span>
+            <span class="skill-chip">SEO</span>
+            <span class="skill-chip">PageSpeed Optimisation</span>
+            <span class="skill-chip">Web Accessibility</span>
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">n8n Automation</span>
+            <span class="skill-chip">Google Search Console</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1493,7 +1547,7 @@
         <nav class="footer-col" aria-label="Navigation links">
           <h3>Navigation</h3>
           <ul role="list">
-        <li><a href="about.html">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
         <li><a href="#lets-build">Get a Quote</a></li>
