@@ -1,1 +1,792 @@
-READ_FROM_DISK:/tmp/cc-agent/68201145/project/portfolio.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Nathaniel Kenny Olie</title>
+  <meta name="description" content="Hand-coded websites built by Nathaniel Kenny Olie. See live projects for hotels, churches, businesses, and more." />
+  <meta name="keywords" content="web developer, freelance, Warri, Nigeria, portfolio, HTML, CSS, website design" />
+  <meta name="author" content="Nathaniel Kenny Olie" />
+  <meta property="og:title" content="Portfolio — Nathaniel Kenny Olie" />
+  <meta property="og:description" content="Every site is hand-coded from scratch — no WordPress, no page builders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webdev.talent-loop.org/portfolio" />
+  <link rel="canonical" href="https://webdev.talent-loop.org/portfolio" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0f1a;
+      --bg-alt:    #111624;
+      --surface:   #1a2035;
+      --surface-2: #222a42;
+      --border:    #2a3450;
+      --text:      #e4e8f0;
+      --text-2:    #b0b8d0;
+      --text-3:    #7a84a0;
+      --accent:    #6c8cff;
+      --accent-2:  #5b7ae0;
+      --gold:      #d4a854;
+      --gold-dim:  #a88438;
+      --green:     #34d399;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow:    0 4px 30px rgba(0,0,0,0.3);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+
+    a { color: var(--accent); text-decoration: underline; transition: color var(--transition); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    .skip-link {
+      position: absolute; top: -100px; left: 1rem;
+      background: var(--surface); color: var(--text);
+      padding: 0.6rem 1.2rem; border-radius: var(--radius-sm);
+      font-weight: 600; font-size: 0.9rem; z-index: 9999;
+      transition: top 0.2s; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1rem 0;
+      transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(11,15,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.6rem 0;
+    }
+
+    .nav-container {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+    }
+    .logo:hover { color: var(--accent); text-decoration: none; }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; font-weight: 800; color: #fff;
+    }
+
+    .nav-menu {
+      list-style: none; display: flex; align-items: center; gap: 0.25rem;
+    }
+    .nav-menu a {
+      color: var(--text-2); font-weight: 500; font-size: 0.88rem;
+      text-decoration: none; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-menu a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+    .nav-cta {
+      background: var(--accent); color: #fff !important; font-weight: 600 !important;
+      padding: 0.5rem 1.25rem !important; border-radius: var(--radius-sm) !important;
+    }
+    .nav-cta:hover { background: var(--accent-2) !important; color: #fff !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: transparent; border: 1.5px solid var(--border);
+      padding: 7px 9px; border-radius: var(--radius-sm);
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 600;
+      border: none; cursor: pointer; transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    .btn-primary {
+      background: var(--accent); color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,140,255,0.3); color: #fff; text-decoration: none; }
+
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #0b0f1a;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,168,84,0.25); color: #0b0f1a; text-decoration: none; }
+
+    .btn-wa {
+      background: #25D366; color: #fff;
+    }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); color: #fff; text-decoration: none; }
+
+    .btn-sm { padding: 0.55rem 1.25rem; font-size: 0.82rem; }
+
+    .hero {
+      min-height: 60vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      position: relative; overflow: hidden;
+      padding-top: 5rem;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(108,140,255,0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(212,168,84,0.06) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.3;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 6rem 1rem 2rem; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-2); font-size: 0.8rem; font-weight: 500;
+      padding: 0.4rem 1rem; border-radius: 99px;
+      margin-bottom: 2rem;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); display: inline-block;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.4rem; font-weight: 800;
+      line-height: 1.08; margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--accent), #8b5cf6, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem; color: var(--text-2);
+      max-width: 560px; margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    section { padding: 6rem 0; position: relative; }
+    .section-header { margin-bottom: 4rem; max-width: 640px; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1.5px; background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 700;
+      line-height: 1.2; margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      color: var(--text-2); font-size: 1.05rem;
+      max-width: 560px; line-height: 1.8;
+    }
+
+    .section-header.centered { text-align: center; margin-left: auto; margin-right: auto; }
+    .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: all var(--transition);
+    }
+    .project-card:hover {
+      transform: translateY(-6px); border-color: rgba(108,140,255,0.2);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .project-thumb {
+      height: 210px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--surface-2), var(--bg-alt));
+    }
+    .project-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      position: absolute; inset: 0;
+    }
+
+    .speed-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(212,168,84,0.15);
+      backdrop-filter: blur(8px);
+      color: var(--gold); font-size: 0.68rem; font-weight: 700;
+      padding: 0.25rem 0.65rem; border-radius: 99px;
+      border: 1px solid rgba(212,168,84,0.3);
+    }
+
+    .project-body { padding: 1.5rem; }
+    .project-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--text); margin-bottom: 0.35rem;
+    }
+    .project-body p {
+      font-size: 0.85rem; color: var(--text-2);
+      margin-bottom: 1rem; line-height: 1.6;
+    }
+    .project-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .project-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .ptag {
+      font-size: 0.68rem; font-weight: 600;
+      padding: 0.2rem 0.55rem; border-radius: 99px;
+      background: rgba(108,140,255,0.08); color: var(--accent);
+    }
+    .project-link {
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 0.3rem; white-space: nowrap;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { font-size: 1.1rem; }
+    .footer-tagline {
+      color: var(--text-3); font-size: 0.85rem;
+      line-height: 1.7; margin-top: 1rem; max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex; gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; text-decoration: none;
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--accent); background: rgba(108,140,255,0.06); }
+
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem; color: var(--text); margin-bottom: 1.25rem;
+    }
+    .footer-col ul {
+      list-style: none; display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .footer-col ul a {
+      color: var(--text-3); font-size: 0.85rem;
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--accent); text-decoration: underline; }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { color: var(--text-3); font-size: 0.8rem; }
+    .footer-bottom a { color: var(--gold); text-decoration: underline; }
+
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      border: none; cursor: pointer; z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; opacity: 0; pointer-events: none;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,140,255,0.3);
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(108,140,255,0.4); }
+
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hero-title { font-size: 3.6rem; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-title { font-size: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-menu {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; left: 1rem; right: 1rem;
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 0.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-menu.active { display: flex; }
+      .nav-menu a { padding: 0.65rem 1rem; }
+      .nav-cta { text-align: center; }
+
+      .hero-title { font-size: 2.4rem; }
+      .section-title { font-size: 2rem; }
+      .section-header { margin-bottom: 2.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      section { padding: 4rem 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.9rem; }
+      .btn { width: 100%; justify-content: center; }
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/" class="logo" aria-label="Nathaniel Kenny Olie — Home">
+        <img src="kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+        Nathaniel Kenny
+      </a>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="/about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/portfolio">Work</a></li>
+        <li><a href="/#lets-build">Get a Quote</a></li>
+        <li><a href="/#cv">CV</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <section class="hero" aria-labelledby="portfolio-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-badge reveal visible">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Full portfolio
+      </p>
+      <h1 class="hero-title reveal visible reveal-delay-1" id="portfolio-heading">
+        My <span class="gradient-text">Work</span>
+      </h1>
+      <p class="hero-sub reveal visible reveal-delay-2">
+        Every site below is hand-coded from scratch — no WordPress, no page builders.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects" aria-labelledby="portfolio-grid-heading">
+    <div class="container">
+      <div class="projects-grid">
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://talent-loop.org/" alt="Talent Loop" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Talent Loop</h3>
+            <p>Freelance web development agency connecting businesses with expert developers.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Agency</span>
+                <span class="ptag">Portfolio</span>
+              </div>
+              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://topviewhotels.pages.dev/" alt="Topview Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Topview Hotels</h3>
+            <p>Modern hotel website with room showcases, amenities, and online booking features.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://kayriott.pages.dev/" alt="Kayriott Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Kayriott Hotels</h3>
+            <p>Elegant hotel site showcasing rooms, dining, events, and local hospitality.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://catwrighthotels.pages.dev/" alt="Catwright Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Catwright Hotels</h3>
+            <p>Clean, modern hotel presence with amenities, gallery, and contact integration.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://beechnuthotels.pages.dev/" alt="Beechnut Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Beechnut Hotels</h3>
+            <p>Premium hotel website with full service listings, events, and guest information.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://beechnuthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://decoastalhotels.pages.dev/" alt="DeCoastal Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>DeCoastal Hotels</h3>
+            <p>Coastal hotel site with room listings, event spaces, and seamless contact flow.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+              </div>
+              <a href="https://decoastalhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://bedouinhotels.pages.dev/" alt="Bedouin Hotels" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Bedouin Hotels &amp; Suites</h3>
+            <p>Luxury hotel and suites website with room gallery and WhatsApp booking CTA.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Hotel</span>
+                <span class="ptag">Suites</span>
+              </div>
+              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://abariecomedy.pages.dev/" alt="Abarie Comedy" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Abarie Comedy</h3>
+            <p>Comedy show event site with tour dates, ticket info, and performer highlights.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Events</span>
+                <span class="ptag">Entertainment</span>
+              </div>
+              <a href="https://abariecomedy.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://okarobetty.pages.dev/" alt="Betty Oriflame" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>Betty Oriflame</h3>
+            <p>Oriflame beauty consultant personal brand site with product showcases and contact.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Personal Brand</span>
+                <span class="ptag">Beauty</span>
+              </div>
+              <a href="https://okarobetty.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-thumb">
+            <img src="https://image.thum.io/get/width/800/crop/600/https://godskingdomsociety.github.io/gksdemo/" alt="God's Kingdom Society" loading="lazy" width="800" height="600" />
+            <span class="speed-badge">⚡ 100</span>
+          </div>
+          <div class="project-body">
+            <h3>God's Kingdom Society</h3>
+            <p>Church site with sermon archive, YouTube embeds, branch locator, and donation page.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="ptag">Church</span>
+                <span class="ptag">Sermons</span>
+              </div>
+              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Back to home">
+            <img src="kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+            Nathaniel Kenny
+          </a>
+          <p class="footer-tagline">
+            Freelance web developer specialized in hand-coded HTML &amp; CSS. Building fast, hand-coded websites for hotels, churches, and businesses across Nigeria.
+          </p>
+          <div class="footer-social">
+            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+            <a href="mailto:nathanielkenny@talent-loop.org" aria-label="Email">📧</a>
+            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐</a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Navigation links">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="/about">About</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/portfolio">Work</a></li>
+            <li><a href="/#lets-build">Get a Quote</a></li>
+            <li><a href="/#cv">CV</a></li>
+            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h3>Services</h3>
+          <ul role="list">
+            <li><a href="/#services">Hotel Websites</a></li>
+            <li><a href="/#services">Church Websites</a></li>
+            <li><a href="/#services">Business Websites</a></li>
+            <li><a href="/#services">Website Rescue</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Contact links">
+          <h3>Contact</h3>
+          <ul role="list">
+            <li><a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:nathanielkenny@talent-loop.org">Email</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
+        <p>Built with <span aria-hidden="true">❤️</span> in Warri, Delta State, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isExpanded = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      navbar.classList.toggle('scrolled', currentScroll > 50);
+      lastScroll = currentScroll;
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
