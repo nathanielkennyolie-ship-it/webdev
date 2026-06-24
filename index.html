@@ -379,7 +379,8 @@
     .service-card:hover::before { opacity: 1; }
     .service-card.featured { border-color: rgba(212,168,84,0.3); }
 
-    .service-icon { font-size: 2rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .service-icon { width: 40px; height: 40px; margin-bottom: 1rem; position: relative; z-index: 1; color: var(--accent); }
+    .service-icon svg { width: 100%; height: 100%; }
     .service-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem; color: var(--text);
@@ -429,7 +430,8 @@
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 0.25rem;
     }
-    .project-thumb-icon { font-size: 2.8rem; }
+    .project-thumb-icon { width: 40px; height: 40px; color: var(--accent); opacity: 0.8; }
+    .project-thumb-icon svg { width: 100%; height: 100%; }
     .project-thumb-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem; color: #fff; font-weight: 700;
@@ -1038,25 +1040,43 @@
       </header>
       <div class="services-grid">
         <article class="service-card featured reveal reveal-delay-1">
-          <div class="service-icon" aria-hidden="true">🏨</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7" />
+            </svg>
+          </div>
           <h3>Hotel Websites</h3>
           <p>Room showcases, event pages, booking enquiry forms, and Maps integration — everything to turn online visitors into guests.</p>
           <span class="service-tag">⭐ Most Popular</span>
         </article>
         <article class="service-card reveal reveal-delay-2">
-          <div class="service-icon" aria-hidden="true">⛪</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 21h16M6 21V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14M9 21V14h6v7" />
+              <path d="M12 7v2M10 11h4" />
+            </svg>
+          </div>
           <h3>Church Websites</h3>
           <p>Sermon archives with YouTube embeds, branch locator, event calendar, and donation pages for congregations across Nigeria.</p>
           <span class="service-tag">Sermon Archive Included</span>
         </article>
         <article class="service-card reveal reveal-delay-3">
-          <div class="service-icon" aria-hidden="true">🏢</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </div>
           <h3>Business Websites</h3>
           <p>Professional online presence for shops, clinics, schools, and service businesses. Clean, fast, and built to convert.</p>
           <span class="service-tag">Fast Delivery</span>
         </article>
         <article class="service-card reveal reveal-delay-4">
-          <div class="service-icon" aria-hidden="true">🚑</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </div>
           <h3>Website Rescue</h3>
           <p>Broken site? Slow load times? Stuck on an error? I diagnose and fix it — or rebuild it properly for less than you'd expect.</p>
           <span class="service-tag">Quick Turnaround</span>
@@ -1111,7 +1131,7 @@
         <article class="project-card reveal reveal-delay-1">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7"/></svg></div>
               <div class="project-thumb-name">Rikon Hotels</div>
             </div>
             <span class="speed-badge">⚡ 96 Mobile</span>
@@ -1132,7 +1152,7 @@
         <article class="project-card reveal reveal-delay-2">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7"/></svg></div>
               <div class="project-thumb-name">Bedouin Hotels</div>
             </div>
             <span class="speed-badge">⚡ 99 Desktop</span>
@@ -1153,7 +1173,7 @@
         <article class="project-card reveal reveal-delay-3">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7"/></svg></div>
               <div class="project-thumb-name">Kayriots Hotel</div>
             </div>
             <span class="speed-badge">⚡ 99 Desktop</span>
@@ -1173,7 +1193,7 @@
         <article class="project-card reveal reveal-delay-1">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7"/></svg></div>
               <div class="project-thumb-name">Catwright Hotel</div>
             </div>
             <span class="speed-badge">⚡ 99 Desktop</span>
@@ -1193,7 +1213,7 @@
         <article class="project-card reveal reveal-delay-2">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">🏨</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10l9-7 9 7M5 10v11M19 10v11M9 21V14h6v7"/></svg></div>
               <div class="project-thumb-name">Tophill Hotel</div>
             </div>
             <span class="speed-badge">⚡ 99 Desktop</span>
@@ -1214,7 +1234,7 @@
         <article class="project-card reveal reveal-delay-3">
           <div class="project-thumb">
             <div class="project-thumb-overlay">
-              <div class="project-thumb-icon">⛪</div>
+              <div class="project-thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M6 21V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14M9 21V14h6v7"/><path d="M12 7v2M10 11h4"/></svg></div>
               <div class="project-thumb-name">GKS Demo</div>
             </div>
             <span class="speed-badge">⚡ 96 Mobile</span>
