@@ -765,6 +765,8 @@
     }
     .form-group textarea { resize: vertical; min-height: 110px; }
     .form-group option { background: var(--surface); color: var(--text); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-3); opacity: 1; }
 
     .wa-alternative {
       display: flex; align-items: center; gap: 0.75rem;
@@ -964,10 +966,10 @@
           <div class="about-img-wrap">
             <img
               src="kenny.webp"
-              alt="Nathaniel Kenny Olie ΓÇö Freelance Web Developer"
-              loading="lazy"
+              alt="Nathaniel Kenny Olie — Freelance Web Developer"
               width="800"
               height="460"
+              fetchpriority="high"
             />
             <div class="about-exp">
               <div class="num">10+</div>
@@ -1052,7 +1054,7 @@
         <a href="/services" class="btn btn-outline">View All Services →</a>
       </div>
       <div style="text-align:center;margin-top:3rem;" class="reveal reveal-delay-1">
-        <img src="pagespeed-credential.webp" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="700" height="auto" style="max-width:700px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);" />
+        <img src="pagespeed-credential.webp" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="700" height="389" style="max-width:700px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);" />
         <p style="color:var(--text-3);font-size:0.8rem;margin-top:0.75rem;">Verified by Google PageSpeed Insights — June 24, 2026</p>
       </div>
     </div>
@@ -1114,7 +1116,7 @@
                 <span class="ptag">Agency</span>
                 <span class="ptag">Portfolio</span>
               </div>
-              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Talent Loop live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1132,7 +1134,7 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">Suites</span>
               </div>
-              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Bedouin Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1149,7 +1151,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Kayriott Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1166,7 +1168,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Catwright Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1183,7 +1185,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Topview Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1201,7 +1203,7 @@
                 <span class="ptag">Church</span>
                 <span class="ptag">Sermons</span>
               </div>
-              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View GKS Demo live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
