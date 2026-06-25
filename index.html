@@ -18,6 +18,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" /></noscript>
+  <link rel="preload" as="image" href="pagespeed-credential.webp" imagesrcset="pagespeed-credential.webp 700w" imagesizes="100vw">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,6 +51,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      font-size-adjust: from-font;
     }
     ::selection { background: var(--accent); color: #fff; }
 
@@ -182,7 +184,8 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       position: relative; overflow: hidden;
-      contain: layout;
+      contain: layout style;
+      min-height: 92dvh;
     }
 
     .hero-bg {
@@ -209,7 +212,7 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--surface); border: 1px solid var(--border);
-      color: var(--text); font-size: 0.8rem; font-weight: 500;
+      color: #c5deff; font-size: 0.8rem; font-weight: 500;
       padding: 0.4rem 1rem; border-radius: 99px;
       margin-bottom: 2rem;
     }
@@ -299,7 +302,7 @@
       gap: 4rem; align-items: center;
     }
 
-    .about-visual { position: relative; contain: layout; }
+    .about-visual { position: relative; contain: layout; padding-bottom: 2rem; }
 
     .about-img-wrap {
       border-radius: var(--radius); overflow: hidden;
@@ -543,8 +546,11 @@
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; text-align: center; gap: 0.75rem;
     }
-    .testi-placeholder p { color: var(--text-2); font-size: 0.85rem; font-style: italic; }
+    .testi-placeholder p { color: #50596a; font-size: 0.85rem; font-style: italic; }
     .testi-placeholder strong { color: var(--accent); font-size: 0.95rem; }
+    .contact-box > p,
+    .contact-divider { color: #50596a; }
+    .hero-eyebrow { color: #c5deff; }
 
     /* === PRICING === */
     .pricing-grid {
@@ -953,7 +959,7 @@
         <a href="#work" class="btn btn-outline">View My Work ΓåÆ</a>
       </div>
     </div>
-    <a href="#about" class="hero-scroll" aria-label="Scroll down">
+    <a href="#about" class="hero-scroll">
       <span>Scroll</span>
       <span class="hero-scroll-arrow" aria-hidden="true"></span>
     </a>
@@ -967,6 +973,8 @@
           <div class="about-img-wrap">
             <img
               src="kenny.webp"
+              srcset="kenny.webp 800w"
+              sizes="(max-width: 768px) 100vw, 800px"
               alt="Nathaniel Kenny Olie — Freelance Web Developer"
               width="800"
               height="460"
@@ -1055,7 +1063,7 @@
         <a href="/services" class="btn btn-outline">View All Services →</a>
       </div>
       <div style="text-align:center;margin-top:3rem;" class="reveal reveal-delay-1">
-        <img src="pagespeed-credential.webp" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="700" height="389" style="max-width:700px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);" />
+        <img src="pagespeed-credential.webp" srcset="pagespeed-credential.webp 700w" sizes="100vw" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="700" height="389" style="max-width:700px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);" />
         <p style="color:var(--text-3);font-size:0.8rem;margin-top:0.75rem;">Verified by Google PageSpeed Insights — June 24, 2026</p>
       </div>
     </div>
@@ -1117,7 +1125,7 @@
                 <span class="ptag">Agency</span>
                 <span class="ptag">Portfolio</span>
               </div>
-              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Talent Loop live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1135,7 +1143,7 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">Suites</span>
               </div>
-              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Bedouin Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1152,7 +1160,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Kayriott Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1169,7 +1177,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Catwright Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1186,7 +1194,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Topview Hotels live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1204,7 +1212,7 @@
                 <span class="ptag">Church</span>
                 <span class="ptag">Sermons</span>
               </div>
-              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer">View Live ΓåÆ</a>
+              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View GKS Demo live site">View Live ΓåÆ</a>
             </div>
           </div>
         </article>
@@ -1333,7 +1341,7 @@
             </div>
           </div>
           <div class="cv-actions">
-            <a href="#" class="btn btn-gold" download aria-label="Download CV (PDF)">
+            <a href="#" class="btn btn-gold" download>
               ≡ƒôä Download CV (PDF)
             </a>
             <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20CV" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Discuss a Project</a>
@@ -1538,13 +1546,13 @@
     hamburger.addEventListener('click', () => {
       const isExpanded = navMenu.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isExpanded);
-    });
+    }, { passive: true });
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-      });
+      }, { passive: true });
     });
 
     document.addEventListener('keydown', (e) => {
@@ -1553,7 +1561,7 @@
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.focus();
       }
-    });
+    }, { passive: true });
 
     // === Smooth Scroll ===
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1590,7 +1598,7 @@
 
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    }, { passive: true });
 
     // === Scroll Reveal (Intersection Observer) ===
     const revealElements = document.querySelectorAll('.reveal');

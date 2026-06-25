@@ -18,6 +18,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" /></noscript>
+  <link rel="preload" as="image" href="pagespeed-credential.webp" imagesrcset="pagespeed-credential.webp 700w" imagesizes="100vw">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,6 +51,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      font-size-adjust: from-font;
     }
     ::selection { background: var(--accent); color: #fff; }
 
@@ -177,7 +179,8 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       position: relative; overflow: hidden;
-      contain: layout;
+      contain: layout style;
+      min-height: 92dvh;
       padding-top: 5rem;
     }
 
@@ -205,7 +208,7 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--surface); border: 1px solid var(--border);
-      color: var(--text); font-size: 0.8rem; font-weight: 500;
+      color: #c5deff; font-size: 0.8rem; font-weight: 500;
       padding: 0.4rem 1rem; border-radius: 99px;
       margin-bottom: 2rem;
     }
@@ -579,7 +582,7 @@
         <p class="section-sub">Every site I build is tested and verified by Google PageSpeed Insights.</p>
       </header>
       <div style="text-align:center;" class="reveal">
-        <img src="pagespeed-credential.webp" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="900" height="500" style="max-width:900px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow-lg);" />
+        <img src="pagespeed-credential.webp" srcset="pagespeed-credential.webp 900w" sizes="100vw" alt="Google PageSpeed Insights 100/100 score — Mobile and Desktop" loading="lazy" width="900" height="500" style="max-width:900px;width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow-lg);" />
         <p style="color:var(--text-3);font-size:0.85rem;margin-top:1rem;">Verified by Google PageSpeed Insights — June 24, 2026</p>
       </div>
     </div>
@@ -723,13 +726,13 @@
     hamburger.addEventListener('click', () => {
       const isExpanded = navMenu.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isExpanded);
-    });
+    }, { passive: true });
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-      });
+      }, { passive: true });
     });
 
     document.addEventListener('keydown', (e) => {
@@ -738,7 +741,7 @@
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.focus();
       }
-    });
+    }, { passive: true });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -786,7 +789,7 @@
 
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    }, { passive: true });
   </script>
 
 </body>

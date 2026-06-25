@@ -18,6 +18,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" /></noscript>
+  <link rel="preload" as="image" href="kenny.webp" imagesrcset="kenny.webp 800w" imagesizes="(max-width: 768px) 100vw, 800px">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,6 +51,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      font-size-adjust: from-font;
     }
     ::selection { background: var(--accent); color: #fff; }
 
@@ -177,7 +179,8 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       position: relative; overflow: hidden;
-      contain: layout;
+      contain: layout style;
+      min-height: 92dvh;
       padding-top: 5rem;
     }
 
@@ -205,7 +208,7 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--surface); border: 1px solid var(--border);
-      color: var(--text); font-size: 0.8rem; font-weight: 500;
+      color: #c5deff; font-size: 0.8rem; font-weight: 500;
       padding: 0.4rem 1rem; border-radius: 99px;
       margin-bottom: 2rem;
     }
@@ -492,7 +495,7 @@
                 <span class="ptag">Agency</span>
                 <span class="ptag">Portfolio</span>
               </div>
-              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://talent-loop.org/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Talent Loop live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -509,7 +512,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://topviewhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Topview Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -526,7 +529,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://kayriott.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Kayriott Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -543,7 +546,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://catwrighthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Catwright Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -560,7 +563,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://beechnuthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://beechnuthotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Beechnut Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -577,7 +580,7 @@
               <div class="project-tags">
                 <span class="ptag">Hotel</span>
               </div>
-              <a href="https://decoastalhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://decoastalhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View DeCoastal Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -595,7 +598,7 @@
                 <span class="ptag">Hotel</span>
                 <span class="ptag">Suites</span>
               </div>
-              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://bedouinhotels.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Bedouin Hotels live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -613,7 +616,7 @@
                 <span class="ptag">Events</span>
                 <span class="ptag">Entertainment</span>
               </div>
-              <a href="https://abariecomedy.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://abariecomedy.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Abarie Comedy live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -631,7 +634,7 @@
                 <span class="ptag">Personal Brand</span>
                 <span class="ptag">Beauty</span>
               </div>
-              <a href="https://okarobetty.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://okarobetty.pages.dev/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Betty Oriflame live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -649,7 +652,7 @@
                 <span class="ptag">Church</span>
                 <span class="ptag">Sermons</span>
               </div>
-              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer">View Live →</a>
+              <a href="https://godskingdomsociety.github.io/gksdemo/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View GKS Demo live site">View Live →</a>
             </div>
           </div>
         </article>
@@ -721,13 +724,13 @@
     hamburger.addEventListener('click', () => {
       const isExpanded = navMenu.classList.toggle('active');
       hamburger.setAttribute('aria-expanded', isExpanded);
-    });
+    }, { passive: true });
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-      });
+      }, { passive: true });
     });
 
     document.addEventListener('keydown', (e) => {
@@ -736,7 +739,7 @@
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.focus();
       }
-    });
+    }, { passive: true });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -784,7 +787,7 @@
 
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    }, { passive: true });
   </script>
 
 </body>
