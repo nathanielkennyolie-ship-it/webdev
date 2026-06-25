@@ -615,128 +615,6 @@
     .pricing-features li.na { color: var(--text-3); }
 
     /* === CTA / LET'S BUILD === */
-    .cta-section { background: var(--bg-alt); text-align: center; }
-    .cta-content { max-width: 700px; margin: 0 auto; }
-    .cta-text { color: var(--text-2); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
-    .cta-steps { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .cta-step { display: flex; align-items: center; gap: 0.75rem; font-size: 0.92rem; color: var(--text-2); }
-    .cta-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
-    .cta-tagline { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); margin: 2rem 0 1.5rem; }
-    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .cta-footer-text { font-size: 0.82rem; color: var(--text-3); margin-top: 1.25rem; }
-
-    /* === BLOG === */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .blog-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: all var(--transition);
-    }
-    .blog-card:hover { transform: translateY(-4px); border-color: rgba(108,140,255,0.15); }
-
-    .blog-thumb {
-      height: 180px; background: var(--surface-2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-    }
-    .blog-body { padding: 1.5rem; }
-    .blog-body .blog-date {
-      font-size: 0.72rem; color: var(--text-3);
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;
-    }
-    .blog-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem;
-    }
-    .blog-body p {
-      font-size: 0.85rem; color: var(--text-2); line-height: 1.6; margin-bottom: 1rem;
-    }
-    .blog-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
-
-    /* === CONTACT === */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 3.5rem; align-items: start;
-    }
-
-    .contact-info > p {
-      color: var(--text); line-height: 1.8;
-      margin-bottom: 2rem; font-size: 0.95rem;
-    }
-
-    .contact-items {
-      display: flex; flex-direction: column; gap: 1.25rem;
-    }
-    .contact-item {
-      display: flex; align-items: flex-start; gap: 1rem;
-    }
-    .contact-icon-wrap {
-      width: 42px; height: 42px; border-radius: var(--radius-sm);
-      background: var(--surface); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .contact-item-text h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.9rem; color: var(--text); margin-bottom: 0.1rem;
-    }
-    .contact-item-text p, .contact-item-text a {
-      font-size: 0.85rem; color: var(--text-2); line-height: 1.5;
-    }
-    .contact-item-text a { color: var(--accent); }
-
-    .contact-form-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2.5rem;
-    }
-    .contact-form-card h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; color: var(--text); margin-bottom: 0.5rem;
-    }
-    .contact-form-card > p {
-      font-size: 0.88rem; color: var(--text); margin-bottom: 2rem;
-    }
-
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label {
-      display: block; font-size: 0.82rem; font-weight: 600;
-      color: var(--text); margin-bottom: 0.35rem;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%; padding: 0.75rem 1rem;
-      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
-      font-family: 'Inter', sans-serif; font-size: 0.88rem;
-      color: var(--text); background: var(--bg);
-      transition: border-color var(--transition);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none; border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(108,140,255,0.08);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group option { background: var(--surface); color: var(--text); }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--text-3); opacity: 1; }
-
-    .wa-alternative {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 1rem; margin-top: 1.5rem;
-      background: rgba(37,211,102,0.06); border: 1.5px solid rgba(37,211,102,0.2);
-      border-radius: var(--radius-sm); text-decoration: none;
-      transition: background var(--transition);
-    }
-    .wa-alternative:hover { background: rgba(37,211,102,0.1); text-decoration: none; }
-    .wa-alternative span:last-child { font-size: 0.82rem; color: var(--text-2); }
-
     /* === FOOTER === */
     .footer {
       border-top: 1px solid var(--border);
@@ -812,7 +690,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img-wrap img { height: 340px; }
       .about-exp { right: -0.75rem; bottom: -1rem; padding: 1rem 1.25rem; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .process-step:not(:last-child)::after { display: none; }
       .hero-title { font-size: 3rem; }
     }
@@ -880,9 +757,9 @@
         <li><a href="/about">About</a></li>
         <li><a href="/services">Services</a></li>
             <li><a href="/portfolio">Work</a></li>
-        <li><a href="#lets-build">Get a Quote</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/get-a-quote">Get a Quote</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
         <li><a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
       </ul>
 
@@ -1229,169 +1106,6 @@
     </div>
   </section>
 
-  <!-- Let's Build -->
-  <section class="cta-section" id="lets-build" aria-labelledby="cta-heading">
-    <div class="container">
-      <div class="cta-content reveal">
-        <p class="section-label" style="color:var(--gold);">Get a Custom Quote</p>
-        <h2 class="section-title" id="cta-heading">Let's Build Something Great</h2>
-        <p class="cta-text">
-          Every project is unique &mdash; so instead of fixed packages, I work with you directly
-          to understand your goals and deliver exactly what your business needs.
-        </p>
-        <p class="cta-text">
-          Whether you need a brand new website, an SEO overhaul, or a full digital setup
-          from scratch, I'll send you a detailed quote within 24 hours.
-        </p>
-        <div class="cta-steps">
-          <div class="cta-step">
-            <span class="cta-step-num">1</span>
-            <span>Tell me about your project</span>
-          </div>
-          <div class="cta-step">
-            <span class="cta-step-num">2</span>
-            <span>I review your needs and goals</span>
-          </div>
-          <div class="cta-step">
-            <span class="cta-step-num">3</span>
-            <span>You receive a custom quote within 24 hours</span>
-          </div>
-          <div class="cta-step">
-            <span class="cta-step-num">4</span>
-            <span>We agree on timeline and get to work</span>
-          </div>
-        </div>
-        <p class="cta-tagline">Based in Nigeria. Available worldwide. Let's talk.</p>
-        <div class="cta-actions">
-          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I'd%20like%20to%20get%20a%20custom%20quote%20for%20my%20project" class="btn btn-wa" target="_blank" rel="noopener noreferrer">WhatsApp Me Now</a>
-          <a href="#contact" class="btn btn-outline">Send a Message</a>
-        </div>
-        <p class="cta-footer-text">No pressure. No long calls. Just a straightforward conversation about your project.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog -->
-  <section class="blog" id="blog" aria-labelledby="blog-heading">
-    <div class="container">
-      <header class="section-header centered reveal">
-        <p class="section-label">Blog</p>
-        <h2 class="section-title" id="blog-heading">Latest Thoughts</h2>
-        <p class="section-sub">Tips, insights, and behind-the-scenes from building websites for Nigerian businesses.</p>
-      </header>
-      <div class="blog-grid">
-        <article class="blog-card reveal reveal-delay-1">
-          <div class="blog-thumb" aria-hidden="true"><i class="fas fa-bolt"></i></div>
-          <div class="blog-body">
-            <p class="blog-date">June 15, 2026</p>
-            <h3>Why Your Hotel Website Needs to Load in Under 2 Seconds</h3>
-            <p>Most hotel guests in Nigeria browse on mobile with 3G. If your site takes longer than 2 seconds, you're losing bookings &mdash; here's how to fix it.</p>
-            <a href="#blog" class="blog-link">Read More &rarr;</a>
-          </div>
-        </article>
-        <article class="blog-card reveal reveal-delay-2">
-          <div class="blog-thumb" aria-hidden="true"><i class="fas fa-lock"></i></div>
-          <div class="blog-body">
-            <p class="blog-date">May 28, 2026</p>
-            <h3>WordPress vs Hand-Coded HTML: What Nigerian Business Owners Need to Know</h3>
-            <p>WordPress powers 40% of the web, but for a small business in Warri, a hand-coded site might be safer, faster, and cheaper in the long run.</p>
-            <a href="#blog" class="blog-link">Read More &rarr;</a>
-          </div>
-        </article>
-        <article class="blog-card reveal reveal-delay-3">
-          <div class="blog-thumb" aria-hidden="true"><i class="fas fa-mobile-alt"></i></div>
-          <div class="blog-body">
-            <p class="blog-date">May 10, 2026</p>
-            <h3>The State of Web Development in Delta State</h3>
-            <p>A look at how businesses in Warri, Ughelli, and Asaba approach their online presence &mdash; and where most of them are getting it wrong.</p>
-            <a href="#blog" class="blog-link">Read More &rarr;</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact" aria-labelledby="contact-heading">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <p class="section-label">Get In Touch</p>
-          <h2 class="section-title" id="contact-heading">Let's Build Something<br>Together</h2>
-          <p>WhatsApp is the fastest way to reach me. Send a message and I'll respond within the hour &mdash; no forms, no email chains, just a real conversation with a real developer.</p>
-          <ul class="contact-items" role="list">
-            <li class="contact-item">
-              <div class="contact-icon-wrap" aria-hidden="true"><i class="fas fa-comment"></i></div>
-              <div class="contact-item-text">
-                <h3>WhatsApp (Fastest)</h3>
-                <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer">+234 800 000 0000</a>
-              </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon-wrap" aria-hidden="true"><i class="fas fa-envelope"></i></div>
-              <div class="contact-item-text">
-                <h3>Email</h3>
-                <a href="mailto:nathanielkenny@talent-loop.org">nathanielkenny@talent-loop.org</a>
-              </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon-wrap" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
-              <div class="contact-item-text">
-                <h3>Location</h3>
-                <p>Warri, Delta State, Nigeria</p>
-              </div>
-            </li>
-            <li class="contact-item">
-              <div class="contact-icon-wrap" aria-hidden="true"><i class="fas fa-clock"></i></div>
-              <div class="contact-item-text">
-                <h3>Response Time</h3>
-                <p>Usually within 1 hour on WhatsApp</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="contact-form-card reveal reveal-delay-1">
-          <h2>Send a Message</h2>
-          <p>Fill out the form below and I'll get back to you within 24 hours.</p>
-          <form id="contactForm" novalidate onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your full name" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="projectType">Project Type</label>
-              <select id="projectType" name="projectType">
-                <option value="">Select one...</option>
-                <option value="hotel">Hotel Website</option>
-                <option value="church">Church Website</option>
-                <option value="business">Business Website</option>
-                <option value="rescue">Website Rescue</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-              Send Message
-            </button>
-            <p class="form-group hint" style="text-align:center;margin-top:0.75rem;font-size:0.75rem;color:var(--text-3);">I'll respond within 24 hours via email</p>
-          </form>
-          <a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio" class="wa-alternative" target="_blank" rel="noopener noreferrer">
-            <span style="font-size:1.5rem;" aria-hidden="true"><i class="fas fa-heart"></i></span>
-            <span>Prefer WhatsApp? Message me directly instead</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   </main>
 
   <!-- Footer -->
@@ -1418,9 +1132,9 @@
         <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
         <li><a href="/portfolio">Work</a></li>
-        <li><a href="#lets-build">Get a Quote</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <li><a href="/get-a-quote">Get a Quote</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
         <nav class="footer-col" aria-label="Services links">

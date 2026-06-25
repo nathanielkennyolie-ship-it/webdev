@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get a Quote &mdash; Nathaniel Kenny Olie</title>
-  <meta name="description" content="Tell me about your project and get a custom quote within 24 hours." />
+  <title>Blog &mdash; Nathaniel Kenny Olie</title>
+  <meta name="description" content="Tips, insights, and behind-the-scenes from building websites for Nigerian businesses." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://webdev.talent-loop.org/get-a-quote" />
+  <link rel="canonical" href="https://webdev.talent-loop.org/blog" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -80,9 +80,7 @@
       padding: 0.6rem 0;
     }
 
-    .nav-container {
-      display: flex; justify-content: space-between; align-items: center;
-    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
     .logo {
       display: flex; align-items: center; gap: 0.75rem;
@@ -127,24 +125,20 @@
       text-decoration: none;
     }
     .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-
-    .btn-primary {
-      background: var(--accent); color: #fff;
-    }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,140,255,0.3); color: #fff; text-decoration: none; }
-
     .btn-outline {
       background: transparent; color: var(--text);
       border: 1.5px solid var(--border);
     }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
-
-    .btn-wa {
-      background: #25D366; color: #fff;
-    }
+    .btn-wa { background: #25D366; color: #fff; }
     .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); color: #fff; text-decoration: none; }
 
+    .page-section { padding: 8rem 0 6rem; min-height: 100vh; }
+
     .section-header { margin-bottom: 3rem; max-width: 640px; }
+    .section-header.centered { text-align: center; margin-left: auto; margin-right: auto; }
 
     .section-label {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -167,73 +161,54 @@
       color: var(--text-2); font-size: 1.05rem;
       max-width: 560px; line-height: 1.8;
     }
+    .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
 
-    .quote-page { padding-top: 8rem; padding-bottom: 6rem; min-height: 100vh; }
-    .quote-layout {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 4rem; align-items: start;
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
 
-    .quote-info { position: sticky; top: 8rem; }
-    .quote-info p { color: var(--text-2); font-size: 0.95rem; line-height: 1.9; margin-bottom: 1.5rem; }
-    .quote-info ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .quote-info ul li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text-2); }
-    .quote-info ul li i { color: var(--green); font-size: 1rem; width: 1.2rem; text-align: center; }
-
-    .quote-card {
+    .blog-card {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2.5rem;
+      border-radius: var(--radius); overflow: hidden;
+      transition: all var(--transition);
     }
+    .blog-card:hover { transform: translateY(-4px); border-color: rgba(108,140,255,0.15); }
 
-    .quote-card h2 {
+    .blog-thumb {
+      height: 180px; background: var(--surface-2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .blog-body { padding: 1.5rem; }
+    .blog-body .blog-date {
+      font-size: 0.72rem; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;
+    }
+    .blog-body h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; color: var(--text); margin-bottom: 0.5rem;
+      font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem;
     }
-    .quote-card > p {
-      font-size: 0.88rem; color: var(--text-2); margin-bottom: 2rem;
+    .blog-body p {
+      font-size: 0.85rem; color: var(--text-2); line-height: 1.6; margin-bottom: 1rem;
     }
+    .blog-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
 
-    .form-group { margin-bottom: 1.25rem; }
-    .form-group label {
-      display: block; font-size: 0.82rem; font-weight: 600;
-      color: var(--text); margin-bottom: 0.35rem;
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      border: none; cursor: pointer; z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; opacity: 0; pointer-events: none;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,140,255,0.3);
     }
-    .form-group label .required { color: #ef4444; }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%; padding: 0.75rem 1rem;
-      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
-      font-family: 'Inter', sans-serif; font-size: 0.88rem;
-      color: var(--text); background: var(--bg);
-      transition: border-color var(--transition);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none; border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(108,140,255,0.08);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group option { background: var(--surface); color: var(--text); }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--text-3); opacity: 1; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(108,140,255,0.4); }
 
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    .form-divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 1.5rem 0;
-    }
-
-    .submit-error {
-      background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);
-      border-radius: var(--radius-sm); padding: 0.75rem 1rem;
-      font-size: 0.85rem; color: #f87171; margin-bottom: 1rem; display: none;
-    }
-    .submit-error.visible { display: block; }
-
-    /* === FOOTER === */
     .footer {
       border-top: 1px solid var(--border);
       padding: 4rem 0 2rem;
@@ -248,7 +223,6 @@
       color: var(--text-3); font-size: 0.85rem;
       line-height: 1.7; margin-top: 1rem; max-width: 280px;
     }
-
     .footer-social {
       display: flex; gap: 0.75rem; margin-top: 1.25rem;
     }
@@ -282,23 +256,7 @@
     }
     .footer-bottom p { color: var(--text-3); font-size: 0.8rem; }
 
-    .back-to-top {
-      position: fixed; bottom: 2rem; right: 2rem;
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--accent); color: #fff;
-      border: none; cursor: pointer; z-index: 999;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; opacity: 0; pointer-events: none;
-      transform: translateY(20px);
-      transition: all var(--transition);
-      box-shadow: 0 4px 20px rgba(108,140,255,0.3);
-    }
-    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(108,140,255,0.4); }
-
     @media (max-width: 1024px) {
-      .quote-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .quote-info { position: static; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
@@ -316,8 +274,6 @@
       .nav-cta { text-align: center; }
 
       .section-title { font-size: 2rem; }
-      .quote-card { padding: 1.5rem; }
-      .form-row { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
@@ -356,130 +312,41 @@
   </nav>
 
   <main id="main-content">
-    <section class="quote-page" aria-labelledby="quote-heading">
+    <section class="page-section" aria-labelledby="blog-heading">
       <div class="container">
-        <div class="quote-layout">
-          <div class="quote-info">
-            <p class="section-label">Get a Quote</p>
-            <h1 class="section-title" id="quote-heading">Tell Me About<br>Your Project</h1>
-            <p>Fill out the form and I'll send you a detailed custom quote within 24 hours. Every project is hand-coded from scratch &mdash; no page builders, no templates.</p>
-            <ul>
-              <li><i class="fas fa-check-circle"></i> Custom quote within 24 hours</li>
-              <li><i class="fas fa-check-circle"></i> No pressure, no obligation</li>
-              <li><i class="fas fa-check-circle"></i> Direct WhatsApp communication</li>
-              <li><i class="fas fa-check-circle"></i> Hand-coded HTML &amp; CSS</li>
-              <li><i class="fas fa-check-circle"></i> 100% PageSpeed guarantee</li>
-            </ul>
-          </div>
-
-          <div class="quote-card">
-            <h2>Project Details</h2>
-            <p>All fields marked with <span class="required" style="color:#ef4444;">*</span> are required.</p>
-
-            <div class="submit-error" id="submitError"></div>
-
-            <form id="quoteForm" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Your Name <span class="required">*</span></label>
-                  <input type="text" id="name" name="name" required placeholder="e.g. John Doe" />
-                </div>
-                <div class="form-group">
-                  <label for="business">Business / Organisation</label>
-                  <input type="text" id="business" name="business" placeholder="e.g. My Hotel Ltd" />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="phone">Phone / WhatsApp <span class="required">*</span></label>
-                  <input type="tel" id="phone" name="phone" required placeholder="e.g. 080 1234 5678" />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="you@example.com" />
-                </div>
-              </div>
-
-              <hr class="form-divider" />
-
-              <div class="form-group">
-                <label for="type">What type of website do you need? <span class="required">*</span></label>
-                <select id="type" name="type" required>
-                  <option value="">&mdash; Select one &mdash;</option>
-                  <option value="Hotel / Hospitality">Hotel / Hospitality</option>
-                  <option value="Church / Religious Organisation">Church / Religious Organisation</option>
-                  <option value="Business / Company">Business / Company</option>
-                  <option value="Personal Portfolio / Brand">Personal Portfolio / Brand</option>
-                  <option value="E-commerce / Online Store">E-commerce / Online Store</option>
-                  <option value="Website Rescue / Redesign">Website Rescue / Redesign</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="description">Tell me about your project <span class="required">*</span></label>
-                <textarea id="description" name="description" rows="4" required placeholder="Describe what you need — pages, features, content, design preferences, anything you have in mind..."></textarea>
-              </div>
-
-              <hr class="form-divider" />
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="timeline">Timeline / Deadline</label>
-                  <select id="timeline" name="timeline">
-                    <option value="Not sure">Not sure</option>
-                    <option value="ASAP (within 2 weeks)">ASAP (within 2 weeks)</option>
-                    <option value="Within 1 month">Within 1 month</option>
-                    <option value="Within 3 months">Within 3 months</option>
-                    <option value="No rush">No rush</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="budget">Budget Range</label>
-                  <select id="budget" name="budget">
-                    <option value="Not sure">Not sure</option>
-                    <option value="Less than ₦100,000">Less than ₦100,000</option>
-                    <option value="₦100,000 &mdash; ₦300,000">₦100,000 &mdash; ₦300,000</option>
-                    <option value="₦300,000 &mdash; ₦500,000">₦300,000 &mdash; ₦500,000</option>
-                    <option value="₦500,000+">₦500,000+</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="domain">Do you have a domain name?</label>
-                  <select id="domain" name="domain">
-                    <option value="Not sure">Not sure</option>
-                    <option value="Yes, I have one">Yes, I have one</option>
-                    <option value="No, I need one">No, I need one</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="content">Do you have content ready?</label>
-                  <select id="content" name="content">
-                    <option value="Not sure">Not sure</option>
-                    <option value="Yes, text and images ready">Yes, text and images ready</option>
-                    <option value="Some of it">Some of it</option>
-                    <option value="No, I need help with content">No, I need help with content</option>
-                  </select>
-                </div>
-              </div>
-
-              <hr class="form-divider" />
-
-              <div class="form-group">
-                <label for="extra">Anything else you'd like me to know?</label>
-                <textarea id="extra" name="extra" rows="3" placeholder="Any specific features, integrations, or questions..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;">
-                <i class="fab fa-whatsapp"></i> Send via WhatsApp
-              </button>
-              <p style="text-align:center;margin-top:0.75rem;font-size:0.75rem;color:var(--text-3);">You'll be redirected to WhatsApp to send the message. No data is stored on any server.</p>
-            </form>
-          </div>
+        <header class="section-header centered">
+          <p class="section-label">Blog</p>
+          <h1 class="section-title" id="blog-heading">Latest Thoughts</h1>
+          <p class="section-sub">Tips, insights, and behind-the-scenes from building websites for Nigerian businesses.</p>
+        </header>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-thumb" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+            <div class="blog-body">
+              <p class="blog-date">June 15, 2026</p>
+              <h3>Why Your Hotel Website Needs to Load in Under 2 Seconds</h3>
+              <p>Most hotel guests in Nigeria browse on mobile with 3G. If your site takes longer than 2 seconds, you're losing bookings &mdash; here's how to fix it.</p>
+              <a href="#blog" class="blog-link">Read More &rarr;</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-thumb" aria-hidden="true"><i class="fas fa-lock"></i></div>
+            <div class="blog-body">
+              <p class="blog-date">May 28, 2026</p>
+              <h3>WordPress vs Hand-Coded HTML: What Nigerian Business Owners Need to Know</h3>
+              <p>WordPress powers 40% of the web, but for a small business in Warri, a hand-coded site might be safer, faster, and cheaper in the long run.</p>
+              <a href="#blog" class="blog-link">Read More &rarr;</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-thumb" aria-hidden="true"><i class="fas fa-mobile-alt"></i></div>
+            <div class="blog-body">
+              <p class="blog-date">May 10, 2026</p>
+              <h3>The State of Web Development in Delta State</h3>
+              <p>A look at how businesses in Warri, Ughelli, and Asaba approach their online presence &mdash; and where most of them are getting it wrong.</p>
+              <a href="#blog" class="blog-link">Read More &rarr;</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -562,7 +429,6 @@
       }
     }, { passive: true });
 
-    // Navbar scroll
     const navbar = document.getElementById('navbar');
     let ticking = false;
     const onScroll = () => {
@@ -577,7 +443,6 @@
     document.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Back to top
     const backToTop = document.getElementById('backToTop');
     const handleScroll = () => {
       backToTop.classList.toggle('visible', window.scrollY > 400);
@@ -586,58 +451,6 @@
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, { passive: true });
-
-    // Form submission
-    const quoteForm = document.getElementById('quoteForm');
-    const submitError = document.getElementById('submitError');
-
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      submitError.classList.remove('visible');
-
-      const name = document.getElementById('name').value.trim();
-      const business = document.getElementById('business').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const type = document.getElementById('type').value;
-      const description = document.getElementById('description').value.trim();
-      const timeline = document.getElementById('timeline').value;
-      const budget = document.getElementById('budget').value;
-      const domain = document.getElementById('domain').value;
-      const content = document.getElementById('content').value;
-      const extra = document.getElementById('extra').value.trim();
-
-      if (!name || !phone || !type || !description) {
-        submitError.textContent = 'Please fill in all required fields.';
-        submitError.classList.add('visible');
-        return;
-      }
-
-      const msg = [
-        '*New Project Quote Request*',
-        '',
-        '*Contact Info*',
-        'Name: ' + name,
-        business ? 'Business: ' + business : 'Business: N/A',
-        'Phone: ' + phone,
-        email ? 'Email: ' + email : 'Email: N/A',
-        '',
-        '*Project Details*',
-        'Type: ' + type,
-        'Description: ' + description,
-        '',
-        '*Timeline & Budget*',
-        'Timeline: ' + timeline,
-        'Budget: ' + budget,
-        '',
-        '*Readiness*',
-        'Domain: ' + domain,
-        'Content: ' + content,
-        extra ? 'Extra Notes: ' + extra : ''
-      ].filter(Boolean).join('%0A');
-
-      window.open('https://wa.me/2349076042573?text=' + msg, '_blank');
-    });
   </script>
 </body>
 </html>
