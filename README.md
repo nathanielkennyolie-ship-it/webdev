@@ -1,6 +1,6 @@
 # Nathaniel Kenny Olie — Freelance Web Developer Portfolio
 
-Personal portfolio site for Nathaniel Kenny Olie, a freelance web developer based in Warri, Delta State, Nigeria.
+Personal portfolio site for Nathaniel Kenny Olie, a freelance web developer who builds fast, hand-coded websites for clients worldwide.
 
 ## Sections
 
