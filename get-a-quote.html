@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote &mdash; Nathaniel Kenny Olie</title>
+  <meta name="description" content="Tell me about your project and get a custom quote within 24 hours." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://webdev.talent-loop.org/get-a-quote" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0f1a;
+      --bg-alt:    #111624;
+      --surface:   #1a2035;
+      --surface-2: #222a42;
+      --border:    #2a3450;
+      --text:      #e4e8f0;
+      --text-2:    #b0b8d0;
+      --text-3:    #a0aac0;
+      --accent:    #6c8cff;
+      --accent-2:  #5b7ae0;
+      --gold:      #d4a854;
+      --gold-dim:  #a88438;
+      --green:     #34d399;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow:    0 4px 30px rgba(0,0,0,0.3);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+
+    a { color: var(--accent); text-decoration: underline; transition: color var(--transition); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    .skip-link {
+      position: absolute; top: -100px; left: 1rem;
+      background: var(--surface); color: var(--text);
+      padding: 0.6rem 1.2rem; border-radius: var(--radius-sm);
+      font-weight: 600; font-size: 0.9rem; z-index: 9999;
+      transition: top 0.2s; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1rem 0;
+      transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(11,15,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.6rem 0;
+    }
+
+    .nav-container {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+    }
+    .logo:hover { color: var(--accent); text-decoration: none; }
+
+    .nav-menu {
+      list-style: none; display: flex; align-items: center; gap: 0.25rem;
+    }
+    .nav-menu a {
+      color: var(--text-2); font-weight: 500; font-size: 0.88rem;
+      text-decoration: none; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-menu a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+    .nav-cta {
+      background: var(--accent); color: #fff !important; font-weight: 600 !important;
+      padding: 0.5rem 1.25rem !important; border-radius: var(--radius-sm) !important;
+    }
+    .nav-cta:hover { background: var(--accent-2) !important; color: #fff !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: transparent; border: 1.5px solid var(--border);
+      padding: 7px 9px; border-radius: var(--radius-sm);
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 600;
+      border: none; cursor: pointer; transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    .btn-primary {
+      background: var(--accent); color: #fff;
+    }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,140,255,0.3); color: #fff; text-decoration: none; }
+
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+
+    .btn-wa {
+      background: #25D366; color: #fff;
+    }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); color: #fff; text-decoration: none; }
+
+    .section-header { margin-bottom: 3rem; max-width: 640px; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1.5px; background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 700;
+      line-height: 1.2; margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      color: var(--text-2); font-size: 1.05rem;
+      max-width: 560px; line-height: 1.8;
+    }
+
+    .quote-page { padding-top: 8rem; padding-bottom: 6rem; min-height: 100vh; }
+    .quote-layout {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 4rem; align-items: start;
+    }
+
+    .quote-info { position: sticky; top: 8rem; }
+    .quote-info p { color: var(--text-2); font-size: 0.95rem; line-height: 1.9; margin-bottom: 1.5rem; }
+    .quote-info ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .quote-info ul li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text-2); }
+    .quote-info ul li i { color: var(--green); font-size: 1rem; width: 1.2rem; text-align: center; }
+
+    .quote-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2.5rem;
+    }
+
+    .quote-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .quote-card > p {
+      font-size: 0.88rem; color: var(--text-2); margin-bottom: 2rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: var(--text); margin-bottom: 0.35rem;
+    }
+    .form-group label .required { color: #ef4444; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      color: var(--text); background: var(--bg);
+      transition: border-color var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(108,140,255,0.08);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group option { background: var(--surface); color: var(--text); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-3); opacity: 1; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .submit-error {
+      background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);
+      border-radius: var(--radius-sm); padding: 0.75rem 1rem;
+      font-size: 0.85rem; color: #f87171; margin-bottom: 1rem; display: none;
+    }
+    .submit-error.visible { display: block; }
+
+    /* === FOOTER === */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { font-size: 1.1rem; }
+    .footer-tagline {
+      color: var(--text-3); font-size: 0.85rem;
+      line-height: 1.7; margin-top: 1rem; max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex; gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; text-decoration: none;
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--accent); background: rgba(108,140,255,0.06); }
+
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem; color: var(--text); margin-bottom: 1.25rem;
+    }
+    .footer-col ul {
+      list-style: none; display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .footer-col ul a {
+      color: var(--text-3); font-size: 0.85rem;
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--accent); text-decoration: underline; }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { color: var(--text-3); font-size: 0.8rem; }
+
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      border: none; cursor: pointer; z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; opacity: 0; pointer-events: none;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,140,255,0.3);
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(108,140,255,0.4); }
+
+    @media (max-width: 1024px) {
+      .quote-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .quote-info { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-menu {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; left: 1rem; right: 1rem;
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 0.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-menu.active { display: flex; }
+      .nav-menu a { padding: 0.65rem 1rem; }
+      .nav-cta { text-align: center; }
+
+      .section-title { font-size: 2rem; }
+      .quote-card { padding: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/" class="logo" aria-label="Nathaniel Kenny Olie &mdash; Home">
+        <img src="kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+        Nathaniel Kenny
+      </a>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/portfolio">Work</a></li>
+        <li><a href="/get-a-quote">Get a Quote</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="quote-page" aria-labelledby="quote-heading">
+      <div class="container">
+        <div class="quote-layout">
+          <div class="quote-info">
+            <p class="section-label">Get a Quote</p>
+            <h1 class="section-title" id="quote-heading">Tell Me About<br>Your Project</h1>
+            <p>Fill out the form and I'll send you a detailed custom quote within 24 hours. Every project is hand-coded from scratch &mdash; no page builders, no templates.</p>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Custom quote within 24 hours</li>
+              <li><i class="fas fa-check-circle"></i> No pressure, no obligation</li>
+              <li><i class="fas fa-check-circle"></i> Direct WhatsApp communication</li>
+              <li><i class="fas fa-check-circle"></i> Hand-coded HTML &amp; CSS</li>
+              <li><i class="fas fa-check-circle"></i> 100% PageSpeed guarantee</li>
+            </ul>
+          </div>
+
+          <div class="quote-card">
+            <h2>Project Details</h2>
+            <p>All fields marked with <span class="required" style="color:#ef4444;">*</span> are required.</p>
+
+            <div class="submit-error" id="submitError"></div>
+
+            <form id="quoteForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" required placeholder="e.g. John Doe" />
+                </div>
+                <div class="form-group">
+                  <label for="business">Business / Organisation</label>
+                  <input type="text" id="business" name="business" placeholder="e.g. My Hotel Ltd" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone / WhatsApp <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" required placeholder="e.g. 080 1234 5678" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" />
+                </div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <div class="form-group">
+                <label for="type">What type of website do you need? <span class="required">*</span></label>
+                <select id="type" name="type" required>
+                  <option value="">&mdash; Select one &mdash;</option>
+                  <option value="Hotel / Hospitality">Hotel / Hospitality</option>
+                  <option value="Church / Religious Organisation">Church / Religious Organisation</option>
+                  <option value="Business / Company">Business / Company</option>
+                  <option value="Personal Portfolio / Brand">Personal Portfolio / Brand</option>
+                  <option value="E-commerce / Online Store">E-commerce / Online Store</option>
+                  <option value="Website Rescue / Redesign">Website Rescue / Redesign</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Tell me about your project <span class="required">*</span></label>
+                <textarea id="description" name="description" rows="4" required placeholder="Describe what you need — pages, features, content, design preferences, anything you have in mind..."></textarea>
+              </div>
+
+              <hr class="form-divider" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="timeline">Timeline / Deadline</label>
+                  <select id="timeline" name="timeline">
+                    <option value="Not sure">Not sure</option>
+                    <option value="ASAP (within 2 weeks)">ASAP (within 2 weeks)</option>
+                    <option value="Within 1 month">Within 1 month</option>
+                    <option value="Within 3 months">Within 3 months</option>
+                    <option value="No rush">No rush</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget Range</label>
+                  <select id="budget" name="budget">
+                    <option value="Not sure">Not sure</option>
+                    <option value="Less than ₦100,000">Less than ₦100,000</option>
+                    <option value="₦100,000 &mdash; ₦300,000">₦100,000 &mdash; ₦300,000</option>
+                    <option value="₦300,000 &mdash; ₦500,000">₦300,000 &mdash; ₦500,000</option>
+                    <option value="₦500,000+">₦500,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="domain">Do you have a domain name?</label>
+                  <select id="domain" name="domain">
+                    <option value="Not sure">Not sure</option>
+                    <option value="Yes, I have one">Yes, I have one</option>
+                    <option value="No, I need one">No, I need one</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="content">Do you have content ready?</label>
+                  <select id="content" name="content">
+                    <option value="Not sure">Not sure</option>
+                    <option value="Yes, text and images ready">Yes, text and images ready</option>
+                    <option value="Some of it">Some of it</option>
+                    <option value="No, I need help with content">No, I need help with content</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr class="form-divider" />
+
+              <div class="form-group">
+                <label for="extra">Anything else you'd like me to know?</label>
+                <textarea id="extra" name="extra" rows="3" placeholder="Any specific features, integrations, or questions..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;">
+                <i class="fab fa-whatsapp"></i> Send via WhatsApp
+              </button>
+              <p style="text-align:center;margin-top:0.75rem;font-size:0.75rem;color:var(--text-3);">You'll be redirected to WhatsApp to send the message. No data is stored on any server.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Back to home">
+            <img src="kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+            Nathaniel Kenny
+          </a>
+          <p class="footer-tagline">
+            Freelance web developer specialized in hand-coded HTML &amp; CSS. Building fast, hand-coded websites for hotels, churches, and businesses across Nigeria.
+          </p>
+          <div class="footer-social">
+            <a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:nathanielkenny@talent-loop.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Navigation links">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/portfolio">Work</a></li>
+            <li><a href="/get-a-quote">Get a Quote</a></li>
+            <li><a href="/#blog">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h3>Services</h3>
+          <ul role="list">
+            <li><a href="/#services">Hotel Websites</a></li>
+            <li><a href="/#services">Church Websites</a></li>
+            <li><a href="/#services">Business Websites</a></li>
+            <li><a href="/#services">Website Rescue</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Contact links">
+          <h3>Contact</h3>
+          <ul role="list">
+            <li><a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:nathanielkenny@talent-loop.org">Email</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
+        <p>Built with <span aria-hidden="true"><i class="fas fa-heart"></i></span> in Warri, Delta State, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isExpanded = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    }, { passive: true });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }, { passive: true });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    }, { passive: true });
+
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    const handleScroll = () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    };
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, { passive: true });
+
+    // Form submission
+    const quoteForm = document.getElementById('quoteForm');
+    const submitError = document.getElementById('submitError');
+
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitError.classList.remove('visible');
+
+      const name = document.getElementById('name').value.trim();
+      const business = document.getElementById('business').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const type = document.getElementById('type').value;
+      const description = document.getElementById('description').value.trim();
+      const timeline = document.getElementById('timeline').value;
+      const budget = document.getElementById('budget').value;
+      const domain = document.getElementById('domain').value;
+      const content = document.getElementById('content').value;
+      const extra = document.getElementById('extra').value.trim();
+
+      if (!name || !phone || !type || !description) {
+        submitError.textContent = 'Please fill in all required fields.';
+        submitError.classList.add('visible');
+        return;
+      }
+
+      const msg = [
+        '*New Project Quote Request*',
+        '',
+        '*Contact Info*',
+        'Name: ' + name,
+        business ? 'Business: ' + business : 'Business: N/A',
+        'Phone: ' + phone,
+        email ? 'Email: ' + email : 'Email: N/A',
+        '',
+        '*Project Details*',
+        'Type: ' + type,
+        'Description: ' + description,
+        '',
+        '*Timeline & Budget*',
+        'Timeline: ' + timeline,
+        'Budget: ' + budget,
+        '',
+        '*Readiness*',
+        'Domain: ' + domain,
+        'Content: ' + content,
+        extra ? 'Extra Notes: ' + extra : ''
+      ].filter(Boolean).join('%0A');
+
+      window.open('https://wa.me/2349076042573?text=' + msg, '_blank');
+    });
+  </script>
+</body>
+</html>
