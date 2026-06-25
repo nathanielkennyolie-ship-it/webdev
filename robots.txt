@@ -1,4 +1,12 @@
-User-agent: *
+User-agent: GPTBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
 Sitemap: https://webdev.talent-loop.org/sitemap.xml
