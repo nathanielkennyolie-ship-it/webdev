@@ -604,57 +604,6 @@
     .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .cta-footer-text { font-size: 0.82rem; color: var(--text-3); margin-top: 1.25rem; }
 
-    .cv-section { background: var(--bg-alt); }
-
-    .cv-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: center;
-    }
-
-    .cv-content .section-title { margin-bottom: 1rem; }
-    .cv-content > p {
-      color: var(--text-2); line-height: 1.8;
-      margin-bottom: 1.5rem; font-size: 0.95rem;
-    }
-
-    .cv-highlights {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0.75rem; margin-bottom: 2rem;
-    }
-    .cv-highlight {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); padding: 1rem 1.25rem;
-    }
-    .cv-highlight .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-    .cv-highlight .lbl {
-      font-size: 0.75rem; color: var(--text-3); margin-top: 0.15rem;
-    }
-
-    .cv-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .cv-visual { display: flex; justify-content: center; align-items: center; }
-
-    .cv-doc-icon {
-      width: 200px; height: 260px;
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 1rem; padding: 2rem;
-    }
-    .cv-doc-icon svg { width: 56px; height: 56px; }
-    .cv-doc-icon span {
-      font-size: 0.8rem; color: var(--text-3);
-      font-weight: 500; text-align: center; line-height: 1.5;
-    }
-
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -835,8 +784,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img-wrap img { height: 340px; }
       .about-exp { right: -0.75rem; bottom: -1rem; padding: 1rem 1.25rem; }
-      .cv-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .cv-visual { display: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .process-step:not(:last-child)::after { display: none; }
       .hero-title { font-size: 3rem; }
@@ -860,7 +807,6 @@
       .section-title { font-size: 2rem; }
       .section-header { margin-bottom: 2.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .cv-highlights { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -905,7 +851,6 @@
         <li><a href="/services">Services</a></li>
         <li><a href="/portfolio">Work</a></li>
         <li><a href="/#lets-build">Get a Quote</a></li>
-        <li><a href="/#cv">CV</a></li>
         <li><a href="/#blog">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
         <li><a href="https://wa.me/2348000000000?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
@@ -1034,7 +979,6 @@
             <li><a href="/services">Services</a></li>
             <li><a href="/portfolio">Work</a></li>
             <li><a href="/#lets-build">Get a Quote</a></li>
-            <li><a href="/#cv">CV</a></li>
             <li><a href="/#blog">Blog</a></li>
             <li><a href="/#contact">Contact</a></li>
           </ul>
