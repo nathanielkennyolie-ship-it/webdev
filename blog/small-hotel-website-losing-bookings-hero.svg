@@ -1,151 +1,96 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0b1a33;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a3a5c;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a33"/>
+      <stop offset="100%" stop-color="#1a3a5c"/>
     </linearGradient>
     <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ef4444" />
-      <stop offset="100%" style="stop-color:#dc2626" />
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
     </linearGradient>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#D4AF37" />
-      <stop offset="100%" style="stop-color:#f0d060" />
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#f0d060"/>
     </linearGradient>
     <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981" />
-      <stop offset="100%" style="stop-color:#059669" />
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
-    <linearGradient id="phoneScreen1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e1b2e" />
-      <stop offset="100%" style="stop-color:#0f0d1a" />
-    </linearGradient>
-    <linearGradient id="phoneScreen2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d2a1e" />
-      <stop offset="100%" style="stop-color:#06140e" />
-    </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/>
-    </filter>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-
-  <!-- Background -->
-  <rect width="860" height="440" fill="url(#bg)" />
-
-  <!-- Subtle grid pattern -->
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-  </pattern>
-  <rect width="860" height="440" fill="url(#grid)" />
+  <rect width="860" height="440" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="860" height="440" fill="none" stroke="#1a3a5c" stroke-width="1"/>
 
   <!-- Decorative circles -->
-  <circle cx="120" cy="120" r="80" fill="rgba(239,68,68,0.04)" />
-  <circle cx="740" cy="350" r="90" fill="rgba(16,185,129,0.04)" />
-  <circle cx="430" cy="80" r="60" fill="rgba(212,175,55,0.03)" />
+  <circle cx="120" cy="120" r="80" fill="#ef4444" fill-opacity="0.04"/>
+  <circle cx="740" cy="350" r="90" fill="#10b981" fill-opacity="0.04"/>
+  <circle cx="430" cy="80" r="60" fill="#D4AF37" fill-opacity="0.03"/>
 
-  <!-- ===== CENTRAL DIVIDER ===== -->
-  <line x1="430" y1="80" x2="430" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4,6" />
+  <!-- Central divider -->
+  <line x1="430" y1="80" x2="430" y2="360" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" stroke-dasharray="4 6"/>
 
-  <!-- ===== LEFT SIDE: LOSING (RED TONES) ===== -->
+  <!-- === LEFT PHONE === -->
+  <rect x="100" y="100" width="130" height="240" rx="18" fill="#1e2a3e" stroke="#ef4444" stroke-opacity="0.15" stroke-width="1.5"/>
+  <rect x="150" y="106" width="30" height="5" rx="3" fill="#0f1a2e"/>
+  <rect x="106" y="118" width="118" height="204" rx="10" fill="#1e1b2e"/>
+  <rect x="116" y="128" width="60" height="6" rx="2" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="116" y="142" width="98" height="60" rx="4" fill="#ef4444" fill-opacity="0.08"/>
+  <rect x="116" y="212" width="80" height="5" rx="2" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="116" y="222" width="60" height="5" rx="2" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="116" y="232" width="70" height="5" rx="2" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="116" y="250" width="98" height="28" rx="5" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="165" y="268" font-family="Arial" font-size="8" fill="#ef4444" text-anchor="middle" font-weight="bold">BOOKING OFFLINE</text>
+  <rect x="116" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="140" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="164" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="188" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
 
-  <!-- Phone mockup -- slow -->
-  <g filter="url(#shadow)" transform="translate(100, 100)">
-    <!-- Phone body -->
-    <rect x="0" y="0" width="130" height="240" rx="18" fill="#1e2a3e" stroke="rgba(239,68,68,0.15)" stroke-width="1.5" />
-    <!-- Notch -->
-    <rect x="50" y="6" width="30" height="5" rx="3" fill="#0f1a2e" />
-    <!-- Screen -->
-    <rect x="6" y="18" width="118" height="204" rx="10" fill="url(#phoneScreen1)" />
-    <!-- Hotel name on screen -->
-    <rect x="16" y="28" width="60" height="6" rx="2" fill="rgba(255,255,255,0.08)" />
-    <!-- Hero image placeholder -->
-    <rect x="16" y="42" width="98" height="60" rx="4" fill="rgba(239,68,68,0.08)" />
-    <!-- Loading spinner -->
-    <circle cx="65" cy="72" r="8" fill="none" stroke="rgba(239,68,68,0.5)" stroke-width="2" stroke-dasharray="12,8" />
-    <!-- Text lines -->
-    <rect x="16" y="112" width="80" height="5" rx="2" fill="rgba(255,255,255,0.06)" />
-    <rect x="16" y="122" width="60" height="5" rx="2" fill="rgba(255,255,255,0.04)" />
-    <rect x="16" y="132" width="70" height="5" rx="2" fill="rgba(255,255,255,0.04)" />
-    <!-- Booking button -->
-    <rect x="16" y="150" width="98" height="28" rx="5" fill="rgba(239,68,68,0.2)" stroke="rgba(239,68,68,0.3)" stroke-width="1" />
-    <text x="65" y="168" font-family="Arial, sans-serif" font-size="8" fill="#ef4444" text-anchor="middle" font-weight="bold">BOOKING OFFLINE</text>
-    <!-- Bottom nav -->
-    <rect x="16" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="40" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="64" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="88" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-  </g>
-
-  <!-- Roadblock icon -->
-  <g transform="translate(270, 190)">
-    <circle cx="20" cy="20" r="18" fill="rgba(239,68,68,0.12)" />
-    <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" fill="#ef4444" text-anchor="middle">⚠</text>
-  </g>
+  <!-- Warning triangle -->
+  <circle cx="270" cy="210" r="18" fill="#ef4444" fill-opacity="0.12"/>
+  <polygon points="270,198 258,222 282,222" fill="#ef4444" fill-opacity="0.6"/>
+  <rect x="269" y="208" width="2" height="6" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="269" y="216" width="2" height="2" fill="#ffffff" fill-opacity="0.9"/>
 
   <!-- Labels left -->
-  <text x="165" y="370" font-family="Arial, sans-serif" font-size="11" fill="rgba(239,68,68,0.7)" text-anchor="middle" font-weight="bold" letter-spacing="1">SLOW · BROKEN · NO TRUST</text>
-  <text x="165" y="390" font-family="Arial, sans-serif" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="bold">53% LEAVE</text>
-  <text x="165" y="408" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" text-anchor="middle">BOUNCE WITHIN 3 SECONDS</text>
+  <text x="165" y="370" font-family="Arial" font-size="11" fill="#ef4444" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">SLOW &middot; BROKEN &middot; NO TRUST</text>
+  <text x="165" y="390" font-family="Arial" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="bold">53% LEAVE</text>
+  <text x="165" y="408" font-family="Arial" font-size="10" fill="#ffffff" fill-opacity="0.3" text-anchor="middle">BOUNCE WITHIN 3 SECONDS</text>
 
-  <!-- ===== RIGHT SIDE: WINNING (GREEN/GOLD TONES) ===== -->
+  <!-- === RIGHT PHONE === -->
+  <rect x="630" y="100" width="130" height="240" rx="18" fill="#1e2a3e" stroke="#10b981" stroke-opacity="0.15" stroke-width="1.5"/>
+  <rect x="680" y="106" width="30" height="5" rx="3" fill="#0f1a2e"/>
+  <rect x="636" y="118" width="118" height="204" rx="10" fill="#0d2a1e"/>
+  <rect x="646" y="128" width="60" height="6" rx="2" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="646" y="142" width="98" height="60" rx="4" fill="#10b981" fill-opacity="0.08"/>
+  <rect x="646" y="212" width="80" height="5" rx="2" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="646" y="222" width="60" height="5" rx="2" fill="#ffffff" fill-opacity="0.04"/>
+  <text x="646" y="236" font-family="Arial" font-size="7" fill="#10b981" fill-opacity="0.5">&#9733; 4.8 &middot; 127 reviews</text>
+  <rect x="646" y="250" width="98" height="28" rx="5" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="695" y="268" font-family="Arial" font-size="8" fill="#34d399" text-anchor="middle" font-weight="bold">&#10003; BOOK NOW</text>
+  <rect x="646" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="670" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="694" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
+  <rect x="718" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
 
-  <!-- Phone mockup -- fast -->
-  <g filter="url(#shadow)" transform="translate(630, 100)">
-    <!-- Phone body -->
-    <rect x="0" y="0" width="130" height="240" rx="18" fill="#1e2a3e" stroke="rgba(16,185,129,0.15)" stroke-width="1.5" />
-    <!-- Notch -->
-    <rect x="50" y="6" width="30" height="5" rx="3" fill="#0f1a2e" />
-    <!-- Screen -->
-    <rect x="6" y="18" width="118" height="204" rx="10" fill="url(#phoneScreen2)" />
-    <!-- Hotel name -->
-    <rect x="16" y="28" width="60" height="6" rx="2" fill="rgba(255,255,255,0.08)" />
-    <!-- Room photo -->
-    <rect x="16" y="42" width="98" height="60" rx="4" fill="rgba(16,185,129,0.08)" />
-    <text x="65" y="78" font-family="Arial, sans-serif" font-size="22" fill="rgba(16,185,129,0.3)" text-anchor="middle">🏖</text>
-    <!-- Room details -->
-    <rect x="16" y="112" width="80" height="5" rx="2" fill="rgba(255,255,255,0.06)" />
-    <rect x="16" y="122" width="60" height="5" rx="2" fill="rgba(255,255,255,0.04)" />
-    <text x="16" y="136" font-family="Arial, sans-serif" font-size="7" fill="rgba(16,185,129,0.5)">★ 4.8 · 127 reviews</text>
-    <!-- Booking button -->
-    <rect x="16" y="150" width="98" height="28" rx="5" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.3)" stroke-width="1" />
-    <text x="65" y="168" font-family="Arial, sans-serif" font-size="8" fill="#34d399" text-anchor="middle" font-weight="bold">✓ BOOK NOW</text>
-    <!-- Bottom nav -->
-    <rect x="16" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="40" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="64" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-    <rect x="88" y="190" width="18" height="18" rx="4" fill="rgba(255,255,255,0.04)" />
-  </g>
-
-  <!-- Checkmark icon -->
-  <g transform="translate(570, 190)">
-    <circle cx="20" cy="20" r="18" fill="rgba(16,185,129,0.12)" />
-    <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" fill="#34d399" text-anchor="middle">✓</text>
-  </g>
+  <!-- Checkmark -->
+  <circle cx="570" cy="210" r="18" fill="#10b981" fill-opacity="0.12"/>
+  <polyline points="560,210 567,218 580,203" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Labels right -->
-  <text x="695" y="370" font-family="Arial, sans-serif" font-size="11" fill="rgba(16,185,129,0.7)" text-anchor="middle" font-weight="bold" letter-spacing="1">FAST · TRUSTED · OPTIMISED</text>
-  <text x="695" y="390" font-family="Arial, sans-serif" font-size="20" fill="#34d399" text-anchor="middle" font-weight="bold">2× MORE BOOKINGS</text>
-  <text x="695" y="408" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" text-anchor="middle">AFTER SITE REDESIGN</text>
+  <text x="695" y="370" font-family="Arial" font-size="11" fill="#10b981" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">FAST &middot; TRUSTED &middot; OPTIMISED</text>
+  <text x="695" y="390" font-family="Arial" font-size="20" fill="#34d399" text-anchor="middle" font-weight="bold">2&#215; MORE BOOKINGS</text>
+  <text x="695" y="408" font-family="Arial" font-size="10" fill="#ffffff" fill-opacity="0.3" text-anchor="middle">AFTER SITE REDESIGN</text>
 
-  <!-- ===== STAT BADGE CENTER TOP ===== -->
-  <g transform="translate(340, 130)">
-    <rect x="0" y="0" width="180" height="60" rx="30" fill="rgba(13,27,62,0.9)" stroke="rgba(212,175,55,0.2)" stroke-width="1" filter="url(#shadow)" />
-    <text x="90" y="26" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">AVERAGE HOTEL LOSES</text>
-    <text x="90" y="48" font-family="Arial, sans-serif" font-size="22" fill="#ef4444" text-anchor="middle" font-weight="bold">$56,000 / YEAR</text>
-  </g>
+  <!-- Stat badge center top -->
+  <rect x="340" y="130" width="180" height="60" rx="30" fill="#0d1b3e" fill-opacity="0.9" stroke="#D4AF37" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="430" y="156" font-family="Arial" font-size="9" fill="#ffffff" fill-opacity="0.5" text-anchor="middle" letter-spacing="1">AVERAGE HOTEL LOSES</text>
+  <text x="430" y="178" font-family="Arial" font-size="22" fill="#ef4444" text-anchor="middle" font-weight="bold">$56,000 / YEAR</text>
 
-  <!-- ===== TITLE TEXT ===== -->
-  <text x="430" y="85" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle" letter-spacing="-0.5" filter="url(#glow)">Small Hotel Websites Lose More</text>
-  <text x="430" y="118" font-family="Georgia, serif" font-size="20" fill="rgba(255,255,255,0.7)" text-anchor="middle" letter-spacing="1">Than You Realise</text>
+  <!-- Title -->
+  <text x="430" y="85" font-family="Georgia" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">Small Hotel Websites Lose More</text>
+  <text x="430" y="118" font-family="Georgia" font-size="20" fill="#ffffff" fill-opacity="0.7" text-anchor="middle" letter-spacing="1">Than You Realise</text>
 
-  <!-- ===== CONNECTION ARROW ===== -->
-  <g transform="translate(280, 240)">
-    <line x1="0" y1="0" x2="300" y2="0" stroke="rgba(212,175,55,0.15)" stroke-width="1.5" stroke-dasharray="4,4" />
-    <polygon points="300,-5 315,0 300,5" fill="rgba(212,175,55,0.3)" />
-    <text x="150" y="-12" font-family="Arial, sans-serif" font-size="9" fill="rgba(212,175,55,0.4)" text-anchor="middle" font-weight="bold">FIX THE GAP →</text>
-  </g>
+  <!-- Arrow -->
+  <line x1="280" y1="240" x2="580" y2="240" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <polygon points="580,235 595,240 580,245" fill="#D4AF37" fill-opacity="0.3"/>
+  <text x="430" y="228" font-family="Arial" font-size="9" fill="#D4AF37" fill-opacity="0.4" text-anchor="middle" font-weight="bold">FIX THE GAP &#8594;</text>
 </svg>
