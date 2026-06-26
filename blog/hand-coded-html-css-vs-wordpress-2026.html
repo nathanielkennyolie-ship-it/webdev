@@ -192,12 +192,7 @@
     }
     .hamburger:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-    .breadcrumb-bar { background: #f7f7f7; border-bottom: 1px solid #e2e2e2; padding: 75px 24px 11px; }
-    .breadcrumb-inner { max-width: 860px; margin: 0 auto; font-size: 0.82rem; color: #666; }
-    .breadcrumb-inner a { color: #555; text-decoration: underline; text-underline-offset: 2px; }
-    .breadcrumb-inner a:hover { color: #D4AF37; }
-    .breadcrumb-inner span { margin: 0 6px; }
-    .post-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+    .post-wrap { max-width: 860px; margin: 0 auto; padding: 90px 24px 80px; }
     .post-label { display: inline-block; background: #D4AF37; color: #1a2b5f; font-size: 0.72rem; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; padding: 4px 13px; border-radius: 4px; margin-top: 40px; margin-bottom: 18px; }
     .post-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.85rem, 4vw, 2.7rem); font-weight: 800; line-height: 1.2; color: #0d1b3e; margin-bottom: 14px; }
     .post-subtitle { font-size: 1.08rem; color: #444; line-height: 1.65; margin-bottom: 22px; font-style: italic; border-left: 3px solid #D4AF37; padding-left: 16px; }
@@ -299,7 +294,7 @@
       .nav-menu.active { display: flex; }
       .nav-menu a { padding: 0.65rem 1rem; }
       .nav-cta { text-align: center; }
-      .breadcrumb-bar { padding: 75px 16px 11px; }
+      .post-wrap { padding: 80px 16px 60px; }
       .stats-bar { grid-template-columns: repeat(2,1fr); }
       .fit-grid { grid-template-columns: 1fr; }
       .post-hero { height: 240px; }
@@ -392,14 +387,6 @@
   </nav>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
-
-<nav aria-label="Breadcrumb" class="breadcrumb-bar">
-  <div class="breadcrumb-inner">
-    <a href="/">Home</a><span aria-hidden="true">›</span>
-    <a href="/blog">Blog</a><span aria-hidden="true">›</span>
-    <span aria-current="page">Hand-Coded HTML/CSS vs WordPress</span>
-  </div>
-</nav>
 
 <main id="main-content">
 <div class="post-wrap">
