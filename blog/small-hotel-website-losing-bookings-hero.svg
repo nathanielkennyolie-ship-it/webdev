@@ -51,7 +51,7 @@
   <rect x="269" y="216" width="2" height="2" fill="#ffffff" fill-opacity="0.9"/>
 
   <!-- Labels left -->
-  <text x="165" y="370" font-family="Arial" font-size="11" fill="#ef4444" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">SLOW &middot; BROKEN &middot; NO TRUST</text>
+  <text x="165" y="370" font-family="Arial" font-size="11" fill="#ef4444" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">SLOW - BROKEN - NO TRUST</text>
   <text x="165" y="390" font-family="Arial" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="bold">53% LEAVE</text>
   <text x="165" y="408" font-family="Arial" font-size="10" fill="#ffffff" fill-opacity="0.3" text-anchor="middle">BOUNCE WITHIN 3 SECONDS</text>
 
@@ -63,9 +63,9 @@
   <rect x="646" y="142" width="98" height="60" rx="4" fill="#10b981" fill-opacity="0.08"/>
   <rect x="646" y="212" width="80" height="5" rx="2" fill="#ffffff" fill-opacity="0.06"/>
   <rect x="646" y="222" width="60" height="5" rx="2" fill="#ffffff" fill-opacity="0.04"/>
-  <text x="646" y="236" font-family="Arial" font-size="7" fill="#10b981" fill-opacity="0.5">&#9733; 4.8 &middot; 127 reviews</text>
+  <text x="646" y="236" font-family="Arial" font-size="7" fill="#10b981" fill-opacity="0.5">* 4.8 / 127 reviews</text>
   <rect x="646" y="250" width="98" height="28" rx="5" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
-  <text x="695" y="268" font-family="Arial" font-size="8" fill="#34d399" text-anchor="middle" font-weight="bold">&#10003; BOOK NOW</text>
+  <text x="695" y="268" font-family="Arial" font-size="8" fill="#34d399" text-anchor="middle" font-weight="bold">BOOK NOW</text>
   <rect x="646" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
   <rect x="670" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
   <rect x="694" y="290" width="18" height="18" rx="4" fill="#ffffff" fill-opacity="0.04"/>
@@ -76,8 +76,8 @@
   <polyline points="560,210 567,218 580,203" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Labels right -->
-  <text x="695" y="370" font-family="Arial" font-size="11" fill="#10b981" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">FAST &middot; TRUSTED &middot; OPTIMISED</text>
-  <text x="695" y="390" font-family="Arial" font-size="20" fill="#34d399" text-anchor="middle" font-weight="bold">2&#215; MORE BOOKINGS</text>
+  <text x="695" y="370" font-family="Arial" font-size="11" fill="#10b981" fill-opacity="0.7" text-anchor="middle" font-weight="bold" letter-spacing="1">FAST - TRUSTED - OPTIMISED</text>
+  <text x="695" y="390" font-family="Arial" font-size="20" fill="#34d399" text-anchor="middle" font-weight="bold">2X MORE BOOKINGS</text>
   <text x="695" y="408" font-family="Arial" font-size="10" fill="#ffffff" fill-opacity="0.3" text-anchor="middle">AFTER SITE REDESIGN</text>
 
   <!-- Stat badge center top -->
@@ -92,5 +92,5 @@
   <!-- Arrow -->
   <line x1="280" y1="240" x2="580" y2="240" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="4 4"/>
   <polygon points="580,235 595,240 580,245" fill="#D4AF37" fill-opacity="0.3"/>
-  <text x="430" y="228" font-family="Arial" font-size="9" fill="#D4AF37" fill-opacity="0.4" text-anchor="middle" font-weight="bold">FIX THE GAP &#8594;</text>
+  <text x="430" y="228" font-family="Arial" font-size="9" fill="#D4AF37" fill-opacity="0.4" text-anchor="middle" font-weight="bold">FIX THE GAP</text>
 </svg>
