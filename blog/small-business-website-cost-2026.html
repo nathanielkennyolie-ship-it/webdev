@@ -148,15 +148,11 @@
 
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      padding: 1rem 0;
-      transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
-    }
-    .navbar.scrolled {
+      padding: 0.6rem 0;
       background: rgba(11,15,26,0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 1px 0 var(--border);
-      padding: 0.6rem 0;
     }
     .nav-container { display: flex; justify-content: space-between; align-items: center; }
     .logo {
@@ -907,20 +903,7 @@
     }
   }, { passive: true });
 
-  // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  let ticking = false;
-  const onScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+
 </script>
 </body>
 </html>
