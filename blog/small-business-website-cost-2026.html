@@ -648,16 +648,58 @@
 </div>
 </main>
 
-<footer class="footer" style="background: #0d1b3e; padding: 40px 24px 20px; margin-top: 40px;">
-  <div style="max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-    <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin: 0;">&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
-    <div style="display: flex; gap: 16px;">
-      <a href="/" style="color: rgba(255,255,255,0.7); font-size: 0.82rem; text-decoration: underline;">Home</a>
-      <a href="/about" style="color: rgba(255,255,255,0.7); font-size: 0.82rem; text-decoration: underline;">About</a>
-      <a href="/blog" style="color: rgba(255,255,255,0.7); font-size: 0.82rem; text-decoration: underline;">Blog</a>
-      <a href="/contact" style="color: rgba(255,255,255,0.7); font-size: 0.82rem; text-decoration: underline;">Contact</a>
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Back to home">
+            <img src="/kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+            Nathaniel Kenny
+          </a>
+          <p class="footer-tagline">
+            Freelance web developer specialized in hand-coded HTML &amp; CSS. Building fast, hand-coded websites for hotels, churches, and businesses worldwide.
+          </p>
+          <div class="footer-social">
+            <a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fas fa-comment"></i></a>
+            <a href="mailto:webdev@talent-loop.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Navigation links">
+          <h3>Navigation</h3>
+          <ul role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+        <li><a href="/portfolio">Work</a></li>
+        <li><a href="/get-a-quote">Get a Quote</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h3>Services</h3>
+          <ul role="list">
+            <li><a href="/portfolio">Hotel Websites</a></li>
+            <li><a href="/portfolio">Church Websites</a></li>
+            <li><a href="/portfolio">Business Websites</a></li>
+            <li><a href="/portfolio">Website Rescue</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Contact links">
+          <h3>Contact</h3>
+          <ul role="list">
+            <li><a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:webdev@talent-loop.org">Email</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
+        <p>Built with <span aria-hidden="true"><i class="fas fa-heart"></i></span> for clients worldwide</p>
+      </div>
     </div>
-  </div>
 </footer>
 
 <script>
