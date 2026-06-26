@@ -203,7 +203,7 @@
     #code-canvas {
       position: absolute; inset: 0; z-index: 1;
       width: 100%; height: 100%;
-      opacity: 0.12;
+      opacity: 0.35;
       pointer-events: none;
     }
 
@@ -219,8 +219,6 @@
     }
 
     .hero-content { position: relative; z-index: 3; max-width: 800px; padding: 6rem 1rem 2rem; }
-
-    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 6rem 1rem 2rem; }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -1252,13 +1250,14 @@
 
     // === Code Rain Canvas ===
     (function () {
-      const canvas = document.getElementById('code-canvas');
+      var canvas = document.getElementById('code-canvas');
       if (!canvas) return;
-      const hero = canvas.closest('.hero');
-      let ctx = canvas.getContext('2d');
-      let cols, drops, fontSize = 13;
+      var hero = canvas.closest('.hero');
+      var ctx = canvas.getContext('2d');
+      var fontSize = 13;
+      var cols, drops;
 
-      const snippets = [
+      var snippets = [
         '<!DOCTYPE html>', '<html lang="en">', '<head>', '<meta charset="UTF-8">',
         '<title>', '</title>', '<link rel="stylesheet">', '<style>', '</style>',
         '</head>', '<body>', '<header>', '<nav>', '<main>', '<section>',
@@ -1272,46 +1271,48 @@
         '.container {', 'max-width: 1200px;', 'margin: 0 auto;',
         'padding: 0 2rem;', '}', 'nav {', 'display: flex;',
         'justify-content: space-between;', 'align-items: center;', '}',
-        'const app = {', 'init() {', 'this.load();', 'this.render();',
-        '},', 'load() {', 'fetch("/api/data")', '.then(r => r.json())',
-        '.then(d => { this.data = d; });', '},', 'render() {',
+        'const app = { init() { this.load(); }, render() {',
+        'fetch("/api/data")', '.then(r => r.json())',
+        '.then(d => { this.data = d; });',
         'document.querySelector("#root")', '.innerHTML = this.template();',
-        '},', 'template() {', 'return `<h1>Hello</h1>`;', '}',
-        '};', 'app.init();',
+        '}, template() { return "<h1>Hello</h1>"; } };',
         'function handleClick(e) {', 'e.preventDefault();',
         'const btn = e.target;', 'btn.classList.add("active");', '}',
-        '@media (max-width: 768px) {', '.hero {', 'flex-direction: column;',
-        '}', '}',
-        '<!-- comment -->', '/* CSS comment */', '// JS comment',
-        'npm run dev', 'git push origin main', 'deploy: main',
+        '@media (max-width: 768px) {', '.hero {', 'flex-direction: column;', '}',
+        '/* comment */', 'npm run dev', 'git push origin main',
       ];
 
       function resize() {
-        const rect = hero.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-        cols = Math.floor(canvas.width / (fontSize * 1.15));
-        drops = Array(cols).fill(1).map(() => Math.random() * -canvas.height / fontSize);
+        var rect = hero.getBoundingClientRect();
+        canvas.width = Math.floor(rect.width);
+        canvas.height = Math.floor(rect.height);
+        cols = Math.floor(canvas.width / (fontSize * 1.3));
+        drops = [];
+        for (var i = 0; i < cols; i++) {
+          drops.push(-Math.random() * 20);
+        }
       }
 
       function draw() {
-        ctx.fillStyle = 'rgba(11,15,26,0.05)';
+        ctx.fillStyle = 'rgba(11,15,26,0.08)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.font = fontSize + 'px "Courier New", monospace';
 
-        for (let i = 0; i < drops.length; i++) {
-          const snippet = snippets[Math.floor(Math.random() * snippets.length)];
-          const x = i * fontSize * 1.15;
-          const y = drops[i] * fontSize;
+        for (var i = 0; i < drops.length; i++) {
+          var snippet = snippets[Math.floor(Math.random() * snippets.length)];
+          var x = i * fontSize * 1.3;
+          var y = drops[i] * fontSize;
 
-          const brightness = Math.max(0.08, 0.25 - (y / canvas.height) * 0.2);
-          ctx.fillStyle = 'rgba(108, 140, 255, ' + brightness + ')';
-          ctx.fillText(snippet, x, y);
+          if (y > 0 && y < canvas.height) {
+            var t = y / canvas.height;
+            var alpha = 0.5 - t * 0.35;
+            ctx.fillStyle = 'rgba(108, 140, 255, ' + alpha.toFixed(3) + ')';
+            ctx.fillText(snippet, x, y);
+          }
 
-          if (y > canvas.height + 50 || snippet.length < 3) {
-            drops[i] = -Math.random() * 40 - 5;
-          } else {
-            drops[i] += 0.15 + Math.random() * 0.25;
+          drops[i] += 0.2 + Math.random() * 0.3;
+          if (drops[i] * fontSize > canvas.height + 80) {
+            drops[i] = -Math.random() * 15 - 2;
           }
         }
         requestAnimationFrame(draw);
