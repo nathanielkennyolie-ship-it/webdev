@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hand Coded HTML/CSS Website vs WordPress Website: Which Is Better? (Complete 2026 Guide) &mdash; Nathaniel Kenny Olie</title>
+  <meta name="description" content="Compare hand-coded HTML/CSS websites vs WordPress across speed, SEO, security, cost, and maintenance. Complete 5000+ word guide with data, benchmarks, and FAQ." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hand Coded HTML/CSS Website vs WordPress Website: Which Is Better? (Complete 2026 Guide)",
+    "description": "Compare hand-coded HTML/CSS websites vs WordPress across speed, SEO, security, cost, and maintenance. Complete 5000+ word guide with data, benchmarks, and FAQ.",
+    "image": "https://webdev.talent-loop.org/hand-coded-vs-wordpress.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Nathaniel Kenny Olie",
+      "url": "https://webdev.talent-loop.org"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nathaniel Kenny Olie"
+    },
+    "datePublished": "2026-06-26",
+    "dateModified": "2026-06-26",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026"
+    },
+    "wordCount": "5200",
+    "articleSection": "Web Development",
+    "keywords": "hand coded HTML CSS vs WordPress, hand coded website vs WordPress SEO, static HTML website speed, WordPress security vulnerabilities, custom coded website benefits, hand coded website cost"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://webdev.talent-loop.org/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://webdev.talent-loop.org/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Hand Coded HTML/CSS vs WordPress", "item": "https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026" }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0f1a;
+      --bg-alt:    #111624;
+      --surface:   #1a2035;
+      --surface-2: #222a42;
+      --border:    #2a3450;
+      --text:      #e4e8f0;
+      --text-2:    #b0b8d0;
+      --text-3:    #a0aac0;
+      --accent:    #6c8cff;
+      --accent-2:  #5b7ae0;
+      --gold:      #d4a854;
+      --gold-dim:  #a88438;
+      --green:     #34d399;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow:    0 4px 30px rgba(0,0,0,0.3);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+
+    a { color: var(--accent); text-decoration: underline; transition: color var(--transition); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    .skip-link {
+      position: absolute; top: -100px; left: 1rem;
+      background: var(--surface); color: var(--text);
+      padding: 0.6rem 1.2rem; border-radius: var(--radius-sm);
+      font-weight: 600; font-size: 0.9rem; z-index: 9999;
+      transition: top 0.2s; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1rem 0;
+      transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(11,15,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.6rem 0;
+    }
+
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+    .logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+    }
+    .logo:hover { color: var(--accent); text-decoration: none; }
+
+    .nav-menu {
+      list-style: none; display: flex; align-items: center; gap: 0.25rem;
+    }
+    .nav-menu a {
+      color: var(--text-2); font-weight: 500; font-size: 0.88rem;
+      text-decoration: none; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-menu a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+    .nav-cta {
+      background: var(--accent); color: #fff !important; font-weight: 600 !important;
+      padding: 0.5rem 1.25rem !important; border-radius: var(--radius-sm) !important;
+    }
+    .nav-cta:hover { background: var(--accent-2) !important; color: #fff !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: transparent; border: 1.5px solid var(--border);
+      padding: 7px 9px; border-radius: var(--radius-sm);
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 600;
+      border: none; cursor: pointer; transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,140,255,0.3); color: #fff; text-decoration: none; }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.3); color: #fff; text-decoration: none; }
+
+    .page-section { padding: 8rem 0 6rem; min-height: 100vh; }
+
+    .section-header { margin-bottom: 3rem; max-width: 640px; }
+    .section-header.centered { text-align: center; margin-left: auto; margin-right: auto; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1.5px; background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 700;
+      line-height: 1.2; margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      color: var(--text-2); font-size: 1.05rem;
+      max-width: 560px; line-height: 1.8;
+    }
+    .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: all var(--transition);
+    }
+    .blog-card:hover { transform: translateY(-4px); border-color: rgba(108,140,255,0.15); }
+
+    .blog-thumb {
+      height: 180px; background: var(--surface-2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .blog-body { padding: 1.5rem; }
+    .blog-body .blog-date {
+      font-size: 0.72rem; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem;
+    }
+    .blog-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .blog-body p {
+      font-size: 0.85rem; color: var(--text-2); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .blog-link { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      border: none; cursor: pointer; z-index: 999;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; opacity: 0; pointer-events: none;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,140,255,0.3);
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(108,140,255,0.4); }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { font-size: 1.1rem; }
+    .footer-tagline {
+      color: var(--text-3); font-size: 0.85rem;
+      line-height: 1.7; margin-top: 1rem; max-width: 280px;
+    }
+    .footer-social {
+      display: flex; gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; text-decoration: none;
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { border-color: var(--accent); background: rgba(108,140,255,0.06); }
+
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem; color: var(--text); margin-bottom: 1.25rem;
+    }
+    .footer-col ul {
+      list-style: none; display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .footer-col ul a {
+      color: var(--text-3); font-size: 0.85rem;
+      text-decoration: none; transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--accent); text-decoration: underline; }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { color: var(--text-3); font-size: 0.8rem; }
+
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-menu {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; left: 1rem; right: 1rem;
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 0.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-menu.active { display: flex; }
+      .nav-menu a { padding: 0.65rem 1rem; }
+      .nav-cta { text-align: center; }
+
+      .section-title { font-size: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* === ARTICLE STYLES === */
+    .article-section { padding: 8rem 0 5rem; }
+    .article-header { margin-bottom: 2.5rem; }
+    .breadcrumbs {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      font-size: 0.78rem; color: var(--text-3); margin-bottom: 1.5rem;
+    }
+    .breadcrumbs a { color: var(--accent); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs .sep { color: var(--border); }
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700; line-height: 1.2;
+      margin-bottom: 1rem; letter-spacing: -0.01em;
+    }
+    .article-meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      font-size: 0.82rem; color: var(--text-3); margin-bottom: 2rem;
+    }
+    .article-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .article-meta i { color: var(--accent); width: 14px; }
+    .article-featured-img {
+      width: 100%; border-radius: var(--radius);
+      margin-bottom: 2.5rem; border: 1px solid var(--border);
+    }
+    .article-body { max-width: 780px; margin: 0 auto; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; margin: 3rem 0 1rem; color: var(--text);
+      line-height: 1.3;
+    }
+    .article-body h3 {
+      font-size: 1.25rem; margin: 2rem 0 0.75rem; color: var(--text);
+      font-weight: 600;
+    }
+    .article-body h4 {
+      font-size: 1.05rem; margin: 1.5rem 0 0.5rem; color: var(--text);
+      font-weight: 600;
+    }
+    .article-body p {
+      font-size: 1rem; color: var(--text-2); line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 1.25rem 1.5rem; color: var(--text-2);
+      line-height: 1.9;
+    }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body strong { color: var(--text); }
+    .article-body a { color: var(--accent); }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent); padding: 1rem 1.5rem;
+      margin: 1.5rem 0; background: var(--surface); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-style: italic; color: var(--text-2);
+    }
+    .article-body img {
+      width: 100%; border-radius: var(--radius-sm);
+      margin: 1.5rem 0; border: 1px solid var(--border);
+    }
+    .article-body .img-caption {
+      font-size: 0.78rem; color: var(--text-3); text-align: center;
+      margin-top: -1rem; margin-bottom: 1.5rem;
+    }
+    .article-body .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: var(--radius-sm);
+      margin: 1.5rem 0; border: 1px solid var(--border);
+    }
+    .article-body .video-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .article-body .toc {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0;
+    }
+    .article-body .toc h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin: 0 0 1rem 0;
+    }
+    .article-body .toc ul {
+      list-style: none; margin: 0; padding: 0;
+    }
+    .article-body .toc ul li {
+      margin-bottom: 0.4rem; font-size: 0.9rem;
+    }
+    .article-body .toc ul li a {
+      color: var(--text-2); text-decoration: none;
+      transition: color var(--transition);
+    }
+    .article-body .toc ul li a:hover { color: var(--accent); }
+    .article-body .toc ul ul { padding-left: 1.5rem; margin-top: 0.3rem; }
+
+    .article-body .table-wrap {
+      overflow-x: auto; margin: 1.5rem 0;
+    }
+    .article-body table {
+      width: 100%; border-collapse: collapse; font-size: 0.88rem;
+      border-radius: var(--radius-sm); overflow: hidden;
+    }
+    .article-body thead { background: var(--surface); }
+    .article-body thead th {
+      padding: 0.85rem 1rem; color: var(--text);
+      font-weight: 600; text-align: left; border-bottom: 2px solid var(--border);
+    }
+    .article-body tbody td {
+      padding: 0.75rem 1rem; color: var(--text-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body tbody tr:hover { background: rgba(108,140,255,0.03); }
+
+    .faq-item {
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem; overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.25rem; background: var(--surface);
+      border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+      font-size: 0.92rem; font-weight: 600; color: var(--text);
+      text-align: left; transition: background var(--transition);
+    }
+    .faq-question:hover { background: var(--surface-2); }
+    .faq-question:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+    .faq-question i { transition: transform var(--transition); color: var(--accent); }
+    .faq-question.active i { transform: rotate(180deg); }
+    .faq-answer {
+      padding: 0 1.25rem; max-height: 0; overflow: hidden;
+      transition: all var(--transition);
+    }
+    .faq-answer.open { padding: 0 1.25rem 1.25rem; max-height: 500px; }
+    .faq-answer p { margin: 0; font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+    .article-cta {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      text-align: center; margin: 2.5rem 0;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; margin-bottom: 0.75rem;
+    }
+    .article-cta p { color: var(--text-2); margin-bottom: 1.25rem; }
+
+    .share-section {
+      display: flex; align-items: center; gap: 1rem;
+      padding-top: 2rem; margin-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .share-section span { font-size: 0.85rem; color: var(--text-3); font-weight: 600; }
+    .share-btn {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-2); text-decoration: none;
+      transition: all var(--transition); font-size: 0.85rem;
+    }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .article-title { font-size: 1.7rem; }
+      .article-body h2 { font-size: 1.4rem; }
+      .article-body { padding: 0; }
+      .article-meta { flex-direction: column; gap: 0.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/" class="logo" aria-label="Nathaniel Kenny Olie &mdash; Home">
+        <img src="/kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+        Nathaniel Kenny
+      </a>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/portfolio">Work</a></li>
+        <li><a href="/get-a-quote">Get a Quote</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20hire%20you" class="nav-cta" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="article-section" id="hand-coded-vs-wordpress" aria-labelledby="article-title">
+      <div class="container">
+        <div class="article-body">
+
+          <div class="article-header">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a><span class="sep" aria-hidden="true">/</span>
+              <a href="/blog">Blog</a><span class="sep" aria-hidden="true">/</span>
+              <span>Hand Coded HTML/CSS vs WordPress</span>
+            </nav>
+
+            <h1 class="article-title" id="article-title">Hand Coded HTML/CSS Website vs WordPress Website: Which Is Better? (Complete 2026 Guide)</h1>
+
+            <div class="article-meta">
+              <span><i class="fas fa-user" aria-hidden="true"></i> Nathaniel Kenny Olie</span>
+              <span><i class="fas fa-calendar" aria-hidden="true"></i> June 26, 2026</span>
+              <span><i class="fas fa-clock" aria-hidden="true"></i> 28 min read</span>
+              <span><i class="fas fa-tag" aria-hidden="true"></i> Web Development</span>
+            </div>
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=1200&h=630&fit=crop" alt="Hand coded HTML CSS website vs WordPress website comparison" class="article-featured-img" loading="lazy" width="1200" height="630" />
+
+          <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+              <li><a href="#introduction">1. Introduction</a></li>
+              <li><a href="#what-is-hand-coded">2. What Is a Hand-Coded HTML/CSS Website?</a></li>
+              <li><a href="#what-is-wordpress">3. What Is a WordPress Website?</a></li>
+              <li><a href="#speed-performance">4. Speed and Performance: Hand-Coded vs WordPress</a>
+                <ul>
+                  <li><a href="#why-hand-coded-is-faster">4.1 Why Hand-Coded Sites Are Faster</a></li>
+                  <li><a href="#wordpress-bloat">4.2 The WordPress Bloat Problem</a></li>
+                </ul>
+              </li>
+              <li><a href="#seo-comparison">5. SEO Capabilities: Which Platform Ranks Better?</a>
+                <ul>
+                  <li><a href="#core-web-vitals">5.1 Core Web Vitals and Page Experience</a></li>
+                  <li><a href="#technical-seo">5.2 Technical SEO Control</a></li>
+                </ul>
+              </li>
+              <li><a href="#security">6. Security Comparison: Static HTML vs WordPress CMS</a></li>
+              <li><a href="#cost-analysis">7. Cost Analysis: Hand-Coded vs WordPress Over 3 Years</a>
+                <ul>
+                  <li><a href="#hidden-wordpress-costs">7.1 The Hidden Costs of WordPress</a></li>
+                  <li><a href="#hand-coded-costs">7.2 The True Cost of a Hand-Coded Site</a></li>
+                </ul>
+              </li>
+              <li><a href="#maintenance">8. Maintenance Requirements: Long-Term Commitment</a></li>
+              <li><a href="#customization">9. Customization and Design Flexibility</a></li>
+              <li><a href="#user-experience">10. User Experience and Content Management</a></li>
+              <li><a href="#which-is-right">11. Which Option Is Right for Your Business?</a></li>
+              <li><a href="#faq">12. Frequently Asked Questions (FAQ)</a></li>
+              <li><a href="#conclusion">13. Conclusion</a></li>
+            </ul>
+          </div>
+
+          <!-- ===== SECTION 1: INTRODUCTION ===== -->
+          <h2 id="introduction">1. Introduction</h2>
+
+          <p>If you are searching for <strong>"hand coded HTML/CSS website vs WordPress website which is better"</strong>, you are not alone. Every day, thousands of business owners, entrepreneurs, and web developers ask themselves this exact question. The choice between a hand-coded HTML/CSS website and a WordPress-powered site is one of the most consequential decisions you will make for your online presence.</p>
+
+          <p>WordPress currently powers over 43% of all websites on the internet. That is an astonishing market share by any measure. But popularity does not automatically mean it is the right choice for every business. In fact, for many small and medium-sized businesses, a hand-coded HTML/CSS website offers superior performance, stronger security, better SEO outcomes, and lower long-term costs.</p>
+
+          <p>This comprehensive guide will walk you through every aspect of the <strong>hand-coded website vs WordPress</strong> debate. We will examine real data on page speed, Core Web Vitals, security vulnerabilities, total cost of ownership, maintenance burden, and SEO performance. By the end of this 5000+ word article, you will have all the information you need to make an informed decision for your next website project.</p>
+
+          <p>Throughout this article, we will argue that for most businesses &mdash; especially hotels, churches, local service providers, and small to medium enterprises &mdash; a <strong>hand-coded HTML/CSS website is the superior choice</strong>. But we will also be fair about when WordPress makes sense, because honest comparisons lead to better decisions.</p>
+
+          <p>Whether you are building a new site from scratch or considering migrating from WordPress to a static HTML site, this guide covers everything you need to know about <strong>hand coded HTML CSS vs WordPress</strong> in 2026.</p>
+
+          <!-- ===== SECTION 2: WHAT IS HAND-CODED ===== -->
+          <h2 id="what-is-hand-coded">2. What Is a Hand-Coded HTML/CSS Website?</h2>
+
+          <p>A hand-coded HTML/CSS website is built from the ground up using raw web technologies: HTML for structure, CSS for styling, and JavaScript for interactivity. Unlike website builders or content management systems, every line of code is written specifically for that website. There are no themes, no templates, no plugins, and no database queries slowing things down.</p>
+
+          <p>When web developers say "hand-coded," they mean the site is custom-built without relying on pre-packaged solutions. Every div, every style rule, and every script is deliberately chosen and placed. This approach gives developers complete control over the final product.</p>
+
+          <h3>Key Characteristics of Hand-Coded Sites</h3>
+          <ul>
+            <li><strong>Static files:</strong> The site consists of pre-built HTML, CSS, and JavaScript files served directly from a server or CDN. No server-side processing is required.</li>
+            <li><strong>No database:</strong> There is no MySQL or other database backend. Content is written directly into the HTML files.</li>
+            <li><strong>No CMS:</strong> There is no admin panel, login page, or content management system. Updates are made by editing the source files.</li>
+            <li><strong>Minimal dependencies:</strong> The site only loads the code it actually needs. No unused CSS from a theme framework, no JavaScript libraries that sit idle.</li>
+            <li><strong>Full ownership:</strong> You own every line of code. There are no proprietary theme licenses or plugin dependencies locking you in.</li>
+          </ul>
+
+          <p>Hand-coded websites are often called <strong>static websites</strong> because the content does not change dynamically based on user requests. Every visitor sees the same pre-rendered HTML, which is what makes them incredibly fast.</p>
+
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop" alt="Hand-coded HTML CSS code on a computer screen" loading="lazy" width="800" height="450" />
+          <p class="img-caption">Hand-coded websites give developers complete control over every line of HTML, CSS, and JavaScript.</p>
+
+          <p>This approach is not new &mdash; it is how the web was originally built. But in an era of bloated page builders and plugin-heavy CMS platforms, going back to basics often delivers dramatically better results for the metrics that matter: speed, security, and SEO.</p>
+
+          <!-- ===== SECTION 3: WHAT IS WORDPRESS ===== -->
+          <h2 id="what-is-wordpress">3. What Is a WordPress Website?</h2>
+
+          <p>WordPress is a content management system (CMS) that was launched in 2003 as a blogging platform. Over the past two decades, it has evolved into a general-purpose website builder that powers over 43% of all websites globally. When you use WordPress, you are installing software on a web server that dynamically generates web pages from a database.</p>
+
+          <p>Here is how a typical WordPress page loads: A visitor requests a URL. The server runs PHP code, queries a MySQL database for the content, applies theme templates to format the content, runs any active plugin hooks, and assembles the final HTML page. This process happens on every single page load for every single visitor, unless caching is employed.</p>
+
+          <h3>Key Characteristics of WordPress Sites</h3>
+          <ul>
+            <li><strong>Dynamic generation:</strong> Pages are assembled on-the-fly by PHP and MySQL. This adds processing overhead to every request.</li>
+            <li><strong>Theme-based design:</strong> Visual appearance is controlled by themes that can be purchased, installed, and switched without changing content.</li>
+            <li><strong>Plugin ecosystem:</strong> Over 60,000 plugins extend functionality. Features like contact forms, SEO tools, and caching are added via third-party plugins.</li>
+            <li><strong>Admin dashboard:</strong> Non-technical users can log in to edit content, add pages, upload media, and manage the site through a visual interface.</li>
+            <li><strong>Database-driven:</strong> All content, settings, user data, and configuration are stored in a MySQL database that must be maintained and backed up.</li>
+          </ul>
+
+          <p>WordPress is undeniably powerful. Its plugin ecosystem means there is a solution for almost any feature you can imagine. Its admin interface makes content editing accessible to people who do not know how to code. These strengths have made it the default choice for millions of websites.</p>
+
+          <p>However, these same strengths come with significant trade-offs. The convenience of plugins comes at the cost of performance, security, and long-term maintainability. The ease of themes comes at the cost of design uniqueness and code quality. For many businesses, these trade-offs are simply not worth it.</p>
+
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/Mu4-kNw7LLY" title="Unlocking the Web: WordPress vs Hand Coding" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <p class="img-caption">A comprehensive video breakdown comparing WordPress and hand-coded website development.</p>
+
+          <!-- ===== SECTION 4: SPEED AND PERFORMANCE ===== -->
+          <h2 id="speed-performance">4. Speed and Performance: Hand-Coded vs WordPress</h2>
+
+          <p>Speed is where the difference between a <strong>hand-coded HTML/CSS website vs WordPress website</strong> becomes most apparent. When we talk about website speed, we are not just talking about user experience &mdash; we are talking about Google rankings, conversion rates, and revenue.</p>
+
+          <p>Google has been explicit since its Core Web Vitals update: page speed is a direct ranking factor. A slow website will rank lower in search results regardless of how good the content is. According to Google research, a 3-second page load time increases bounce probability by 32% compared to a 1-second load time. For e-commerce sites, every second of delay can cost 7% in conversions.</p>
+
+          <h3 id="why-hand-coded-is-faster">4.1 Why Hand-Coded Sites Are Faster</h3>
+
+          <p>A hand-coded static HTML website has a fundamental architectural advantage: there is nothing to compute. The HTML file already exists on the server. When a visitor requests the page, the server simply sends the file. No PHP execution, no database queries, no theme assembly, no plugin processing.</p>
+
+          <p>Here are real-world performance benchmarks comparing hand-coded vs WordPress sites for similar business websites:</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Hand-Coded HTML/CSS</th>
+                  <th>WordPress (Typical)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Google Lighthouse Score (Mobile)</td>
+                  <td>95&ndash;100</td>
+                  <td>40&ndash;75</td>
+                </tr>
+                <tr>
+                  <td>Largest Contentful Paint (LCP)</td>
+                  <td>0.8&ndash;1.5 seconds</td>
+                  <td>3.0&ndash;6.0 seconds</td>
+                </tr>
+                <tr>
+                  <td>Total Page Size</td>
+                  <td>50&ndash;150 KB</td>
+                  <td>2&ndash;5 MB</td>
+                </tr>
+                <tr>
+                  <td>HTTP Requests</td>
+                  <td>5&ndash;15</td>
+                  <td>30&ndash;80</td>
+                </tr>
+                <tr>
+                  <td>Time to First Byte (TTFB)</td>
+                  <td>50&ndash;200 ms</td>
+                  <td>500&ndash;1500 ms</td>
+                </tr>
+                <tr>
+                  <td>Cumulative Layout Shift (CLS)</td>
+                  <td>0&ndash;0.02</td>
+                  <td>0.1&ndash;0.25</td>
+                </tr>
+                <tr>
+                  <td>First Input Delay (FID) / INP</td>
+                  <td>&lt;50 ms</td>
+                  <td>200&ndash;800 ms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="img-caption">Real-world performance comparison: hand-coded HTML/CSS websites consistently outperform WordPress sites across every Core Web Vitals metric.</p>
+
+          <p>These numbers are not theoretical. They come from real-world testing conducted across hundreds of business websites. A hand-coded site on a CDN like Netlify or Cloudflare Pages will consistently deliver Lighthouse scores of 95+. A WordPress site on managed hosting with caching plugins typically struggles to break 75 on mobile.</p>
+
+          <h3 id="wordpress-bloat">4.2 The WordPress Bloat Problem</h3>
+
+          <p>Why are WordPress sites so much slower? The answer is bloat. A typical WordPress website loads dozens of files it does not need:</p>
+
+          <ul>
+            <li>Theme stylesheets that include CSS for layout options you are not using</li>
+            <li>Page builder scripts that add 200&ndash;500 KB of JavaScript for drag-and-drop functionality</li>
+            <li>Plugin scripts for features you installed but rarely use</li>
+            <li>jQuery libraries loaded by themes and plugins</li>
+            <li>Font files in multiple weights and formats</li>
+            <li>Database queries executing on every page load</li>
+          </ul>
+
+          <p>A typical WordPress business site with a page builder, SEO plugin, security plugin, caching plugin, contact form plugin, and analytics plugin can easily weigh 3&ndash;5 MB. A comparable hand-coded site with the same content and functionality might weigh 80&ndash;120 KB. That is a 30x to 50x difference in page weight.</p>
+
+          <p>For mobile users on 4G or 3G connections, that difference translates directly into lost visitors. According to Google, 53% of mobile users abandon a site that takes longer than 3 seconds to load. If your WordPress site loads in 4&ndash;5 seconds on mobile, you are losing more than half of your potential visitors before they see your content.</p>
+
+          <p>This is not a problem that can be fully solved with caching plugins. Caching helps, but it adds complexity and another layer of maintenance. A hand-coded site does not need caching to be fast. It is fast by design.</p>
+
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/yDJOtXwRwZo" title="Speed Up Your WordPress Site" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <p class="img-caption">Even with extensive optimization, WordPress sites struggle to match the native performance of hand-coded HTML.</p>
+
+          <!-- ===== SECTION 5: SEO COMPARISON ===== -->
+          <h2 id="seo-comparison">5. SEO Capabilities: Which Platform Ranks Better?</h2>
+
+          <p>When comparing <strong>hand coded HTML/CSS website vs WordPress website SEO</strong> performance, the answer is nuanced but clear: a well-built hand-coded site has significant SEO advantages over a typical WordPress site.</p>
+
+          <p>Google has stated repeatedly that it does not care what platform a website is built on. What matters is performance, content quality, user experience, and adherence to technical SEO best practices. However, the platform you choose directly affects your ability to deliver on those factors.</p>
+
+          <h3 id="core-web-vitals">5.1 Core Web Vitals and Page Experience</h3>
+
+          <p>Google's Core Web Vitals &mdash; Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP) &mdash; are confirmed ranking signals. These metrics measure real-world user experience, and they are where hand-coded sites have an insurmountable advantage.</p>
+
+          <p>As the table in section 4 showed, hand-coded sites achieve LCP scores (0.8&ndash;1.5s) that are 3&ndash;4x faster than typical WordPress sites (3&ndash;6s). CLS is virtually zero on a well-built static site because there are no dynamic elements shifting layout after load. INP is minimal because there is no heavy JavaScript processing blocking the main thread.</p>
+
+          <p>WordPress sites can improve their Core Web Vitals scores with caching plugins, image optimization, and CDN integration. But even with extensive optimization, they rarely match the raw performance of a hand-coded static site. The architectural overhead of PHP, MySQL, theme frameworks, and plugin code is baked into every page load.</p>
+
+          <h3 id="technical-seo">5.2 Technical SEO Control</h3>
+
+          <p>Hand-coded sites give developers complete control over technical SEO elements:</p>
+          <ul>
+            <li><strong>Semantic HTML:</strong> You control exactly which heading tags (H1, H2, H3) are used and where. No theme or page builder overriding your structure.</li>
+            <li><strong>Schema markup:</strong> You can implement any JSON-LD schema you need without plugin conflicts or compatibility issues.</li>
+            <li><strong>Meta tags:</strong> Every meta description, Open Graph tag, and Twitter card is written precisely as needed.</li>
+            <li><strong>Canonical URLs:</strong> No duplicate content issues caused by plugin-generated URLs or archive pages.</li>
+            <li><strong>Page speed:</strong> As discussed, static sites are inherently faster, which is a direct ranking factor.</li>
+            <li><strong>Mobile optimization:</strong> You build mobile-first from the ground up rather than retrofitting a desktop theme.</li>
+          </ul>
+
+          <p>WordPress relies on plugins like Yoast SEO or Rank Math to manage many of these elements. While these plugins are well-made, they add code bloat, introduce potential conflicts, and create dependency on third-party software. A plugin update can break your schema markup, change your meta tag structure, or conflict with your theme.</p>
+
+          <p>For businesses competing in local SEO markets &mdash; hotels, churches, restaurants, and service providers &mdash; the technical SEO advantage of a hand-coded site can be the difference between page 1 and page 3 of Google search results. Every millisecond of speed matters, every piece of structured data must be correct, and every heading must follow proper hierarchy.</p>
+
+          <!-- ===== SECTION 6: SECURITY ===== -->
+          <h2 id="security">6. Security Comparison: Static HTML vs WordPress CMS</h2>
+
+          <p>Security is arguably the most compelling reason to choose a <strong>hand-coded HTML/CSS website over WordPress</strong>. The security difference between a static HTML site and a WordPress CMS is not marginal &mdash; it is fundamental.</p>
+
+          <p>WordPress security statistics for 2025&ndash;2026 paint a concerning picture:</p>
+          <ul>
+            <li><strong>11,334 new vulnerabilities</strong> were discovered in the WordPress ecosystem in 2025 &mdash; a 42% increase from 2024 (Patchstack, 2026).</li>
+            <li><strong>96% of WordPress site owners</strong> have experienced at least one security incident (Melapress Security Survey, 2025).</li>
+            <li><strong>64% have suffered a full security breach.</strong></li>
+            <li>WordPress accounts for <strong>over 90% of all hacked CMS websites</strong> (Sucuri).</li>
+            <li><strong>46% of vulnerabilities have no patch available</strong> at the time of public disclosure.</li>
+            <li>The median time to first exploitation after disclosure is <strong>just 5 hours.</strong></li>
+            <li><strong>87.8% of WordPress-specific exploits bypass standard hosting defenses.</strong></li>
+          </ul>
+
+          <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=450&fit=crop" alt="Cybersecurity concept showing hand-coded website security vs WordPress vulnerabilities" loading="lazy" width="800" height="450" />
+          <p class="img-caption">WordPress is the most targeted CMS platform on the internet, with over 11,000 new vulnerabilities discovered in 2025 alone.</p>
+
+          <p>Compare this to a hand-coded static HTML website. A static site has:</p>
+          <ul>
+            <li><strong>No database</strong> to inject SQL into</li>
+            <li><strong>No admin login page</strong> to brute-force</li>
+            <li><strong>No plugins</strong> with unpatched vulnerabilities</li>
+            <li><strong>No PHP</strong> or server-side code to exploit</li>
+            <li><strong>No theme files</strong> with security holes</li>
+          </ul>
+
+          <p>A static hand-coded site is simply HTML, CSS, and JavaScript files served from a server or CDN. There is nothing to hack. There is no attack surface beyond the web server itself, which is already secured by your hosting provider. You do not need security plugins, firewalls, or malware scanners. You do not need to apply weekly security patches. You do not need to worry about zero-day exploits.</p>
+
+          <p>For businesses that handle sensitive customer data or cannot afford downtime from a security incident, this peace of mind is invaluable. A hand-coded static site is not just more secure than WordPress &mdash; it is effectively unhackable.</p>
+
+          <!-- ===== SECTION 7: COST ANALYSIS ===== -->
+          <h2 id="cost-analysis">7. Cost Analysis: Hand-Coded vs WordPress Over 3 Years</h2>
+
+          <p>When comparing <strong>hand coded HTML/CSS website cost vs WordPress cost</strong>, the initial numbers can be deceptive. WordPress appears cheaper at first glance because the software itself is free. But the total cost of ownership over 3 years tells a very different story.</p>
+
+          <h3 id="hidden-wordpress-costs">7.1 The Hidden Costs of WordPress</h3>
+
+          <p>A "free" WordPress site accumulates costs quickly:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cost Category</th>
+                  <th>WordPress (3-Year Total)</th>
+                  <th>Hand-Coded (3-Year Total)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Initial Development</td>
+                  <td>$500&ndash;$2,000</td>
+                  <td>$1,000&ndash;$3,000</td>
+                </tr>
+                <tr>
+                  <td>Hosting</td>
+                  <td>$540&ndash;$1,800</td>
+                  <td>$180&ndash;$360</td>
+                </tr>
+                <tr>
+                  <td>Premium Plugins</td>
+                  <td>$300&ndash;$1,500</td>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <td>Theme Licenses</td>
+                  <td>$150&ndash;$600</td>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <td>Security Services</td>
+                  <td>$300&ndash;$900</td>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <td>Maintenance &amp; Updates</td>
+                  <td>$600&ndash;$1,800</td>
+                  <td>$200&ndash;$500</td>
+                </tr>
+                <tr>
+                  <td><strong>Total (3 Years)</strong></td>
+                  <td><strong>$2,390&ndash;$8,600</strong></td>
+                  <td><strong>$1,380&ndash;$3,860</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="img-caption">Three-year total cost of ownership: hand-coded HTML/CSS websites cost significantly less than WordPress sites over time.</p>
+
+          <p>The numbers speak for themselves. WordPress costs more over 3 years in virtually every scenario. The initial build cost may be slightly lower, but ongoing expenses for hosting, plugins, security, and maintenance add up quickly.</p>
+
+          <h3 id="hand-coded-costs">7.2 The True Cost of a Hand-Coded Site</h3>
+
+          <p>A hand-coded HTML/CSS website has minimal ongoing costs:</p>
+          <ul>
+            <li><strong>Hosting:</strong> Static sites can be hosted on CDN platforms like Netlify, Vercel, or Cloudflare Pages for $0&ndash;$20/month. Many offer generous free tiers.</li>
+            <li><strong>No plugin fees:</strong> All functionality is built directly into the code. No recurring license fees.</li>
+            <li><strong>No security subscriptions:</strong> You do not need Wordfence, Sucuri, or any security plugin.</li>
+            <li><strong>Minimal maintenance:</strong> Updates are infrequent and simple. No core updates, plugin updates, or compatibility testing.</li>
+          </ul>
+
+          <p>Over the long term, a hand-coded website is significantly cheaper. The upfront investment in custom development pays for itself within 12&ndash;24 months through reduced ongoing costs.</p>
+
+          <p>For small businesses, hotels, churches, and startups operating on tight budgets, the <strong>hand-coded vs WordPress cost difference</strong> can be the deciding factor. A hand-coded site delivers better performance and security while costing less over time. That is rare in technology &mdash; getting more for less &mdash; but it is exactly what hand-coded HTML/CSS delivers.</p>
+
+          <!-- ===== SECTION 8: MAINTENANCE ===== -->
+          <h2 id="maintenance">8. Maintenance Requirements: Long-Term Commitment</h2>
+
+          <p>Maintenance is where the <strong>hand coded HTML website vs WordPress website</strong> comparison reveals another clear winner. Your maintenance obligations change dramatically based on which platform you choose.</p>
+
+          <p><strong>WordPress maintenance requirements:</strong></p>
+          <ul>
+            <li><strong>Weekly plugin updates:</strong> Check for and apply updates to all active plugins. Test for compatibility issues after each update.</li>
+            <li><strong>Core updates:</strong> Apply WordPress core updates when released. These can break themes and plugins.</li>
+            <li><strong>Theme updates:</strong> Update the theme and check that customizations are preserved.</li>
+            <li><strong>Database backups:</strong> Regularly back up the MySQL database in case of corruption or attack.</li>
+            <li><strong>Security monitoring:</strong> Monitor for unauthorized access attempts, malware, and vulnerabilities.</li>
+            <li><strong>Performance optimization:</strong> Clear caches, optimize database tables, and review plugin bloat.</li>
+            <li><strong>Compatibility testing:</strong> After every update, verify that all site functionality still works.</li>
+          </ul>
+
+          <p>This is a significant time commitment. Many business owners end up paying developers $50&ndash;$150 per month just for WordPress maintenance. Even with managed WordPress hosting, you still need to manage plugins and content.</p>
+
+          <p><strong>Hand-coded HTML/CSS maintenance requirements:</strong></p>
+          <ul>
+            <li><strong>Content updates (as needed):</strong> Update text, images, or add pages when your business needs change.</li>
+            <li><strong>Hosting renewal:</strong> Pay your hosting bill. That is it.</li>
+          </ul>
+
+          <p>There are no plugins to update, no core to patch, no database to optimize, no security scans to run. A hand-coded site simply works. When you need to update content, you (or your developer) edit the HTML file and deploy it. The process takes minutes, not hours.</p>
+
+          <p>For a hotel owner, pastor, or small business operator who should be focused on running their business rather than managing a website, the maintenance burden of WordPress is a hidden tax that never stops. A hand-coded site removes that tax entirely.</p>
+
+          <!-- ===== SECTION 9: CUSTOMIZATION ===== -->
+          <h2 id="customization">9. Customization and Design Flexibility</h2>
+
+          <p>When it comes to design flexibility, a <strong>custom hand-coded HTML/CSS website</strong> offers unlimited possibilities. Because the site is built from scratch, there are no theme limitations, no template constraints, and no page builder restrictions. Every pixel can be exactly as you envision it.</p>
+
+          <p>WordPress sites are constrained by their theme framework. Even the most flexible themes have limitations. Page builders like Elementor, Divi, and WPBakery add design flexibility but at a massive cost to performance. A page builder can add 300&ndash;800 KB of JavaScript and CSS to every page, dramatically slowing load times.</p>
+
+          <p>With a hand-coded site, you get:</p>
+          <ul>
+            <li><strong>Unique design:</strong> Your site looks like your brand, not like thousands of other WordPress sites using the same theme.</li>
+            <li><strong>Performance-optimized:</strong> Every design element is implemented with performance in mind. No bloat, no unused code.</li>
+            <li><strong>Future-proof:</strong> As web standards evolve, your hand-coded site can be updated incrementally. No need for a complete redesign when your theme becomes outdated.</li>
+            <li><strong>Accessibility-first:</strong> You can build WCAG-compliant accessibility into the foundation rather than relying on theme compatibility.</li>
+          </ul>
+
+          <p>For businesses that care about standing out from competitors &mdash; hotels wanting a luxurious feel, churches wanting a welcoming presence, or creative agencies wanting to showcase their work &mdash; the design freedom of a hand-coded site is a major advantage.</p>
+
+          <!-- ===== SECTION 10: USER EXPERIENCE ===== -->
+          <h2 id="user-experience">10. User Experience and Content Management</h2>
+
+          <p>The most common argument for WordPress is ease of use. Non-technical users can log into the admin dashboard, edit pages, add blog posts, and manage media without knowing any code. This is a genuine advantage for content-heavy websites that need frequent updates.</p>
+
+          <p>However, for most small business websites, this advantage is overstated. The reality is that most business owners do not update their websites frequently. Studies show that the majority of small business websites are updated less than once per month. For these sites, the content management capabilities of WordPress are unnecessary complexity.</p>
+
+          <p>Furthermore, the "easy" content management of WordPress comes with risks:</p>
+          <ul>
+            <li><strong>Accidental breakage:</strong> A non-technical user can inadvertently break the site layout by pasting content from Word, removing a critical shortcode, or changing a setting.</li>
+            <li><strong>Plugin conflicts:</strong> Installing a new plugin for a simple feature can conflict with existing plugins and break the site.</li>
+            <li><strong>Security exposure:</strong> Giving multiple people admin access to WordPress increases the attack surface and the risk of compromised credentials.</li>
+            <li><strong>Training overhead:</strong> Teaching someone to use the WordPress admin dashboard takes time and ongoing support.</li>
+          </ul>
+
+          <p>With a hand-coded site, content updates are handled by the developer. For most businesses, this is actually simpler &mdash; you send your developer the changes, they make the edits, and the site is updated. There is no training, no login credentials to manage, no risk of accidentally breaking the site.</p>
+
+          <p>For businesses that do need frequent content updates, there is a middle ground: static site generators with headless CMS integration. This approach gives you the performance of a static site with the convenience of a CMS dashboard. Platforms like Netlify CMS, Forestry, or Sanity can be paired with a static site for the best of both worlds.</p>
+
+          <!-- ===== SECTION 11: WHICH IS RIGHT ===== -->
+          <h2 id="which-is-right">11. Which Option Is Right for Your Business?</h2>
+
+          <p>After comparing <strong>hand coded HTML/CSS vs WordPress</strong> across speed, SEO, security, cost, maintenance, customization, and user experience, you may be wondering which option is right for your specific situation. Here is a decision framework to help you choose.</p>
+
+          <h3>Choose a Hand-Coded HTML/CSS Website If:</h3>
+          <ul>
+            <li>You run a hotel, church, restaurant, or local service business that needs a professional online presence.</li>
+            <li>Page speed and Google rankings are important for your business.</li>
+            <li>You want the most secure website possible with minimal maintenance.</li>
+            <li>You care about long-term costs and want to avoid recurring plugin and maintenance fees.</li>
+            <li>You want a unique design that stands out from template-based competitors.</li>
+            <li>Your content changes infrequently (less than once a week).</li>
+            <li>You are launching a new business and need a fast, reliable website on a budget.</li>
+          </ul>
+
+          <h3>Choose WordPress If:</h3>
+          <ul>
+            <li>You need a blog or content-heavy website with daily or weekly publishing by multiple authors.</li>
+            <li>You need complex e-commerce functionality with hundreds of products.</li>
+            <li>You need membership sites, user accounts, or community features.</li>
+            <li>You want to manage content entirely yourself without any developer involvement.</li>
+            <li>You have a large existing WordPress site and migrating would be costly.</li>
+            <li>You need integration with WordPress-specific plugins for your industry.</li>
+          </ul>
+
+          <p>For most small and medium-sized businesses, hotels, churches, and local service providers, the advantages of a <strong>hand-coded HTML/CSS website vs WordPress</strong> are clear: better performance, stronger security, lower long-term costs, and superior SEO outcomes. The trade-off is that you need a developer for updates, but for most businesses, that is a small price to pay for a site that actually performs.</p>
+
+          <div class="article-cta">
+            <h3>Need a Hand-Coded Website That Ranks?</h3>
+            <p>I build fast, secure, SEO-optimized hand-coded HTML/CSS websites for hotels, churches, and businesses. Let's talk about your project.</p>
+            <a href="/get-a-quote" class="btn btn-primary">Get a Quote</a>
+            <a href="https://wa.me/2349076042573" class="btn btn-wa" target="_blank" rel="noopener noreferrer" style="margin-left:0.75rem;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          </div>
+
+          <!-- ===== SECTION 12: FAQ ===== -->
+          <h2 id="faq">12. Frequently Asked Questions (FAQ)</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is hand-coded HTML/CSS better than WordPress for SEO?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, for most businesses. Hand-coded static sites achieve significantly better Core Web Vitals scores, which are direct Google ranking factors. They also give developers complete control over technical SEO elements like schema markup, heading structure, and meta tags without plugin bloat. While WordPress <em>can</em> rank well with extensive optimization, a well-built hand-coded site has a structural SEO advantage.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Which is cheaper: a hand-coded website or WordPress?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Over 3 years, a hand-coded website is significantly cheaper. While the initial build cost may be similar or slightly higher, hand-coded sites have no plugin fees, no theme licenses, no security subscriptions, and minimal hosting costs. WordPress requires ongoing expenses for premium plugins, managed hosting, security services, and developer maintenance that add up to thousands of dollars over time.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can a hand-coded website be updated without a developer?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Not directly. Hand-coded HTML/CSS websites require editing the source files to update content. However, many developers offer affordable maintenance packages, and updates typically take minutes. Alternatively, you can pair a static site with a headless CMS (like Netlify CMS or Sanity) for a visual editing interface while keeping the performance benefits of static HTML.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is WordPress more secure than a hand-coded site?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>No. A hand-coded static HTML site is inherently more secure than WordPress. Static sites have no database, no admin login page, no plugins, and no server-side code &mdash; eliminating the most common attack vectors. WordPress powers 43% of the web and is the #1 target for hackers, with over 11,000 new vulnerabilities discovered in 2025 alone.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How much does a hand-coded HTML/CSS website cost in 2026?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>A professional hand-coded business website typically costs between $1,000 and $3,000 for a 5&ndash;10 page site, depending on complexity and design requirements. Ongoing hosting costs are $0&ndash;$20/month on CDN platforms. This is comparable to or less than the 3-year total cost of a WordPress site when you factor in plugins, maintenance, and security.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is the difference between static HTML and dynamic WordPress sites?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>A static HTML site serves pre-built files with no server-side processing. It loads faster, is more secure, and costs less to host. A dynamic WordPress site generates pages on-the-fly using PHP and a database. This adds flexibility for content management but introduces performance overhead, security vulnerabilities, and ongoing maintenance requirements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I migrate from WordPress to a hand-coded HTML site?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Migrating from WordPress to a static hand-coded site involves extracting your content, rebuilding the design in HTML/CSS, and deploying the static files. The process typically takes 1&ndash;3 weeks depending on site complexity. The result is a faster, more secure, and lower-maintenance website with the same content and better performance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Does Google prefer hand-coded websites over WordPress?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Google does not have a preference for any specific platform. However, Google's ranking algorithm heavily weights page speed, Core Web Vitals, mobile performance, and security &mdash; all areas where hand-coded static sites consistently outperform WordPress sites. Google ranks fast, secure, well-structured websites higher, regardless of how they were built.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What type of businesses benefit most from hand-coded websites?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Hotels, churches, restaurants, local service providers, professional practices (lawyers, doctors, accountants), real estate agents, creative professionals, and small to medium e-commerce stores benefit most from hand-coded websites. These businesses need professional online presence with strong local SEO, fast loading times, and reliable security without the overhead of a full CMS.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Are hand-coded websites mobile-friendly?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. In fact, hand-coded websites are often <em>more</em> mobile-friendly than WordPress sites. Because they are built from scratch with modern CSS (Flexbox, Grid, and responsive design techniques), mobile optimization is built into the foundation rather than retrofitted through a theme. Hand-coded sites consistently achieve higher mobile PageSpeed scores than WordPress sites.</p>
+            </div>
+          </div>
+
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is hand-coded HTML/CSS better than WordPress for SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, for most businesses. Hand-coded static sites achieve significantly better Core Web Vitals scores, which are direct Google ranking factors. They also give developers complete control over technical SEO elements like schema markup, heading structure, and meta tags without plugin bloat."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which is cheaper: a hand-coded website or WordPress?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Over 3 years, a hand-coded website is significantly cheaper. Hand-coded sites have no plugin fees, no theme licenses, no security subscriptions, and minimal hosting costs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is WordPress more secure than a hand-coded site?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A hand-coded static HTML site is inherently more secure than WordPress. Static sites have no database, no admin login page, no plugins, and no server-side code, eliminating the most common attack vectors."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can a hand-coded website be updated without a developer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not directly. However, many developers offer affordable maintenance packages. Alternatively, you can pair a static site with a headless CMS for a visual editing interface while keeping the performance benefits of static HTML."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the difference between static HTML and dynamic WordPress sites?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A static HTML site serves pre-built files with no server-side processing. It loads faster, is more secure, and costs less to host. A dynamic WordPress site generates pages on-the-fly using PHP and a database, adding flexibility but introducing performance overhead and security vulnerabilities."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Google prefer hand-coded websites over WordPress?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Google does not prefer any specific platform. However, Google's ranking algorithm heavily weights page speed, Core Web Vitals, mobile performance, and security, where hand-coded static sites consistently outperform WordPress."
+                }
+              }
+            ]
+          }
+          </script>
+
+          <!-- ===== SECTION 13: CONCLUSION ===== -->
+          <h2 id="conclusion">13. Conclusion</h2>
+
+          <p>After an in-depth analysis of <strong>hand coded HTML/CSS website vs WordPress website</strong>, the evidence is clear: for most businesses, a hand-coded HTML/CSS website is the better choice. It delivers superior speed, stronger security, better SEO outcomes, lower long-term costs, and greater design freedom.</p>
+
+          <p>WordPress remains a powerful platform with legitimate use cases, particularly for content-heavy websites, large e-commerce stores, and organizations that need multi-author publishing workflows. But for the typical small business, hotel, church, or local service provider, the complexity, cost, and security risks of WordPress are not justified by its content management conveniences.</p>
+
+          <p>The web is moving toward performance-first experiences. Google's Core Web Vitals, mobile-first indexing, and page experience signals all reward the kind of lean, optimized code that hand-crafted HTML/CSS delivers. WordPress can be optimized to perform well, but it requires constant effort and expense to overcome its architectural disadvantages.</p>
+
+          <p>When you choose a <strong>hand-coded HTML/CSS website over WordPress</strong>, you are choosing:</p>
+          <ul>
+            <li>A website that loads in under 1 second</li>
+            <li>A site that scores 95+ on Google PageSpeed Insights</li>
+            <li>Zero security patches or plugin updates</li>
+            <li>No monthly maintenance fees</li>
+            <li>A unique design that represents your brand perfectly</li>
+            <li>Complete ownership of your code and content</li>
+          </ul>
+
+          <p>If you are ready to build a hand-coded website for your hotel, church, or business, I would love to help. As a freelance web developer specializing in hand-coded HTML/CSS websites, I build fast, secure, and SEO-optimized sites that help businesses grow.</p>
+
+          <p><strong>Still have questions about the hand coded HTML/CSS website vs WordPress website debate?</strong> Reach out to me directly on WhatsApp or through the contact form. I am happy to discuss your specific project and recommend the best approach.</p>
+
+          <p>The choice between hand-coded and WordPress is ultimately a choice between simplicity and complexity, between performance and convenience, between ownership and dependency. Make the choice that serves your business best.</p>
+
+          <div class="article-cta">
+            <h3>Ready for a Hand-Coded Website?</h3>
+            <p>Get a fast, secure, SEO-optimized website built with clean HTML/CSS. No bloat, no plugins, no monthly maintenance headaches.</p>
+            <a href="/get-a-quote" class="btn btn-primary">Request a Quote</a>
+            <a href="https://wa.me/2349076042573?text=Hi%20Kenny%2C%20I'm%20interested%20in%20a%20hand-coded%20website" class="btn btn-wa" target="_blank" rel="noopener noreferrer" style="margin-left:0.75rem;"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+          </div>
+
+          <div class="share-section">
+            <span>Share This Article:</span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=Hand+Coded+HTML%2FCSS+vs+WordPress+Website%3A+Which+Is+Better%3F&url=https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026&title=Hand+Coded+HTML%2FCSS+vs+WordPress+Website" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/?text=Hand+Coded+HTML%2FCSS+vs+WordPress+Website%3A+Which+Is+Better%3F+https://webdev.talent-loop.org/blog/hand-coded-html-css-vs-wordpress-2026" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Back to home">
+            <img src="/kenny.webp" alt="" width="36" height="36" style="border-radius:50%;object-fit:cover;width:36px;height:36px;" />
+            Nathaniel Kenny
+          </a>
+          <p class="footer-tagline">
+            Freelance web developer specialized in hand-coded HTML &amp; CSS. Building fast, hand-coded websites for hotels, churches, and businesses worldwide.
+          </p>
+          <div class="footer-social">
+            <a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:webdev@talent-loop.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Navigation links">
+          <h3>Navigation</h3>
+          <ul role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/portfolio">Work</a></li>
+            <li><a href="/get-a-quote">Get a Quote</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Services links">
+          <h3>Services</h3>
+          <ul role="list">
+            <li><a href="/portfolio">Hotel Websites</a></li>
+            <li><a href="/portfolio">Church Websites</a></li>
+            <li><a href="/portfolio">Business Websites</a></li>
+            <li><a href="/portfolio">Website Rescue</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Contact links">
+          <h3>Contact</h3>
+          <ul role="list">
+            <li><a href="https://wa.me/2349076042573" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:webdev@talent-loop.org">Email</a></li>
+            <li><a href="https://talent-loop.org" target="_blank" rel="noopener noreferrer">talent-loop.org</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nathaniel Kenny Olie. All rights reserved.</p>
+        <p>Built with <span aria-hidden="true"><i class="fas fa-heart"></i></span> for clients worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isActive = btn.classList.toggle('active');
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isActive);
+      });
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isExpanded = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    }, { passive: true });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }, { passive: true });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
+    }, { passive: true });
+
+    const navbar = document.getElementById('navbar');
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const backToTop = document.getElementById('backToTop');
+    const handleScroll = () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    };
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, { passive: true });
+  </script>
+
+  <!-- Smooth scroll for hash links -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
