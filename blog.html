@@ -189,7 +189,10 @@
     .blog-thumb {
       height: 180px; background: var(--surface-2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
+      font-size: 2.5rem; overflow: hidden;
+    }
+    .blog-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
     }
     .blog-body { padding: 1.5rem; }
     .blog-body .blog-date {
@@ -498,7 +501,7 @@
         </header>
         <div class="blog-grid">
           <article class="blog-card">
-            <div class="blog-thumb" aria-hidden="true"><i class="fas fa-code"></i></div>
+            <div class="blog-thumb" aria-hidden="true"><img src="/blog/hand-coded-vs-wordpress.webp" alt="" width="1200" height="630" loading="lazy" /></div>
             <div class="blog-body">
               <p class="blog-date">June 26, 2026</p>
               <h3>Hand Coded HTML/CSS Website vs WordPress Website: Which Is Better? (Complete 2026 Guide)</h3>
