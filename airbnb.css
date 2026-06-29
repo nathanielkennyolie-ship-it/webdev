@@ -126,7 +126,7 @@ img { display: block; max-width: 100%; height: auto; }
   letter-spacing: -0.18px;
 }
 .logo:hover { color: var(--primary); text-decoration: none; }
-.logo img { border-radius: 50%; object-fit: cover; width: 36px; height: 36px; }
+.logo img { object-fit: contain; width: auto; height: 36px; }
 
 .nav-menu {
   list-style: none; display: flex; align-items: center; gap: var(--space-xs);
